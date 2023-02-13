@@ -33,5 +33,5 @@ steps:
   displayName: 'Publish $(buildVersion) artifact'
 
 - task: CmdLine@2
-- script: scp -i $(SSH_PRIVATE_KEY) $(System.DefaultWorkingDirectory)/drop/dist/ azure@79.137.39.247:/var/www/yourserver
+- script: scp -i $(SSH_PRIVATE_KEY) $(System.DefaultWorkingDirectory)/drop/dist/ azure@79.137.39.247:/var/www/app.deposit.ovh
   displayName: 'Copy dist folder via SCP'
