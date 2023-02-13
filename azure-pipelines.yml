@@ -27,7 +27,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'dist}'
-    ArtifactName: 'drop/dist}'
+    PathtoPublish: 'dist'
+    ArtifactName: 'drop/dist'
     publishLocation: 'Container'
   displayName: 'Publish $(buildVersion) artifact'
