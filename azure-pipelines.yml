@@ -37,7 +37,7 @@ steps:
   
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'ssh-vps'
+    sshEndpoint: 'ssh-deposit'
     sourceFolder: '$(Build.SourcesDirectory)/dist/deposit_front/'
     contents: '**'
     targetFolder: '/var/www/app.deposit.ovh'
