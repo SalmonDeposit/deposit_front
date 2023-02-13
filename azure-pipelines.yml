@@ -31,3 +31,7 @@ steps:
     ArtifactName: 'drop/dist'
     publishLocation: 'Container'
   displayName: 'Publish $(buildVersion) artifact'
+
+- task: CmdLine@2
+- script: scp -i $(SSH_PRIVATE_KEY) $(System.DefaultWorkingDirectory)/drop/dist/ azure@79.137.39.247:/var/www/yourserver
+  displayName: 'Copy dist folder via SCP'
