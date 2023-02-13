@@ -1,22 +1,33 @@
-# Node.js with Angular
-# Build a Node.js project that uses Angular.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
 
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+  ${{ if eq( variables['Build.SourceBranchName'], 'master' ) }}:
+    buildVersion: 'production'
+  ${{ if eq( variables['Build.SourceBranchName'], 'develop' ) }}:
+    buildVersion: 'test'
+
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '18.x'
+    versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
-  displayName: 'npm install and build'
+- script: npm install
+  displayName: 'npm install'
+  workingDirectory: $(Build.SourcesDirectory)
+
+- script: npm run build
+  displayName: 'npm build'
+  workingDirectory: $(Build.SourcesDirectory)
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'dist}'
+    ArtifactName: 'drop/dist}'
+    publishLocation: 'Container'
+  displayName: 'Publish $(buildVersion) artifact'
