@@ -32,10 +32,13 @@ steps:
     publishLocation: 'Container'
   displayName: 'Publish $(buildVersion) artifact'
 
-- task: CopyFilesOverSSH@0
-  inputs:
-    sshEndpoint: 'ssh-vps'
-    sourceFolder: '$(System.DefaultWorkingDirectory)/drop/dist/build/'
-    contents: '**'
-    targetFolder: '/var/www/app.deposit.ovh'
-    readyTimeout: '20000'
+- script: ls $(Build.SourcesDirectory)
+  displayName: 'List drop/dist directory'
+  
+# - task: CopyFilesOverSSH@0
+#   inputs:
+#     sshEndpoint: 'ssh-vps'
+#     sourceFolder: '$(System.DefaultWorkingDirectory)/drop/dist/build/'
+#     contents: '**'
+#     targetFolder: '/var/www/app.deposit.ovh'
+#     readyTimeout: '20000'
