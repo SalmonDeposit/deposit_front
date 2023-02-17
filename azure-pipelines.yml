@@ -1,12 +1,14 @@
 trigger:
 - master
+- develop
 
 variables:
-  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
   ${{ if eq( variables['Build.SourceBranchName'], 'master' ) }}:
     buildVersion: 'production'
+    targetFolder: '/var/www/app.deposit.ovh'
   ${{ if eq( variables['Build.SourceBranchName'], 'develop' ) }}:
     buildVersion: 'test'
+    targetFolder: '/var/www/app.test.deposit.ovh'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -34,11 +36,11 @@ steps:
 
 - script: ls $(Build.SourcesDirectory)
   displayName: 'List drop/dist directory'
-  
+
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'ssh-deposit'
     sourceFolder: '$(Build.SourcesDirectory)/dist/deposit_front/'
     contents: '**'
-    targetFolder: '/var/www/app.deposit.ovh'
+    targetFolder: '$(targetFolder)'
     readyTimeout: '20000'
