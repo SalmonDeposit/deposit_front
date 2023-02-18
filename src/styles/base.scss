@@ -1,0 +1,234 @@
+/* Font classes */
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: -0.015rem;
+  color: $grey_dark;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+div {
+  &,
+  &:not([cds-text]) {
+   @extend .title;
+}
+}
+h1{
+  &,
+  &:not([cds-text]) {
+    @extend .title;
+    font-size: 2rem;
+    font-weight:300;
+  }
+}
+h2{
+  &,
+  &:not([cds-text]) {
+    @extend .title;
+    font-size: 1.25rem;
+    font-weight:300;
+  }
+}
+h3{
+  &,
+  &:not([cds-text]) {
+    @extend .title;
+    font-size: 1.1rem;
+    font-weight:400;
+  }
+}
+
+%body,
+body:not([cds-text]) {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: -0.015rem;
+}
+
+html,
+body,
+.main-container {
+  min-height: 100vh;
+  height: auto;
+}
+
+.base-font {
+  @extend %body;
+  font-size: 0.7rem;
+}
+
+.label-fs12 {
+  @extend %body;
+  font-size: 0.6rem;
+}
+
+.label-fs13,
+.label {
+  @extend %body;
+  font-size: 0.65rem;
+}
+
+.label-fs14,
+.badge {
+  @extend %body;
+  font-size: 0.7rem;
+}
+
+:root {
+  --clr-global-app-background: #ffffff;
+  --clr-label-font-size: 0.65rem;
+  --clr-label-letter-spacing: -0.015rem;
+  --clr-badge-font-color-light: #333333;
+  --clr-badge-danger-color: #dc5952;
+  --clr-badge-danger-bg-color: #fbe6e5;
+  --clr-badge-warning-color: #d95f07;
+  --clr-badge-warning-bg-color: #fee6d5;
+  --clr-badge-success-color: #333333;
+  --clr-badge-success-bg-color: #f4f4f4;
+  --clr-label-bg-hover-color: #f4f4f4;
+}
+
+.main-container .content-container .content-area {
+  margin: 0;
+  padding: 2rem 6rem;
+  min-height: calc(100vh - (var(--header-height) + var(--footer-height) + 9rem));
+}
+
+.title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+
+  h1 {
+    //@extend .title;
+  }
+
+  button.btn-add-item {
+    @extend .btn-primaryWithIcone;
+    position: relative;
+    margin: 0;
+
+    &::before {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      background-color: $salmon_extraLight !important;
+      &::after {
+        visibility: visible;
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+//.material {
+//  @import "~ng-snotify/styles/material";
+//}
+//
+//.simple {
+//  @import "~ng-snotify/styles/simple";
+//}
+//
+//.dark {
+//  @import "~ng-snotify/styles/dark";
+//}
+
+
+.snotify-icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.clr-form-control {
+  &,
+  .content-container & {
+    margin: 0;
+    .clr-toggle-wrapper {
+      margin-right: 0;
+    }
+  }
+}
+
+.table.quote-table td {
+  text-align: right;
+}
+
+.table.quote-table {
+  td .left,
+  td.left {
+    text-align: left;
+  }
+}
+
+.table.quote-table {
+  padding: 0;
+  border-collapse: collapse;
+  border: none;
+  th {
+    // border: solid black 1px;
+    background-color: inherit;
+    font-size: 0.9em;
+    color: inherit;
+  }
+  tr,
+  tr td {
+    border: none;
+    border-top: none;
+    border-top-width: 0;
+  }
+  tr.last-batch-row {
+    border-top-width: 0.05em;
+  }
+  .med-col {
+    width: 10em;
+    vertical-align: middle;
+  }
+  .small-col {
+    width: 6em;
+    vertical-align: middle;
+  }
+
+  .small-autocomplete-col {
+    width: 8.5em;
+    vertical-align: middle;
+    capcod-autocomplete .ngui-auto-complete-wrapper input,
+    capcod-autocomplete .ngui-auto-complete-wrapper {
+      min-width: 2em;
+      width: 5em;
+      display: inline;
+      margin: 0;
+      text-align: right;
+    }
+    .clr-checkbox-wrapper {
+      text-align: center;
+    }
+  }
+}
+
+.snotify-icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
