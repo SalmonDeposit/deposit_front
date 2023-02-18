@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
-import {HomeComponent} from "./home.component";
+import {DashboardComponent} from "./dashboard.component";
 
 const routes: Route[] = [
-  { path: '', component: HomeComponent},
+  { path: '', component: DashboardComponent},
 ];
 
 @NgModule({
@@ -13,7 +13,7 @@ const routes: Route[] = [
     RouterModule.forChild(routes),
   ],
   declarations: [
-    HomeComponent
+    DashboardComponent
   ]
 })
-export class HomeModule { }
+export class DashboardModule { }
