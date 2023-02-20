@@ -8,6 +8,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {
   DepositTokenCrsfInterceptor,
 } from "../core/generics/services/http/deposit-crsf.interceptor";
+import {ErrorInterceptor} from "../core/generics/interceptors/error.interceptor";
 
 const routes: Route[] = [
   {
@@ -38,6 +39,7 @@ const routes: Route[] = [
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
     { provide: HTTP_INTERCEPTORS, useClass: DepositTokenCrsfInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     SnotifyService,
     {
       provide: 'env',

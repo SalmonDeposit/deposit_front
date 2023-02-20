@@ -42,7 +42,6 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
     headers = headers.append('Content-type', "application/json")
 
     req = req.clone({headers: headers, withCredentials: true});
-    console.log(req.headers)
     return next.handle(req);
   }
 

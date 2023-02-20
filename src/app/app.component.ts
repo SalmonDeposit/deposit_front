@@ -7,14 +7,10 @@ import {DepositHttpService} from "../core/generics/services/http/deposit-http.se
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'deposit_front';
   constructor(private sno: SnotifyService, private http: DepositHttpService) {
 
 
-  }
-
-  ngOnInit(): void {
-    console.log("app component init ")
   }
 }
