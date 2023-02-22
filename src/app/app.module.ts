@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { AppComponent } from './app.component';
 import { Route, RouterModule } from '@angular/router';
@@ -9,6 +8,7 @@ import {
   DepositTokenCrsfInterceptor,
 } from "../core/generics/services/http/deposit-crsf.interceptor";
 import {ErrorInterceptor} from "../core/generics/interceptors/error.interceptor";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const routes: Route[] = [
   {
@@ -29,7 +29,7 @@ const routes: Route[] = [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     SnotifyModule,
     RouterModule.forRoot(routes),

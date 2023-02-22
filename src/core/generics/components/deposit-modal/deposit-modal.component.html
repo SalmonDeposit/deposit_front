@@ -1,0 +1,17 @@
+<div *ngIf="openValue" class="modal">
+  <div class="card">
+    <button *ngIf="canClose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="close()"></button>
+    <div class="modal-header">
+      <h5 class="title">
+        {{ title }}
+      </h5>
+    </div>
+    <div class="modal-body">
+      <ng-content *ngTemplateOutlet="content"> </ng-content>
+    </div>
+    <div class="modal-footer" *ngIf="canBack">
+      <button class="btn btn-secondary" (click)="close()">Retour</button>
+    </div>
+  </div>
+  <div class="modal-backdrop"></div>
+</div>
