@@ -1,8 +1,8 @@
-import {DepositHttpService} from "./deposit-http.service";
+import {DepositHttpService} from "../services/http/deposit-http.service";
 import {from, Observable, tap} from "rxjs";
 import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Inject, Injectable} from "@angular/core";
-import {Environment} from "../../classes/environment";
+import {Environment} from "../classes/environment";
 import {switchMap} from 'rxjs/operators';
 
 @Injectable()
@@ -14,7 +14,6 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
 
   private loadCsrfToken(): Observable<any> {
     const csrfUrl = `${this.environment.sanctumUrl}`
-
     return from(this.http.get(csrfUrl, { withCredentials: true }))
       .pipe(
         tap(() => {
@@ -23,6 +22,7 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
             const cookie = cookies[i].trim();
             if (cookie.startsWith('XSRF-TOKEN=')) {
               this.tokenCrsf = cookie.substring(11);
+              console.log(this.tokenCrsf)
               break;
             }
           }
@@ -34,15 +34,21 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
     const cookieheaderName = 'X-XSRF-TOKEN'
     let headers = new HttpHeaders();
     if (token !== '' && !req.headers.has(cookieheaderName)) {
-      headers = headers.append(cookieheaderName, token)
+      console.log(this.tokenCrsf)
+      headers = headers.append(cookieheaderName,  token)
     }
     headers = headers.append('Current-culture', navigator.language);
     headers = headers.append('Current-tz-offset', new Date().getTimezoneOffset().toString());
     headers = headers.append('Current-tz-timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
     headers = headers.append('Content-type', "application/json")
 
+    console.log(headers)
     req = req.clone({headers: headers, withCredentials: true});
     return next.handle(req);
+  }
+  needCRSFToken(url: string) : boolean{
+    console.log(!url.includes('login'))
+    return !url.includes('login');
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

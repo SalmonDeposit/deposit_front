@@ -3,7 +3,7 @@ import {DepositField} from "../../../../core/generics/interfaces/form/deposit-fi
 import {Validators} from "@angular/forms";
 
 export class SignInFormBuilder implements DepositFormBuilder{
-  textBtnSubmit = "S'inscrire";
+  textBtnSubmit = "Connexion";
   build(): DepositField[] {
     return [
       {
@@ -28,17 +28,10 @@ export class SignInFormBuilder implements DepositFormBuilder{
       },
       {
         name: 'firstName',
-        placeholder: 'Nom de famille*',
+        placeholder: 'Mot de passe*',
         required: true,
-        type: 'text',
-        controlErrors: [
-          {
-            name: 'minlength',
-            display : 'Nom trop court'
-          }
-        ],
+        type: 'password',
         validators : [
-          Validators.minLength(2),
           Validators.required
         ]
       }

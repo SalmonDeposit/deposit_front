@@ -10,11 +10,10 @@ export class ServiceGeneric implements IServiceGeneric {
   protected baseUrl:string;
    constructor(
      @Inject('env') protected environment: Environment,
-     protected notifyService: SnotifyService,
      protected http: DepositHttpService,
      entityName: string
    ) {
-     this.baseUrl = `${this.environment.apiUrl}/${entityName}`;
+     this.baseUrl = `${this.environment.apiUrl}/v1/${entityName}`;
   }
   read(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`).pipe(map((x: any) => x.result));

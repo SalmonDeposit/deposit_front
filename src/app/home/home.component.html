@@ -1,12 +1,12 @@
 <h1> Page d'accueil CM-68</h1>
 <a routerLink="/dashboard">Dashboard</a>
-<button class="btn btn-primary" (click)="openModal()"> Push it </button>
-<app-deposit-modal [isOpen]="modalIsOpen" (isOpenChange)="modalIsOpen = $event" title="Coucou" [content]="contentModal"></app-deposit-modal>
+<button class="btn btn-primary" (click)="openModal()"> Connexion </button>
+<app-deposit-editor-modal
+  [title]="'Connexion'"
+  [formBuilder]="signInFormBuilder"
+  [isOpen]="modalIsOpen"
+  (isOpenChange)="modalIsOpen = $event"
+  (onSubmitForm)="onSubmitForm($event)"
 
-
-<ng-template #contentModal>
-  <p> Je suis un contenu</p>
-  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nunc ac odio feugiat dictum vel elementum ante. Nulla finibus placerat nulla, sed maximus magna luctus ut. Mauris ligula lectus, scelerisque vitae justo at, porttitor eleifend orci. </p>
-</ng-template>
-
-<app-deposit-form [formBuilder]="signInFormBuilder" (submitted)="onSubmitForm($event)"></app-deposit-form>
+>
+</app-deposit-editor-modal>

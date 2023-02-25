@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SignInFormBuilder} from "./classes/forms/sign-in-form.builder";
+import {AuthApiService} from "./services/auth-api.service";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import {SignInFormBuilder} from "./classes/forms/sign-in-form.builder";
 export class HomeComponent implements OnInit {
   modalIsOpen = false;
 
-  constructor(public signInFormBuilder: SignInFormBuilder) { }
+  constructor(public signInFormBuilder: SignInFormBuilder, public authApiService: AuthApiService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,12 @@ export class HomeComponent implements OnInit {
   }
   onSubmitForm(object: any){
     console.log(object)
+    this.authApiService.signIn(object).subscribe({
+      next : res => {
+        console.log(res)
+        this.modalIsOpen = false;
+      }
+    })
   }
 
 }

@@ -8,8 +8,8 @@ import {Environment} from "../../../core/generics/classes/environment";
   providedIn: 'root'
 })
 export class UserService extends ServiceGeneric {
-  constructor(@Inject('env') protected override environment: Environment, notifyService : SnotifyService, http : DepositHttpService) {
-    super(environment, notifyService, http, 'users');
+  constructor(@Inject('env') protected override environment: Environment, http : DepositHttpService) {
+    super(environment, http, 'users');
   }
 
 }

@@ -4,6 +4,7 @@ import {ClrInputModule, ClrModalModule} from "@clr/angular";
 import {CommonModule} from "@angular/common";
 import { DepositFormComponent } from './components/deposit-form/deposit-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { DepositEditorModalComponent } from './components/deposit-editor-modal/deposit-editor-modal.component';
 
 @NgModule({
   imports: [
@@ -13,13 +14,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [
-    DepositModalComponent,
-    DepositFormComponent
-  ],
+    exports: [
+        DepositModalComponent,
+        DepositFormComponent,
+        DepositEditorModalComponent
+    ],
   declarations: [
     DepositModalComponent,
-    DepositFormComponent
+    DepositFormComponent,
+    DepositEditorModalComponent
   ]
 })
 export class GenericsModule { }

@@ -6,7 +6,7 @@ import {environment} from "../environments/environment";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {
   DepositTokenCrsfInterceptor,
-} from "../core/generics/services/http/deposit-crsf.interceptor";
+} from "../core/generics/interceptors/deposit-crsf.interceptor";
 import {ErrorInterceptor} from "../core/generics/interceptors/error.interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
