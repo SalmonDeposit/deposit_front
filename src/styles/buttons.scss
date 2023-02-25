@@ -64,6 +64,9 @@ body {
       width: 0.95rem;
       transform: translateY(-0.05rem);
     }
+    &.btn-secondary{
+      background-color: aqua;
+    }
   }
 
   &.btn-primary {
@@ -164,6 +167,7 @@ body {
     }
   }
 }
+
 
 
   .card-header [class*="title"],

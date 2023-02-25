@@ -15,5 +15,9 @@ export class HomeComponent implements OnInit {
   openModal(){
     this.modalIsOpen = true;
   }
+  changeOpenModal(e: any){
+    console.log(e);
+    this.modalIsOpen = e;
+  }
 
 }

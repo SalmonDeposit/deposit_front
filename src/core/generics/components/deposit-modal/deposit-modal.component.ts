@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, TemplateRef} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 
 @Component({
   selector: 'app-deposit-modal',
@@ -11,12 +11,14 @@ export class DepositModalComponent implements OnInit {
   @Input() title?: string;
   @Input() canBack = true;
   @Input() canClose = true;
+  @Output() isOpenChange = new EventEmitter();
 
-  get isOpen() {
+  public get isOpen() {
     return this.openValue;
   }
-  set isOpen(val: boolean) {
+  @Input() set isOpen(val: any) {
     this.openValue = val;
+    console.log("openValue in modal", this.openValue)
     if (val) {
       setTimeout(() => {
         const element = document.getElementById('input_0');
@@ -25,7 +27,7 @@ export class DepositModalComponent implements OnInit {
         }
       }, 1);
     }
-    //this.openChange.emit(this.openValue);
+    this.isOpenChange.emit(this.openValue);
   }
   close(){
     this.isOpen = false
