@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SignInFormBuilder} from "./classes/forms/sign-in-form.builder";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   modalIsOpen = false;
 
-  constructor() { }
+  constructor(public signInFormBuilder: SignInFormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
   changeOpenModal(e: any){
     console.log(e);
     this.modalIsOpen = e;
+  }
+  onSubmitForm(object: any){
+    console.log(object)
   }
 
 }

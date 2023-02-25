@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { DepositModalComponent } from './components/deposit-modal/deposit-modal.component';
-import {ClrModalModule} from "@clr/angular";
+import {ClrInputModule, ClrModalModule} from "@clr/angular";
 import {CommonModule} from "@angular/common";
+import { DepositFormComponent } from './components/deposit-form/deposit-form.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     ClrModalModule,
-    CommonModule
+    CommonModule,
+    ClrInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
-    DepositModalComponent
+    DepositModalComponent,
+    DepositFormComponent
   ],
   declarations: [
-    DepositModalComponent
+    DepositModalComponent,
+    DepositFormComponent
   ]
 })
 export class GenericsModule { }

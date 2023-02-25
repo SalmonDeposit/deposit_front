@@ -1,0 +1,23 @@
+<form clrForm [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+  <ng-container *ngFor="let field of formFields">
+    <clr-input-container>
+      <input clrInput [type]="field.type" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name"/>
+        <clr-control-error *ngFor="let error of field.controlErrors">
+          <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+          {{error.display}}
+          </span>
+        </clr-control-error>
+    </clr-input-container>
+  </ng-container>
+  <div class="tooltip tooltip-md" role="tooltip" aria-haspopup="true">
+    <button type="submit" class="btn btn-primary" [disabled]="!depositForm.valid">
+      {{formBuilder?.textBtnSubmit}}
+    </button>
+     <span *ngIf="!depositForm.valid" class="tooltip-content">
+      <span *ngFor="let error of currentErrors">
+      {{error}} <br>
+      </span>
+    </span>
+  </div>
+</form>
+
