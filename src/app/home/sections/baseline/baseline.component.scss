@@ -1,0 +1,52 @@
+@import "../../../../styles/variables";
+
+#baseline{
+  display: flex;
+  aside{
+    width: 50%;
+  }
+  .baseline-left{
+    h1{
+      color: $salmon;
+      line-height:2.4rem;
+    }
+    .title-text{
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      p{
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+    }
+    div{
+      display: flex;
+      justify-content: space-between;
+      margin-top : 5rem;
+      button{
+        line-height: 1.5rem;
+        min-height: 3rem;
+        padding:1rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+  .baseline-right{
+    #baseline-right{
+      background-image: url("/assets/img/home/baseline-1.png");
+      background-position: left center;
+      background-repeat: no-repeat;
+      min-height: 300px;
+    }
+    #baseline-left{
+      background-image: url("/assets/img/home/baseline-2.png");
+      background-position: right center;
+      background-repeat: no-repeat;
+      min-height: 300px;
+    }
+  }
+
+
+
+}

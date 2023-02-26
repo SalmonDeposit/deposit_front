@@ -7,6 +7,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {SignInFormBuilder} from "./classes/forms/sign-in-form.builder";
 import {AuthApiService} from "./services/auth-api.service";
 import {SharedModule} from "../../core/shared/shared.module";
+import { BaselineComponent } from './sections/baseline/baseline.component';
+import { SupportComponent } from './sections/support/support.component';
 
 const routes: Route[] = [
   { path: '', component: HomeComponent},
@@ -21,7 +23,9 @@ const routes: Route[] = [
         SharedModule
     ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    BaselineComponent,
+    SupportComponent
   ],
   providers: [
     SignInFormBuilder,
