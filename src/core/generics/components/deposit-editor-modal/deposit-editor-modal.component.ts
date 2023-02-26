@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {DepositFormBuilder} from "../../interfaces/form/deposit-form-builder.interface";
 import {IServiceGeneric} from "../../interfaces/service.generic.interface";
+import {SnotifyService} from "ng-snotify";
 
 @Component({
   selector: 'app-deposit-editor-modal',
@@ -12,16 +13,15 @@ export class DepositEditorModalComponent implements OnInit {
   @Input() service?: IServiceGeneric;
   @Input() editMode = false
   @Input() title?:string;
+  @Input() object?:any;
   @Output() isOpenChange = new EventEmitter();
   @Output() onSubmitForm = new EventEmitter();
-  object: any;
   openValue = false
   public get isOpen() {
     return this.openValue;
   }
   @Input() set isOpen(val: any) {
     this.openValue = val;
-    console.log("openValue in modal", this.openValue)
     if (val) {
       setTimeout(() => {
         const element = document.getElementById('input_0');
@@ -33,18 +33,34 @@ export class DepositEditorModalComponent implements OnInit {
     this.isOpenChange.emit(this.openValue);
   }
 
-  constructor() { }
+  constructor(private sno: SnotifyService) { }
 
   ngOnInit(): void {
-    if(this.editMode){
-      this.service?.read('').subscribe({
-        next : res => this.object = res.object
-      })
-    }
+  }
+  editObject(data: any){
+    if(!this.object){return;}
+    this.service?.update(this.object.id, data).subscribe({
+      next: res => {
+        this.sno.success(this.service?.updateNotify ?? '')
+        this.isOpen = false
+      }
+    })
+  }
+  addObject(data: any){
+    this.service?.create(data).subscribe({
+      next: res => {
+        this.sno.success(this.service?.addNotify ?? '')
+        this.isOpen = false
+      }
+    })
   }
   onSubmit(formValue: any){
-    console.log("formulaire soumis", formValue)
-    this.onSubmitForm.emit(formValue);
+    if(this.editMode){
+     this.editObject(formValue)
+      return
+    }
+    this.addObject(formValue)
+
   }
 
 }

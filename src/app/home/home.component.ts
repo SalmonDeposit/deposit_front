@@ -17,15 +17,10 @@ export class HomeComponent implements OnInit {
   openModal(){
     this.modalIsOpen = true;
   }
-  changeOpenModal(e: any){
-    console.log(e);
-    this.modalIsOpen = e;
-  }
   onSubmitForm(object: any){
-    console.log(object)
     this.authApiService.signIn(object).subscribe({
       next : res => {
-        console.log(res)
+        localStorage.setItem('token', res.token)
         this.modalIsOpen = false;
       }
     })

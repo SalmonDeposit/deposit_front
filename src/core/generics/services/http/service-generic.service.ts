@@ -15,25 +15,25 @@ export class ServiceGeneric implements IServiceGeneric {
    ) {
      this.baseUrl = `${this.environment.apiUrl}/v1/${entityName}`;
   }
+
+  updateNotify: string = '';
+   addNotify: string = '';
   read(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`).pipe(map((x: any) => x.result));
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   list(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`).pipe(map((x: any) =>{
-      console.log(x.result);
-      x.result
-    }));;
+    return this.http.get(`${this.baseUrl}`);
   }
   create(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, data).pipe(map((x: any) => x.result));
+    return this.http.post(`${this.baseUrl}`, data);
   }
 
   update(id: string, data: any): Observable<any> {
-    return this.http.patch(`${this.baseUrl}/${id}`, data).pipe(map((x: any) => x.result));
+    return this.http.patch(`${this.baseUrl}/${id}`, data);
   }
 
   delete(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`).pipe(map((x: any) => x.result));
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }

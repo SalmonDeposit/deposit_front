@@ -12,6 +12,7 @@ import {DepositFieldError} from "../../interfaces/form/deposit-field-error.inter
 export class DepositFormComponent implements OnInit {
   @Input() object: any;
   @Input() formBuilder?: DepositFormBuilder;
+  @Input() editMode = false;
   @Output() submitted = new EventEmitter();
 
   depositForm: FormGroup;
@@ -34,11 +35,18 @@ export class DepositFormComponent implements OnInit {
     this.formFields = this.formBuilder.build()
     for(const field of this.formFields){
       const validators = field.validators || [];
-      this.depositForm.addControl(field.name, new FormControl('', validators))
+      const initialValue = this.editMode ? this.getInitialValue(field) : '';
+      this.depositForm.addControl(field.name, new FormControl(initialValue, validators))
     }
     this.manageErrors()
   }
 
+  getInitialValue(field: DepositField)
+  {
+    if(field.name in this.object){
+      return this.object[field.name]
+    }
+  }
   manageErrors(){
     if (this.formFields == undefined){return;}
     const errors = this.formFields.flatMap(x => x.controlErrors)

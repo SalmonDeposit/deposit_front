@@ -22,7 +22,6 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
             const cookie = cookies[i].trim();
             if (cookie.startsWith('XSRF-TOKEN=')) {
               this.tokenCrsf = cookie.substring(11);
-              console.log(this.tokenCrsf)
               break;
             }
           }
@@ -34,20 +33,21 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
     const cookieheaderName = 'X-XSRF-TOKEN'
     let headers = new HttpHeaders();
     if (token !== '' && !req.headers.has(cookieheaderName)) {
-      console.log(this.tokenCrsf)
       headers = headers.append(cookieheaderName,  token)
+    }
+    const accessToken = localStorage.getItem('token')
+    if(accessToken){
+      headers = headers.append('Authorization', `Bearer ${accessToken}`)
     }
     headers = headers.append('Current-culture', navigator.language);
     headers = headers.append('Current-tz-offset', new Date().getTimezoneOffset().toString());
     headers = headers.append('Current-tz-timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
     headers = headers.append('Content-type', "application/json")
 
-    console.log(headers)
     req = req.clone({headers: headers, withCredentials: true});
     return next.handle(req);
   }
   needCRSFToken(url: string) : boolean{
-    console.log(!url.includes('login'))
     return !url.includes('login');
   }
 

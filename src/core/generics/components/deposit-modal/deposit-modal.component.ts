@@ -18,7 +18,6 @@ export class DepositModalComponent implements OnInit {
   }
   @Input() set isOpen(val: any) {
     this.openValue = val;
-    console.log("openValue in modal", this.openValue)
     if (val) {
       setTimeout(() => {
         const element = document.getElementById('input_0');

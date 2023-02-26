@@ -4,6 +4,8 @@ import { RouterModule, Route } from '@angular/router';
 import {DashboardComponent} from "./dashboard.component";
 import { environment } from '../../environments/environment';
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
+import {GenericsModule} from "../../core/generics/generic.module";
+import {UserFormBuilder} from "./classes/user-form.builder";
 
 const routes: Route[] = [
   { path: '', component: DashboardComponent},
@@ -13,7 +15,8 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HttpClientXsrfModule
+    HttpClientXsrfModule,
+    GenericsModule
   ],
   declarations: [
     DashboardComponent
@@ -23,6 +26,7 @@ const routes: Route[] = [
       provide: 'env',
       useValue: environment
     },
+    UserFormBuilder
   ]
 })
 export class DashboardModule { }

@@ -11,7 +11,7 @@
   </ng-container>
   <div class="tooltip tooltip-md" role="tooltip" aria-haspopup="true">
     <button type="submit" class="btn btn-primary" [disabled]="!depositForm.valid">
-      {{formBuilder?.textBtnSubmit}}
+      {{editMode ? formBuilder?.textUpdateBtnSubmit : formBuilder?.textAddBtnSubmit}}
     </button>
      <span *ngIf="!depositForm.valid" class="tooltip-content">
       <span *ngFor="let error of currentErrors">
