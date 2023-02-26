@@ -2,7 +2,7 @@
 
 #deposit-support{
   width: 70%;
-  margin: 4rem auto auto;
+  margin: 8rem auto auto;
 
   h2{
     text-align: center;
@@ -16,7 +16,8 @@
   .asides-containers{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     .aside-deposit-support{
       display: flex;
       flex-direction: column;

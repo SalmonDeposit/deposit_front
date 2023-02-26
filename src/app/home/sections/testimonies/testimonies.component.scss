@@ -1,0 +1,13 @@
+@import "src/styles/variables";
+#testimonies{
+  background-color: rgba($salmon, 0.3);
+  margin-top: 8rem;
+  .container{
+    display: flex;
+  }
+  h3{
+    text-align: center;
+    margin-left: 3rem;
+  }
+
+}
