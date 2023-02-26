@@ -1,1 +1,22 @@
 <h1>Dashboard CM-76 </h1>
+
+<button class="btn btn-primary" (click)="editModal = true"> Test Edit </button>
+<button class="btn btn-primary" (click)="addModal = true"> Test Add </button>
+<app-deposit-editor-modal
+  [title]="'Modification utilisateur'"
+  [formBuilder]="userFormBuilder"
+  [isOpen]="editModal"
+  (isOpenChange)="editModal = $event"
+  [editMode] = true
+  [object]="user"
+  [service]="service"
+>
+</app-deposit-editor-modal>
+<app-deposit-editor-modal
+  [title]="'Ajout utilisateur'"
+  [formBuilder]="userFormBuilder"
+  [isOpen]="addModal"
+  (isOpenChange)="editModal = $event"
+  [service]="service"
+>
+</app-deposit-editor-modal>

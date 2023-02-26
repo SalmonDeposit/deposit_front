@@ -1,0 +1,19 @@
+@import "src/styles/variables";
+
+.span-errors{
+  color: var(--clr-forms-invalid-color, #c21d00);
+}
+.clr-form-control {
+  margin-bottom:1.5rem;
+}
+.clr-form-horizontal .clr-form-control{
+  flex-direction: column;
+    .clr-input{
+      border: 1px solid $blue;
+      border-radius: 1rem;
+      min-height:1.8rem;
+      width: 100%;
+    }
+}
+
+

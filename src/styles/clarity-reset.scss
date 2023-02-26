@@ -41,3 +41,7 @@ body .btn.btn-link:hover{
 .clr-input-group .clr-input-group-icon-action clr-icon {
   transform: none !important;
 }
+button:focus{
+  outline:none;
+  outline-offset: 0;
+}

@@ -114,3 +114,14 @@ clr-alert > div {
   font-weight: bold;
 }
 
+.clr-error .clr-input:not([readonly]){
+  border: 1px solid var(--clr-forms-invalid-color, #c21d00);
+  border-radius: 1rem;
+  min-height:1.8rem;
+  width: 100%;
+}
+.clr-error .clr-subtext {
+  margin-top: 0.7rem;
+  margin-left:0.6rem
+}
+
