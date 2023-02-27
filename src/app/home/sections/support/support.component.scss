@@ -8,10 +8,10 @@
     text-align: center;
   }
   hr{
-    border-color: $blue;
+    border: 1px solid $blue;
     margin-bottom: 4rem;
     width: 4rem;
-    color:transparent;
+    background-color:$blue;
   }
   .asides-containers{
     display: flex;

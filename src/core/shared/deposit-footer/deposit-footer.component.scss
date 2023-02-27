@@ -48,7 +48,8 @@ footer{
     hr{
       width: 100%;
       min-height: 1px;
-      color: $salmon
+      border: 1px solid $salmon;
+      background-color: $salmon;
     }
     .legal-notice{
       padding: 1rem 2rem;
