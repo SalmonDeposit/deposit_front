@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 
 import SwiperCore, { Keyboard, Pagination, Navigation, Virtual } from 'swiper';
+import { icon } from '@fortawesome/fontawesome-svg-core';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
@@ -11,6 +13,10 @@ SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
   styleUrls: ['./testimonies.component.scss']
 })
 export class TestimoniesComponent implements OnInit {
+  // @ts-ignore
+  faAngleRight = icon(faAngleRight).html;
+  // @ts-ignore
+  faAngleLeft = icon(faAngleLeft).html;
 
   constructor() { }
   slides$ = new BehaviorSubject<string[]>(['']);

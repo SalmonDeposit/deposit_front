@@ -1,18 +1,35 @@
 @import "src/styles/variables";
-@import "swiper/css";
-// @import "swiper/css/navigation";
-// @import "~swiper/css/pagination";
-@import "swiper/css/effect-creative";
 
 #testimonies{
   background-color: rgba($salmon, 0.3);
   margin-top: 8rem;
   .container{
     display: flex;
+    padding: 5rem;
+    aside{
+      width: 50%;
+      position: relative;
+      .quote-character{
+        color: $blue;
+        font-size: 12.5rem;
+        position: absolute;
+        top:-9.5rem;
+        left:0;
+        font-family: none;
+        max-height: 100px;
+      }
+      .testimony-container{
+        width: 70%;
+        margin: auto;
+        .author-name{
+          font-weight: bold;
+          text-align: right;
+        }
+      }
+    }
   }
   h3{
     text-align: center;
-    margin-left: 3rem;
   }
 
 }
