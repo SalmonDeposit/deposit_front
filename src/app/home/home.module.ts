@@ -11,6 +11,7 @@ import { BaselineComponent } from './sections/baseline/baseline.component';
 import { SupportComponent } from './sections/support/support.component';
 import { TestimoniesComponent } from './sections/testimonies/testimonies.component';
 import {SwiperModule} from "swiper/angular";
+import { ValuesComponent } from './sections/values/values.component';
 
 const routes: Route[] = [
   { path: '', component: HomeComponent},
@@ -29,7 +30,8 @@ const routes: Route[] = [
     HomeComponent,
     BaselineComponent,
     SupportComponent,
-    TestimoniesComponent
+    TestimoniesComponent,
+    ValuesComponent
   ],
   providers: [
     SignInFormBuilder,
