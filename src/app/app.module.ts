@@ -9,6 +9,7 @@ import {
 } from "../core/generics/interceptors/deposit-crsf.interceptor";
 import {ErrorInterceptor} from "../core/generics/interceptors/error.interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {UserGuard} from "../core/generics/guards/user.guard";
 
 const routes: Route[] = [
   {
@@ -17,6 +18,7 @@ const routes: Route[] = [
   },
   {
     path: 'dashboard',
+    canActivate: [UserGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then((x) => x.DashboardModule)
   },
   {

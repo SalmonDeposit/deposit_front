@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
+import {Token} from "../../interfaces/token.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -6,12 +7,25 @@ import { Inject, Injectable } from '@angular/core';
 export class DepositAuthService {
   constructor(@Inject('env') private env: any) {
   }
-
-  public getToken(): string | null {
-    return localStorage.getItem('token');
+  public getToken(): Token | null{
+    const token = this.getTokenFromStorage();
+    if(token == null || Date.parse(token.expiredAt) < Date.now()){
+      localStorage.removeItem('token')
+      return null;
+    }
+    return token;
   }
-  public setToken(accessToken: string, expired_at:Date){
-    const token = {accessToken, expired_at}
+
+
+  private getTokenFromStorage(): Token | null {
+    const token = localStorage.getItem('token');
+    if(token){
+      return JSON.parse(token)
+    }
+    return null
+  }
+  public setToken(accessToken: string, expiredAt:Date){
+    const token = {accessToken, expiredAt}
     localStorage.setItem('token', JSON.stringify(token));
   }
 }

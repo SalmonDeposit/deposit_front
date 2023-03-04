@@ -4,12 +4,15 @@ import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from 
 import {Inject, Injectable} from "@angular/core";
 import {Environment} from "../classes/environment";
 import {switchMap} from 'rxjs/operators';
+import {DepositAuthService} from "../services/http/deposit-auth.service";
 
 @Injectable()
 export class DepositTokenCrsfInterceptor implements HttpInterceptor {
 
   tokenCrsf : string = '';
-  constructor(@Inject('env') protected environment: Environment, private http : DepositHttpService) {
+  constructor(@Inject('env') protected environment: Environment,
+              private http : DepositHttpService,
+              public authService: DepositAuthService) {
   }
 
   private loadCsrfToken(): Observable<any> {
@@ -35,7 +38,7 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
     if (token !== '' && !req.headers.has(cookieheaderName)) {
       headers = headers.append(cookieheaderName,  token)
     }
-    const accessToken = localStorage.getItem('token')
+    const accessToken = this.authService.getToken()?.accessToken
     if(accessToken){
       headers = headers.append('Authorization', `Bearer ${accessToken}`)
     }
