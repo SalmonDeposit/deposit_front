@@ -71,8 +71,9 @@ body {
 
   &.btn-primary {
     padding: 0 0.65rem;
-    color: #ffffff;
-    background-color: $salmon;
+    color: $salmon;
+    background-color: white;
+    border: 1px solid $salmon;
 
     &:hover {
       color: #ffffff;

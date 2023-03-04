@@ -54,6 +54,7 @@ body:not([cds-text]) {
   font-weight: normal;
   line-height: 1.4;
   letter-spacing: -0.015rem;
+  background-color: #ffffff;
 }
 
 html,
@@ -140,19 +141,6 @@ body,
   }
 }
 
-//.material {
-//  @import "~ng-snotify/styles/material";
-//}
-//
-//.simple {
-//  @import "~ng-snotify/styles/simple";
-//}
-//
-//.dark {
-//  @import "~ng-snotify/styles/dark";
-//}
-
-
 .snotify-icon {
   object-fit: cover;
   width: 100%;
@@ -169,66 +157,16 @@ body,
     }
   }
 }
-
-.table.quote-table td {
-  text-align: right;
-}
-
-.table.quote-table {
-  td .left,
-  td.left {
-    text-align: left;
-  }
-}
-
-.table.quote-table {
-  padding: 0;
-  border-collapse: collapse;
-  border: none;
-  th {
-    // border: solid black 1px;
-    background-color: inherit;
-    font-size: 0.9em;
-    color: inherit;
-  }
-  tr,
-  tr td {
-    border: none;
-    border-top: none;
-    border-top-width: 0;
-  }
-  tr.last-batch-row {
-    border-top-width: 0.05em;
-  }
-  .med-col {
-    width: 10em;
-    vertical-align: middle;
-  }
-  .small-col {
-    width: 6em;
-    vertical-align: middle;
-  }
-
-  .small-autocomplete-col {
-    width: 8.5em;
-    vertical-align: middle;
-    capcod-autocomplete .ngui-auto-complete-wrapper input,
-    capcod-autocomplete .ngui-auto-complete-wrapper {
-      min-width: 2em;
-      width: 5em;
-      display: inline;
-      margin: 0;
-      text-align: right;
-    }
-    .clr-checkbox-wrapper {
-      text-align: center;
-    }
-  }
-}
-
 .snotify-icon {
   object-fit: cover;
   width: 100%;
   height: 100%;
   object-position: center;
 }
+.container{
+  min-width: 1200px;
+  max-width: 1200px;
+  padding: 0 20px 0 20px;
+  margin: auto;
+}
+

@@ -1,12 +1,8 @@
-<h1> Page d'accueil CM-68</h1>
-<a routerLink="/dashboard">Dashboard</a>
-<button class="btn btn-primary" (click)="openModal()"> Connexion </button>
-<app-deposit-editor-modal
-  [title]="'Connexion'"
-  [formBuilder]="signInFormBuilder"
-  [isOpen]="modalIsOpen"
-  (isOpenChange)="modalIsOpen = $event"
-  (onSubmitForm)="onSubmitForm($event)"
-
->
-</app-deposit-editor-modal>
+<app-deposit-header></app-deposit-header>
+<main>
+<app-baseline></app-baseline>
+<app-support></app-support>
+<app-testimonies></app-testimonies>
+  <app-values></app-values>
+</main>
+<app-deposit-footer></app-deposit-footer>
