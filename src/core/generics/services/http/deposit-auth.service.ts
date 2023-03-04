@@ -28,4 +28,9 @@ export class DepositAuthService {
     const token = {accessToken, expiredAt}
     localStorage.setItem('token', JSON.stringify(token));
   }
+
+  public logout(){
+    localStorage.removeItem('token');
+  }
+
 }

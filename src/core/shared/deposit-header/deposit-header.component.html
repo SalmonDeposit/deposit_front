@@ -11,7 +11,7 @@
     </section>
     <section id="header-auth-buttons-container">
       <button class="btn btn-primary" (click)="connectionModal = true"> Se connecter</button>
-      <button class="btn btn-primary"> S'inscrire </button>
+      <button class="btn btn-primary" (click)="registerModal = true"> S'inscrire </button>
     </section>
   </div>
   <app-deposit-editor-modal
@@ -21,6 +21,16 @@
     (isOpenChange)="connectionModal = $event"
     [service]="service"
     (onSubmitForm)="onConnectionSubmit($event)"
+    [customForm]="true"
+  >
+  </app-deposit-editor-modal>
+  <app-deposit-editor-modal
+    [title]="'S\'inscrire'"
+    [formBuilder]="registerFormBuilder"
+    [isOpen]="registerModal"
+    (isOpenChange)="connectionModal = $event"
+    [service]="service"
+    (onSubmitForm)="onRegisterSubmit($event)"
     [customForm]="true"
   >
   </app-deposit-editor-modal>

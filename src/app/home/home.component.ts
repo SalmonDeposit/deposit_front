@@ -9,5 +9,5 @@ import {DepositAuthService} from "../../core/generics/services/http/deposit-auth
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  
+
 }

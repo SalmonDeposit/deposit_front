@@ -3,6 +3,7 @@ import {AuthApiService} from "./services/auth-api.service";
 import {DepositAuthService} from "../../generics/services/http/deposit-auth.service";
 import {Router} from "@angular/router";
 import {ConnectionFormBuilder} from "./builders/connection-form.builder";
+import {RegisterFormBuilder} from "./builders/register-form.builder";
 
 @Component({
   selector: 'app-deposit-header',
@@ -15,18 +16,24 @@ export class DepositHeaderComponent  {
   constructor(public service: AuthApiService,
               public authService: DepositAuthService,
               public connectionFormBuilder: ConnectionFormBuilder,
+              public registerFormBuilder: RegisterFormBuilder,
               public router: Router
               ) {
   }
 
+  private manageConnection(res: any){
+    this.authService.setToken(res.token, res.expired_at)
+    this.router.navigate(['dashboard'])
+  }
 
   onConnectionSubmit(user: any){
     this.service.signIn(user).subscribe({
-      next: res => {
-        console.log(res)
-        this.authService.setToken(res.token, res.expired_at)
-        this.router.navigate(['dashboard'])
-      }
+      next: res => this.manageConnection(res)
+    })
+  }
+  onRegisterSubmit(user: any){
+    this.service.register(user).subscribe({
+      next: res => this.manageConnection(res)
     })
   }
 }

@@ -4,6 +4,7 @@ import { DepositFooterComponent } from './deposit-footer/deposit-footer.componen
 import {GenericsModule} from "../generics/generic.module";
 import {UserFormBuilder} from "../../app/dashboard/classes/user-form.builder";
 import {ConnectionFormBuilder} from "./deposit-header/builders/connection-form.builder";
+import {RegisterFormBuilder} from "./deposit-header/builders/register-form.builder";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {ConnectionFormBuilder} from "./deposit-header/builders/connection-form.b
         GenericsModule
     ],
   providers: [
-    ConnectionFormBuilder
+    ConnectionFormBuilder,
+    RegisterFormBuilder
   ],
     exports: [
         DepositHeaderComponent,
