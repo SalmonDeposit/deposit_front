@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { DepositHeaderComponent } from './deposit-header/deposit-header.component';
 import { DepositFooterComponent } from './deposit-footer/deposit-footer.component';
+import {GenericsModule} from "../generics/generic.module";
+import {UserFormBuilder} from "../../app/dashboard/classes/user-form.builder";
+import {ConnectionFormBuilder} from "./deposit-header/builders/connection-form.builder";
 
 
 @NgModule({
@@ -8,8 +11,12 @@ import { DepositFooterComponent } from './deposit-footer/deposit-footer.componen
     DepositHeaderComponent,
     DepositFooterComponent
   ],
-  imports: [],
-  providers: [],
+    imports: [
+        GenericsModule
+    ],
+  providers: [
+    ConnectionFormBuilder
+  ],
     exports: [
         DepositHeaderComponent,
         DepositFooterComponent

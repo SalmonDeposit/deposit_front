@@ -10,4 +10,8 @@ export class DepositAuthService {
   public getToken(): string | null {
     return localStorage.getItem('token');
   }
+  public setToken(accessToken: string, expired_at:Date){
+    const token = {accessToken, expired_at}
+    localStorage.setItem('token', JSON.stringify(token));
+  }
 }

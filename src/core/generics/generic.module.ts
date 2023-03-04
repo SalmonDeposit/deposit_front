@@ -22,7 +22,7 @@ import { DepositEditorModalComponent } from './components/deposit-editor-modal/d
   declarations: [
     DepositModalComponent,
     DepositFormComponent,
-    DepositEditorModalComponent
+    DepositEditorModalComponent,
   ]
 })
 export class GenericsModule { }
