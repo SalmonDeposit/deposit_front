@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {SignInFormBuilder} from "./classes/forms/sign-in-form.builder";
-import {AuthApiService} from "../../core/shared/deposit-header/services/auth-api.service";
-import {DepositAuthService} from "../../core/generics/services/http/deposit-auth.service";
+import {SocialAuthService} from "@abacritt/angularx-social-login";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  constructor(
+    private socialAuthService: SocialAuthService
+  ) { }
 
+  ngOnInit(): void {
+    this.socialAuthService.authState.subscribe((user) => {
+      console.log(user);
+    });
+  }
 }
