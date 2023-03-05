@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "deposit_front"
+  "defaultProject": "deposit_front",
+  "cli": {
+    "analytics": false
+  }
 }
