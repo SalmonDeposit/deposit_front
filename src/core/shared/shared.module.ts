@@ -11,13 +11,15 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
+import { ConnectionModalComponent } from './deposit-header/connection-modal/connection-modal.component';
 
 
 @NgModule({
   declarations: [
     DepositHeaderComponent,
     DepositFooterComponent,
-    RegisterModalComponent
+    RegisterModalComponent,
+    ConnectionModalComponent
   ],
     imports: [
         GenericsModule,

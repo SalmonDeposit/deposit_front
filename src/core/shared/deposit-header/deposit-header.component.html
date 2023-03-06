@@ -11,18 +11,7 @@
     </section>
     <section id="header-auth-buttons-container">
       <app-register-modal></app-register-modal>
-<!--      <button class="btn btn-primary" (click)="registerModal = true"> S'inscrire </button>-->
+      <app-connection-modal></app-connection-modal>
     </section>
   </div>
-  <app-deposit-editor-modal
-    [title]="'Se connecter'"
-    [formBuilder]="connectionFormBuilder"
-    [isOpen]="connectionModal"
-    (isOpenChange)="connectionModal = $event"
-    [service]="service"
-    (onSubmitForm)="onConnectionSubmit($event)"
-    [customForm]="true"
-  >
-  </app-deposit-editor-modal>
-
 </header>

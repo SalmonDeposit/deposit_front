@@ -10,25 +10,4 @@ import {RegisterFormBuilder} from "./builders/register-form.builder";
   templateUrl: './deposit-header.component.html',
   styleUrls: ['./deposit-header.component.scss']
 })
-export class DepositHeaderComponent  {
-  connectionModal = false;
-  registerModal = false;
-  constructor(public service: AuthApiService,
-              public authService: DepositAuthService,
-              public connectionFormBuilder: ConnectionFormBuilder,
-              public registerFormBuilder: RegisterFormBuilder,
-              public router: Router
-              ) {
-  }
-
-  private manageConnection(res: any){
-    this.authService.setToken(res.token, res.expired_at)
-    this.router.navigate(['dashboard'])
-  }
-
-  onConnectionSubmit(user: any){
-    this.service.signIn(user).subscribe({
-      next: res => this.manageConnection(res)
-    })
-  }
-}
+export class DepositHeaderComponent  {}

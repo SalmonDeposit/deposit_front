@@ -20,9 +20,13 @@ constructor(public service: AuthApiService,
             ) {}
   ngOnInit(): void {
     this.socialAuthService.authState.subscribe({
-      next: user => this.service.connectWithGoogle(user, true).subscribe({
-        next : res => this.manageConnection(res)
-      })
+      next: user => {
+        if(this.registerModal){
+          this.service.connectWithGoogle(user, true).subscribe({
+            next : res => this.manageConnection(res)
+          })
+        }
+      }
     })
   }
   private manageConnection(res: any){
