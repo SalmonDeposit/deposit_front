@@ -10,10 +10,10 @@ import {SharedModule} from "../../core/shared/shared.module";
 import { BaselineComponent } from './sections/baseline/baseline.component';
 import { SupportComponent } from './sections/support/support.component';
 import { TestimoniesComponent } from './sections/testimonies/testimonies.component';
-import {SwiperModule} from "swiper/angular";
 import { ValuesComponent } from './sections/values/values.component';
 import {SocialLoginModule
 } from "@abacritt/angularx-social-login";
+import { SwiperModule } from 'swiper/angular';
 
 const routes: Route[] = [
   { path: '', component: HomeComponent},
@@ -26,8 +26,8 @@ const routes: Route[] = [
     GenericsModule,
     ReactiveFormsModule,
     SharedModule,
-    SwiperModule,
-    SocialLoginModule
+    SocialLoginModule,
+    SwiperModule
   ],
   declarations: [
     HomeComponent,
