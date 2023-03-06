@@ -4,7 +4,9 @@ import {DepositAuthService} from "../../../generics/services/http/deposit-auth.s
 import {ConnectionFormBuilder} from "../builders/connection-form.builder";
 import {RegisterFormBuilder} from "../builders/register-form.builder";
 import {Router} from "@angular/router";
-import {SocialAuthService} from "@abacritt/angularx-social-login";
+import {SocialAuthService, SocialUser} from "@abacritt/angularx-social-login";
+import {catchError, switchMap} from "rxjs/operators";
+import {of} from "rxjs";
 
 @Component({
   selector: 'app-connection-modal',
@@ -13,7 +15,7 @@ import {SocialAuthService} from "@abacritt/angularx-social-login";
 })
 export class ConnectionModalComponent implements OnInit {
   connectionModal = false;
-  constructor(public service: AuthApiService,
+  constructor(public authApiService: AuthApiService,
               public authService: DepositAuthService,
               public connectionFormBuilder: ConnectionFormBuilder,
               public router: Router,
@@ -22,14 +24,24 @@ export class ConnectionModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.socialAuthService.authState.subscribe({
-      next: user => {
-        if(this.connectionModal){
-          this.service.connectWithGoogle(user).subscribe({
-            next : res => this.manageConnection(res)
-          })
+    this.socialAuthService.authState
+      .pipe(
+        switchMap((user: SocialUser | null) => {
+          console.log(user)
+          if (user && this.connectionModal) {
+            console.log("je me connecte api")
+            return this.authApiService.connectWithGoogle(user);
+          } else {
+            return of(null);
+          }
+        }),
+        catchError(() => of(null))
+      )
+      .subscribe((res) => {
+        if (res) {
+          this.manageConnection(res);
         }
-      }})
+      });
     }
 
   private manageConnection(res: any){
@@ -37,7 +49,7 @@ export class ConnectionModalComponent implements OnInit {
     this.router.navigate(['dashboard'])
   }
   onConnectionSubmit(user: any){
-    this.service.signIn(user).subscribe({
+    this.authApiService.signIn(user).subscribe({
       next: res => this.manageConnection(res)
     })
   }

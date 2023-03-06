@@ -4,7 +4,7 @@
   [formBuilder]="connectionFormBuilder"
   [isOpen]="connectionModal"
   (isOpenChange)="connectionModal = $event"
-  [service]="service"
+  [service]="authApiService"
   (onSubmitForm)="onConnectionSubmit($event)"
   [customForm]="true"
   [extraContent]="registerWithGoogle"
