@@ -7,10 +7,22 @@
       <div class="quote-character">
         “
       </div>
-      <div class="testimony-container">
-        <p class="testimony"> Application très intuitive et pratique, parfait pour garder des documents important et y accéder très facilement de ma poche</p>
-        <p class="author-name">Aranxa</p>
-      </div>
+      <swiper
+        [slidesPerView]="1"
+        [spaceBetween]="50"
+        (swiper)="onSwiper($event)"
+        (slideChange)="onSlideChange()"
+        [navigation]="true"
+        [pagination]="{ clickable: true }"
+        [scrollbar]="{ draggable: true }">
+        <ng-template *ngFor="let testimony of testimonies" swiperSlide>
+          <div class="testimony-container">
+            <p class="testimony">{{testimony.content}} </p>
+            <p class="author-name">{{testimony.author}}</p>
+          </div>
+        </ng-template>
+      </swiper>
+
     </aside>
   </div>
 </section>

@@ -6,4 +6,8 @@
     [editMode]="editMode"
     (submitted)="onSubmit($event)">
   </app-deposit-form>
+
+  <div *ngIf="extraContent">
+    <ng-content *ngTemplateOutlet="extraContent"> </ng-content>
+  </div>
 </ng-template>

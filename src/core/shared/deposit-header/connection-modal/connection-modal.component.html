@@ -1,0 +1,19 @@
+<button class="btn btn-primary" (click)="connectionModal = true"> Se connecter </button>
+<app-deposit-editor-modal
+  [title]="'Se connecter'"
+  [formBuilder]="connectionFormBuilder"
+  [isOpen]="connectionModal"
+  (isOpenChange)="connectionModal = $event"
+  [service]="authApiService"
+  (onSubmitForm)="onConnectionSubmit($event)"
+  [customForm]="true"
+  [extraContent]="registerWithGoogle"
+>
+</app-deposit-editor-modal>
+
+<ng-template #registerWithGoogle>
+  <div class="auth-with-google">
+    <hr>
+    <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button>
+  </div>
+</ng-template>
