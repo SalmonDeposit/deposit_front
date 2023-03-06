@@ -30,9 +30,10 @@ export class AuthApiService implements IServiceGeneric {
 
   connectWithGoogle(socialUser: SocialUser, registerMode = false){
     const url = registerMode ?
-      `${this.baseUrl}/register-google` :
-      `${this.baseUrl}/login-google`;
+      `${this.baseUrl}/register/google` :
+      `${this.baseUrl}/login/google`;
     const user = SocialUserBuilder.buildUserFromSocialUser(socialUser);
+    console.log(user)
     return this.http.post(url, user)
   }
 
