@@ -1,0 +1,18 @@
+<button class="btn btn-primary" (click)="registerModal = true"> S'inscrire </button>
+<app-deposit-editor-modal
+  [title]="'S\'inscrire'"
+  [formBuilder]="registerFormBuilder"
+  [isOpen]="registerModal"
+  (isOpenChange)="registerModal = $event"
+  [service]="service"
+  (onSubmitForm)="onRegisterSubmit($event)"
+  [customForm]="true"
+  [extraContent]="registerWithGoogle"
+>
+</app-deposit-editor-modal>
+<ng-template #registerWithGoogle>
+  <div class="auth-with-google">
+    <hr>
+    <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button>
+  </div>
+</ng-template>

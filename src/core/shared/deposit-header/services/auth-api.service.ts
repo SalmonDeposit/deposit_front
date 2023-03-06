@@ -3,6 +3,8 @@ import {Environment} from "../../../generics/classes/environment";
 import {DepositHttpService} from "../../../generics/services/http/deposit-http.service";
 import {Observable} from "rxjs";
 import {IServiceGeneric} from "../../../generics/interfaces/service.generic.interface";
+import {SocialUser} from "@abacritt/angularx-social-login";
+import {SocialUserBuilder} from "../builders/social-user.builder";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +26,14 @@ export class AuthApiService implements IServiceGeneric {
   signIn(connectionInformation: any) : Observable<any>{
     const connectionUrl = `${this.baseUrl}/login`
     return this.http.post(connectionUrl, connectionInformation)
+  }
+
+  connectWithGoogle(socialUser: SocialUser, registerMode = false){
+    const url = registerMode ?
+      `${this.baseUrl}/register-google` :
+      `${this.baseUrl}/login-google`;
+    const user = SocialUserBuilder.buildUserFromSocialUser(socialUser);
+    return this.http.post(url, user)
   }
 
   addNotify: string = "";

@@ -12,11 +12,7 @@ import { SupportComponent } from './sections/support/support.component';
 import { TestimoniesComponent } from './sections/testimonies/testimonies.component';
 import {SwiperModule} from "swiper/angular";
 import { ValuesComponent } from './sections/values/values.component';
-import {
-  GoogleLoginProvider,
-  SocialAuthService,
-  SocialAuthServiceConfig,
-  SocialLoginModule
+import {SocialLoginModule
 } from "@abacritt/angularx-social-login";
 
 const routes: Route[] = [
@@ -43,21 +39,6 @@ const routes: Route[] = [
   providers: [
     SignInFormBuilder,
     AuthApiService,
-    SocialAuthService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '692533076797-at27d6jb36bqdkdb9kg7s8qehors39ht.apps.googleusercontent.com'
-            )
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
   ]
 })
 export class HomeModule { }

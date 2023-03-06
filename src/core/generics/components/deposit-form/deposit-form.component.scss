@@ -1,5 +1,13 @@
 @import "src/styles/variables";
 
+form{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  clr-input-container{
+    width: 80%
+  }
+}
 .span-errors{
   color: var(--clr-forms-invalid-color, #c21d00);
 }

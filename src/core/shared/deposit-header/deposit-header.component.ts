@@ -31,9 +31,4 @@ export class DepositHeaderComponent  {
       next: res => this.manageConnection(res)
     })
   }
-  onRegisterSubmit(user: any){
-    this.service.register(user).subscribe({
-      next: res => this.manageConnection(res)
-    })
-  }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, TemplateRef} from '@angular/core';
 import {DepositFormBuilder} from "../../interfaces/form/deposit-form-builder.interface";
 import {IServiceGeneric} from "../../interfaces/service.generic.interface";
 import {SnotifyService} from "ng-snotify";
@@ -15,6 +15,7 @@ export class DepositEditorModalComponent implements OnInit {
   @Input() customForm = false;
   @Input() title?:string;
   @Input() object?:any;
+  @Input() extraContent?: TemplateRef<any>;
   @Output() isOpenChange = new EventEmitter();
   @Output() onSubmitForm = new EventEmitter();
 
