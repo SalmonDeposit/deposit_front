@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "./services/user.service";
-import {UserFormBuilder} from "./classes/user-form.builder";
+import {UserFormBuilder} from "./classes/builders/user-form.builder";
 import {DepositAuthService} from "../../core/generics/services/http/deposit-auth.service";
 import {Router} from "@angular/router";
 import {SnotifyService} from "ng-snotify";

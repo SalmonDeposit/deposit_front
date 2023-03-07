@@ -5,7 +5,10 @@ import {DashboardComponent} from "./dashboard.component";
 import { environment } from '../../environments/environment';
 import {HttpClientModule, HttpClientXsrfModule} from "@angular/common/http";
 import {GenericsModule} from "../../core/generics/generic.module";
-import {UserFormBuilder} from "./classes/user-form.builder";
+import {UserFormBuilder} from "./classes/builders/user-form.builder";
+import { AsideMenuComponent } from './aside-menu/aside-menu.component';
+import { AsideProfileInfoComponent } from './aside-profile-info/aside-profile-info.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 const routes: Route[] = [
   { path: '', component: DashboardComponent},
@@ -16,10 +19,13 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientXsrfModule,
-    GenericsModule
+    GenericsModule,
+    FontAwesomeModule,
   ],
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    AsideMenuComponent,
+    AsideProfileInfoComponent
   ],
   providers: [
     {
