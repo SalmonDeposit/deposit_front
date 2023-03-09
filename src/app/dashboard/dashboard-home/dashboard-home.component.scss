@@ -1,0 +1,10 @@
+@import "src/styles/variables";
+
+#dashboard-home-header{
+  display: flex;
+  justify-content: space-between;
+  h1{
+    color:$blue
+  }
+
+}

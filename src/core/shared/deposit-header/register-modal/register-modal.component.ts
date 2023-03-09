@@ -46,7 +46,7 @@ export class RegisterModalComponent implements OnInit {
 
   private manageConnection(res: any): void {
     this.authService.setToken(res.token, res.expired_at);
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['dashboard/home']);
   }
 
   onRegisterSubmit(user: any): void {

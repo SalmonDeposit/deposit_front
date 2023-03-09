@@ -1,1 +1,17 @@
-<p>Dashboard home </p>
+<section id="dashboard-home-header">
+  <div>
+    <h1> Bonjour {{currentUser?.email}}</h1>
+    <p> Comment Depos'It peut vous aider aujourd'hui ? </p>
+  </div>
+  <div>
+    <app-user-buttons [currentUser]="currentUser" ></app-user-buttons>
+  </div>
+</section>
+<section>
+  <app-deposit-search-document-bar></app-deposit-search-document-bar>
+</section>
+<section>
+<app-user-last-documents [currentUser]="currentUser"></app-user-last-documents>
+
+</section>
+

@@ -1,0 +1,12 @@
+<section>
+  <h3> Vos derniers documents </h3>
+  <div>
+    <ng-template *ngIf="documents.length > 0; else noDocuments">
+
+
+    </ng-template>
+    <ng-template #noDocuments>
+      <p>Vous n'avez pas encore ajouté de documents</p>
+    </ng-template>
+  </div>
+</section>

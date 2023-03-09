@@ -1,5 +1,6 @@
 export class User {
-  firstname: string = '';
-  lastname: string = '';
+  id?:string;
+ email?: string;
+  simon_coin_stock?:number;
 
 }

@@ -6,10 +6,11 @@ import { environment } from '../../environments/environment';
 import {HttpClientXsrfModule} from "@angular/common/http";
 import {GenericsModule} from "../../core/generics/generic.module";
 import {UserFormBuilder} from "./classes/builders/user-form.builder";
-import { AsideMenuComponent } from './aside-menu/aside-menu.component';
-import { AsideProfileInfoComponent } from './aside-profile-info/aside-profile-info.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {SharedModule} from "../../core/shared/shared.module";
+import {ClrIconModule} from "@clr/angular";
+import {FormsModule} from "@angular/forms";
+import {DashboardSharedModule} from "../../core/dashboard-shared/dashboard-shared.module";
 
 const routes: Route[] = [
   { path: '', component: DashboardComponent,
@@ -28,12 +29,14 @@ const routes: Route[] = [
     GenericsModule,
     FontAwesomeModule,
     SharedModule,
+    ClrIconModule,
+    FormsModule,
+    DashboardSharedModule
   ],
   declarations: [
-    DashboardComponent,
-    AsideMenuComponent,
-    AsideProfileInfoComponent,
+    DashboardComponent
   ],
+  exports: [],
   providers: [
     {
       provide: 'env',
