@@ -7,6 +7,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {DashboardSharedModule} from "../../../core/dashboard-shared/dashboard-shared.module";
 import { UserLastDocumentsComponent } from './user-last-documents/user-last-documents.component';
 import {DocumentService} from "../services/document.service";
+import { UserQuickAccessComponent } from './user-quick-access/user-quick-access.component';
 
 const routes: Route[] = [
   { path: '', component: DashboardHomeComponent},
@@ -22,7 +23,8 @@ const routes: Route[] = [
   declarations: [
     DashboardHomeComponent,
     UserButtonsComponent,
-    UserLastDocumentsComponent
+    UserLastDocumentsComponent,
+    UserQuickAccessComponent
   ],
   providers: []
 })

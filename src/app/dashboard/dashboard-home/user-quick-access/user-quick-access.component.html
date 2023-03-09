@@ -1,0 +1,18 @@
+<div class="user-quick-access">
+  <div class="user-simon-coin">
+    <div>
+      <img src="assets/img/simon_coin.png">
+    </div>
+    {{currentUser?.simon_coin_stock}} sc
+  </div>
+  <div class="document-buttons">
+    <button class="btn btn-primary" (click)="generateDocument()">
+      <img src="assets/img/icons/loader.svg"/>
+      Générer un document
+    </button>
+    <button class="btn btn btn-primary">
+      <fa-icon class="icon" [icon]="uploadIcon"></fa-icon>
+      Charger un document
+    </button>
+  </div>
+</div>
