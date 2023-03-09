@@ -1,4 +1,10 @@
-<app-deposit-modal [title]="title" [isOpen]="openValue" [content]="form" (isOpenChange)="isOpen = $event"></app-deposit-modal>
+<app-deposit-modal
+  [title]="title"
+  [isOpen]="openValue"
+  [content]="form"
+  (isOpenChange)="isOpen = $event">
+
+</app-deposit-modal>
 <ng-template #form>
   <app-deposit-form
     [formBuilder]="formBuilder"

@@ -15,6 +15,8 @@ export class DepositFormComponent implements OnInit {
   @Input() editMode = false;
   @Output() submitted = new EventEmitter();
 
+  files?: any[];
+
   depositForm: FormGroup;
   formFields?: DepositField[]
   currentErrors?: string[];
@@ -55,5 +57,4 @@ export class DepositFormComponent implements OnInit {
   onSubmit(){
     this.submitted.emit(this.depositForm.value)
   }
-
 }

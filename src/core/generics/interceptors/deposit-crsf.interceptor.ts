@@ -45,7 +45,7 @@ export class DepositTokenCrsfInterceptor implements HttpInterceptor {
     headers = headers.append('Current-culture', navigator.language);
     headers = headers.append('Current-tz-offset', new Date().getTimezoneOffset().toString());
     headers = headers.append('Current-tz-timezone', Intl.DateTimeFormat().resolvedOptions().timeZone);
-    headers = headers.append('Content-type', "application/json")
+    console.log(headers)
 
     req = req.clone({headers: headers, withCredentials: true});
     return next.handle(req);
