@@ -2,7 +2,7 @@ import {SnotifyService} from "ng-snotify";
 import {DepositHttpService} from "./deposit-http.service";
 import {IServiceGeneric} from "../../interfaces/service.generic.interface";
 import {Inject, Injectable} from "@angular/core";
-import {map, Observable} from "rxjs";
+import {map, Observable, Subject} from "rxjs";
 import {Environment} from "../../classes/environment";
 
 export class ServiceGeneric implements IServiceGeneric {
@@ -18,6 +18,7 @@ export class ServiceGeneric implements IServiceGeneric {
 
   updateNotify: string = '';
    addNotify: string = '';
+  addSubject = new Subject();
   read(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }

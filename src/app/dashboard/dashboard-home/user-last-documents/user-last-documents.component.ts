@@ -11,13 +11,24 @@ import {DepositDocument} from "../../classes/models/document";
 export class UserLastDocumentsComponent implements OnInit{
   @Input() currentUser?:User
   documents: DepositDocument[] = [];
+  isLoading = true
 
   constructor(public service: DocumentService) {
   }
 
   ngOnInit(): void {
+    this.load();
+    this.service.addSubject.subscribe({
+      next: () => this.load()
+    })
+  }
+  load(){
+    this.isLoading = true
     this.service.list().subscribe({
-      next : res => this.documents = res
+      next : res => {
+        this.documents = res.object
+        this.isLoading = false
+      }
     })
   }
 

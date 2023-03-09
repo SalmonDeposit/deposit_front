@@ -42,6 +42,7 @@ export class DepositUploadFileComponent {
         next: () => {
           this.isOpenChange.emit(false);
           this.sno.success("Fichier ajouté")
+          this.service?.addSubject.next(null);
         }
       });
     }

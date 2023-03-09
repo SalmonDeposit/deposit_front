@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 import {ClrIconModule} from "@clr/angular";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
+import {JsonPipe} from "@angular/common";
 
 
 @NgModule({
@@ -18,14 +19,16 @@ import { DocumentCardComponent } from './document-card/document-card.component';
   imports: [
     FormsModule,
     ClrIconModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    JsonPipe
   ],
   providers: [],
-  exports: [
-    AsideMenuComponent,
-    AsideProfileInfoComponent,
-    DepositSearchDocumentBarComponent
-  ],
+    exports: [
+        AsideMenuComponent,
+        AsideProfileInfoComponent,
+        DepositSearchDocumentBarComponent,
+        DocumentCardComponent
+    ],
   bootstrap: []
 })
 export class DashboardSharedModule { }
