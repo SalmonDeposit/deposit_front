@@ -1,0 +1,117 @@
+@import "src/styles/variables";
+@import "../../../styles/variables.scss";
+
+#title{
+    h1{
+        color: $salmon;
+        text-align: center;
+    }
+  }
+
+#QuiSommesNous{
+  display: flex;
+  aside{
+    width: 50%;
+  }
+  .content-left{
+    div{
+      display: flex;
+      justify-content: space-between;
+      margin-top : 5rem;
+    }
+    .text{
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      p{
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+    }
+  }
+  .content-right{
+    .text{
+      flex-direction: column;
+      width: 80%;
+      margin: auto;
+      p{
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+      }
+    }
+    div{
+      display: flex;
+      justify-content: space-between;
+      margin-top : 5rem;
+    }
+  }
+}
+
+#NotreEquipe{
+  width: 70%;
+  margin: 8rem auto auto;
+  .image{
+    width:150px; 
+    height:150px;
+  }
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 6rem;
+    background-color:$blue;
+  }
+  table{
+    width: 100%;
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+#NotreEntreprise{
+  width: 70%;
+  margin: 8rem auto auto;
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+  .text{
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+#NosServices{
+  width: 80%;
+  margin: 8rem auto auto;
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 5rem;
+    background-color:$blue;
+  }
+  table{
+    width: 100%;
+    text-align: center;
+  }
+  .text{
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+}
