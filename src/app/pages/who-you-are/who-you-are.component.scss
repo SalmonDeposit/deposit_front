@@ -1,104 +1,71 @@
 @import "src/styles/variables";
 @import "../../../styles/variables.scss";
 
-#title{
-    h1{
-        color: $blue;
-        text-align: center;
-    }
-  }
 
-#QuiSommesNous{
+h1{
+  color: $blue;
+}
+
+#qui-sommes-nous{
   display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
   aside{
-    width: 50%;
-  }
-  .content-left{
-    div{
-      display: flex;
-      justify-content: space-between;
-      margin-top : 5rem;
-    }
-    .text{
-      flex-direction: column;
-      width: 80%;
-      margin: auto;
-      p{
-        font-size: 1.2rem;
-        font-weight: 300;
-        line-height: 1.8rem;
-      }
-    }
-  }
-  .content-right{
-    .text{
-      flex-direction: column;
-      width: 80%;
-      margin: auto;
-      p{
-        font-size: 1.2rem;
-        font-weight: 300;
-        line-height: 1.8rem;
-      }
-    }
-    div{
-      display: flex;
-      justify-content: space-between;
-      margin-top : 5rem;
-    }
-  }
-}
-
-#NotreEquipe{
-  width: 70%;
-  margin: 8rem auto auto;
-  .image{
-    width:150px; 
-    height:150px;
-  }
-  h2{
-    text-align: center;
-  }
-  hr{
-    border: 1px solid $blue;
-    margin-bottom: 4rem;
-    width: 8rem;
-    background-color:$blue;
-  }
-  table{
-    width: 100%;
-    text-align: center;
-  }
-  p{
-    text-align: center;
-  }
-}
-
-#NotreEntreprise{
-  width: 70%;
-  margin: 8rem auto auto;
-  h2{
-    text-align: center;
-  }
-  hr{
-    border: 1px solid $blue;
-    margin-bottom: 4rem;
-    width: 8rem;
-    background-color:$blue;
+    width: 40%;
   }
   .text{
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
+    text-align: center;
   }
 }
 
-#NosServices{
-  width: 80%;
-  margin: 8rem auto auto;
+#notre-equipe{
+  margin-top: 8rem;
+  #teams-images{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 70%;
+      div{
+        width: 8rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img{
+          width: 100%
+        }
+      }
+
+  }
   h2{
     text-align: center;
   }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+}
+#notre-entreprise{
+  width: 70%;
+  margin: 8rem auto auto;
+
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+}
+
+
+
+
+#nos-services{
+
   hr{
     border: 1px solid $blue;
     margin-bottom: 4rem;
