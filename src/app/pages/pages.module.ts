@@ -4,6 +4,7 @@ import { RouterModule, Route } from '@angular/router';
 import { WhoYouAreComponent } from './who-you-are/who-you-are.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import {SharedModule} from "../../core/shared/shared.module";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Route[] = [
   { path: 'qui-sommes-nous', component: WhoYouAreComponent},
@@ -14,7 +15,9 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule,
+    SharedModule, 
+    FontAwesomeModule
+
   ],
   declarations: [
     WhoYouAreComponent,

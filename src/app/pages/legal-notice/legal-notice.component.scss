@@ -1,8 +1,8 @@
 @import "src/styles/variables";
 @import "../../../styles/variables.scss";
 
-#MentionsLegales{
-  margin: 8rem auto auto;
+#mentions-Legales{
+  margin: auto;
   h2{
     text-align: center;
   }
@@ -13,26 +13,10 @@
     background-color:$blue;
   }
   .text{
-    flex-direction: column;
+    
     width: 80%;
     margin: auto;
   }
+  margin-bottom: 8rem;
 }
 
-#ConditionsGenerales{
-  margin: 8rem auto auto;
-  h2{
-    text-align: center;
-  }
-  hr{
-    border: 1px solid $blue;
-    margin-bottom: 4rem;
-    width: 22rem;
-    background-color:$blue;
-  }
-  .text{
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-  }
-}

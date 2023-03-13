@@ -14,7 +14,6 @@ h1{
     width: 40%;
   }
   .text{
-    text-align: center;
   }
 }
 
@@ -33,6 +32,9 @@ h1{
         img{
           width: 100%
         }
+      }
+      p{
+        text-align: center;
       }
 
   }
@@ -65,20 +67,42 @@ h1{
 
 
 #nos-services{
+  margin: 8rem auto;
+  width: 70%;
 
+  h2{
+  text-align: center;
+  }
   hr{
     border: 1px solid $blue;
     margin-bottom: 4rem;
     width: 8rem;
     background-color:$blue;
   }
-  table{
-    width: 100%;
-    text-align: center;
+  p{
+    .icon{
+      color: salmon;
+    }
   }
-  .text{
-    flex-direction: column;
-    width: 80%;
+  
+  #services-images{
+    display: flex;    
+    justify-content: space-between;
+    margin-top: 5rem;
     margin: auto;
+    padding-top: 4rem;
+    p{
+      text-align: center;
+    }
+      div{
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img{
+          width: 100%;
+        }
+      }
+
   }
 }
