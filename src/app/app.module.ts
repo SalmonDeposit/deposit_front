@@ -34,7 +34,7 @@ const routes: Route[] = [
     BrowserAnimationsModule,
     RouterModule,
     SnotifyModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration:"top"}),
     HttpClientModule
 
   ],
