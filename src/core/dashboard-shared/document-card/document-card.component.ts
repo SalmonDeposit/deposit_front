@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DepositDocument} from "../../../app/dashboard/classes/models/document";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-document-card',
@@ -8,5 +9,11 @@ import {DepositDocument} from "../../../app/dashboard/classes/models/document";
 })
 export class DocumentCardComponent {
   @Input() document?: DepositDocument;
+  constructor(public router: Router) {
+  }
+
+  navigateToDocument(){
+      this.router.navigate([`dashboard/documents/details/${this.document?.id}`])
+  }
 
 }
