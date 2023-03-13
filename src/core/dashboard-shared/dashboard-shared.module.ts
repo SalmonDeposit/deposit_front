@@ -6,7 +6,8 @@ import {FormsModule} from "@angular/forms";
 import {ClrIconModule} from "@clr/angular";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
-import {JsonPipe} from "@angular/common";
+import {DatePipe, JsonPipe} from "@angular/common";
+import { DocumentTypeImagePipePipe } from './document-card/document-type-image-pipe.pipe';
 
 
 @NgModule({
@@ -14,14 +15,16 @@ import {JsonPipe} from "@angular/common";
     AsideMenuComponent,
     AsideProfileInfoComponent,
     DepositSearchDocumentBarComponent,
-    DocumentCardComponent
+    DocumentCardComponent,
+    DocumentTypeImagePipePipe
   ],
-  imports: [
-    FormsModule,
-    ClrIconModule,
-    FontAwesomeModule,
-    JsonPipe
-  ],
+    imports: [
+        FormsModule,
+        ClrIconModule,
+        FontAwesomeModule,
+        JsonPipe,
+        DatePipe
+    ],
   providers: [],
     exports: [
         AsideMenuComponent,

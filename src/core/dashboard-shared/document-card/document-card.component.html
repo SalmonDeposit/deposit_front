@@ -1,1 +1,10 @@
-<p>{{document?.name}}</p>
+ <div class="deposit-card">
+    <span class="date-document">{{document?.createdAt | date: 'dd.MM.yyyy' }}</span>
+    <span class="name-document">{{document?.name}}</span>
+    <div class="deposit-card-footer">
+      <p> 7.96 ko</p>
+      <div class="img-document-type">
+        <img src="{{document?.type | documentTypeImagePipe}}"/>
+      </div>
+    </div>
+  </div>
