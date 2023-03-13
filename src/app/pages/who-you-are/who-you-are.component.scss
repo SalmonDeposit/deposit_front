@@ -1,0 +1,108 @@
+@import "src/styles/variables";
+@import "../../../styles/variables.scss";
+
+
+h1{
+  color: $blue;
+}
+
+#qui-sommes-nous{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  aside{
+    width: 40%;
+  }
+  .text{
+  }
+}
+
+#notre-equipe{
+  margin-top: 8rem;
+  #teams-images{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 70%;
+      div{
+        width: 8rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img{
+          width: 100%
+        }
+      }
+      p{
+        text-align: center;
+      }
+
+  }
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+}
+#notre-entreprise{
+  width: 70%;
+  margin: 8rem auto auto;
+
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+}
+
+
+
+
+#nos-services{
+  margin: 8rem auto;
+  width: 70%;
+
+  h2{
+  text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 8rem;
+    background-color:$blue;
+  }
+  p{
+    .icon{
+      color: salmon;
+    }
+  }
+  
+  #services-images{
+    display: flex;    
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin: auto;
+    padding-top: 4rem;
+    p{
+      text-align: center;
+    }
+      div{
+        width: 10rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img{
+          width: 100%;
+        }
+      }
+
+  }
+}

@@ -22,7 +22,7 @@ const routes: Route[] = [
     loadChildren: () => import('./dashboard/dashboard.module').then((x) => x.DashboardModule)
   },
   {
-    path: '**',
+    path: '',
     loadChildren: () => import('./home/home.module').then((x) => x.HomeModule)
   }
 ]
