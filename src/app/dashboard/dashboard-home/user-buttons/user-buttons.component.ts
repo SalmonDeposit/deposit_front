@@ -25,6 +25,7 @@ export class UserButtonsComponent {
       next : () => {
         this.sno.success("Vous êtes déconnecté");
         this.router.navigate(['/']);
+        localStorage.removeItem('token');
       }
     });
   }
