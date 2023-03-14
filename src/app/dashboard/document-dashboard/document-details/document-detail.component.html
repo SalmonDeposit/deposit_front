@@ -1,1 +1,13 @@
-<p>document-detail works!</p>
+<ng-container *ngIf="!isLoading && document; else loading">
+  <h1>{{document.name}}</h1>
+  <ngx-doc-viewer *ngIf="document.storageLink"
+    [url]="document.storageLink"
+    viewer="url"
+    style="width:80%;height:100vh; margin: 4rem auto"
+  ></ngx-doc-viewer>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>

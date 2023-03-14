@@ -26,7 +26,7 @@ export class UserLastDocumentsComponent implements OnInit{
     this.isLoading = true
     this.service.list().subscribe({
       next : res => {
-        this.documents = res.object
+        this.documents = res.object.slice(0,4)
         this.isLoading = false
       }
     })

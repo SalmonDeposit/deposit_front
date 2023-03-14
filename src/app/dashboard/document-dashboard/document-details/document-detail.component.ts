@@ -10,6 +10,7 @@ import {DepositDocument} from "../../classes/models/document";
 })
 export class DocumentDetailComponent implements OnInit {
   document?: DepositDocument
+  isLoading = true
 
   constructor(private route: ActivatedRoute, private service: DocumentService) {
   }
@@ -19,6 +20,7 @@ export class DocumentDetailComponent implements OnInit {
         next: res => {
           console.log(res.object)
           this.document = res.object
+          this.isLoading = false
         }
       })
     })
