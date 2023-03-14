@@ -19,7 +19,6 @@ const routes: Route[] = [
     FontAwesomeModule,
     DashboardSharedModule,
     GenericsModule,
-    PdfViewerModule,
     NgxDocViewerModule,
   ],
   declarations: [
