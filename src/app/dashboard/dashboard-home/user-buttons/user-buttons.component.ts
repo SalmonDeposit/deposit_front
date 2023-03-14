@@ -21,8 +21,11 @@ export class UserButtonsComponent {
   }
 
   logout(){
-    this.authService.logout();
-    this.sno.success("Vous êtes déconnecté");
-    this.router.navigate(['/']);
+    this.authService.logout().subscribe({
+      next : () => {
+        this.sno.success("Vous êtes déconnecté");
+        this.router.navigate(['/']);
+      }
+    });
   }
 }

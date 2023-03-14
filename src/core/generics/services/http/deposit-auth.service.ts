@@ -1,11 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
 import {Token} from "../../interfaces/token.interface";
+import {AuthApiService} from "../../../shared/deposit-header/services/auth-api.service";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepositAuthService {
-  constructor(@Inject('env') private env: any) {
+  constructor(@Inject('env') private env: any, private apiService: AuthApiService) {
   }
   public getToken(): Token | null{
     const token = this.getTokenFromStorage();
@@ -29,9 +31,9 @@ export class DepositAuthService {
     localStorage.setItem('token', JSON.stringify(token));
   }
 
-  public logout(){
+  public logout() : Observable<any>{
     localStorage.removeItem('token');
-    document.cookie = 'deposit_session' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    return this.apiService.logout()
   }
 
 }

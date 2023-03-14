@@ -15,7 +15,6 @@ export class AuthApiService implements IServiceGeneric {
     @Inject('env') protected environment: Environment,
     protected http: DepositHttpService,
   ) {
-    console.log(this.environment);
     this.baseUrl = `${this.environment.apiUrl}`;
   }
 
@@ -27,6 +26,10 @@ export class AuthApiService implements IServiceGeneric {
   signIn(connectionInformation: any) : Observable<any>{
     const connectionUrl = `${this.baseUrl}/login`
     return this.http.post(connectionUrl, connectionInformation)
+  }
+  logout(): Observable<any>{
+    const logoutUrl = `${this.baseUrl}/logout`
+    return this.http.post(logoutUrl, {})
   }
 
   connectWithGoogle(socialUser: SocialUser, registerMode = false){
