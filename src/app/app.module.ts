@@ -22,7 +22,7 @@ const routes: Route[] = [
     loadChildren: () => import('./dashboard/dashboard.module').then((x) => x.DashboardModule)
   },
   {
-    path: '**',
+    path: '',
     loadChildren: () => import('./home/home.module').then((x) => x.HomeModule)
   }
 ]
@@ -34,7 +34,7 @@ const routes: Route[] = [
     BrowserAnimationsModule,
     RouterModule,
     SnotifyModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {scrollPositionRestoration:"top"}),
     HttpClientModule
 
   ],

@@ -12,6 +12,7 @@ import {
   SocialLoginModule
 } from "@abacritt/angularx-social-login";
 import { ConnectionModalComponent } from './deposit-header/connection-modal/connection-modal.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ConnectionModalComponent } from './deposit-header/connection-modal/conn
   ],
     imports: [
         GenericsModule,
-        SocialLoginModule
+        SocialLoginModule,
+        RouterModule
     ],
   providers: [
     ConnectionFormBuilder,

@@ -31,10 +31,14 @@ export class ConnectionModalComponent implements OnInit {
             console.log("je me connecte api")
             return this.authApiService.connectWithGoogle(user);
           } else {
+            console.log("je suis ds le else")
             return of(null);
           }
         }),
-        catchError(() => of(null))
+        catchError((res) => {
+          console.log("catch error",res);
+          return of(null)
+        })
       )
       .subscribe((res) => {
         if (res) {
