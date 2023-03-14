@@ -15,6 +15,7 @@ export class AuthApiService implements IServiceGeneric {
     @Inject('env') protected environment: Environment,
     protected http: DepositHttpService,
   ) {
+    console.log(this.environment);
     this.baseUrl = `${this.environment.apiUrl}`;
   }
 
