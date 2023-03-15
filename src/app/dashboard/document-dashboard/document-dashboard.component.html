@@ -1,0 +1,37 @@
+<h1> Vos documents </h1>
+<ng-container *ngIf="!isLoading && documents; else loading">
+  <table class="table">
+    <thead>
+    <tr>
+      <th> Date de création</th>
+      <th> Nom </th>
+      <th> Type </th>
+      <th> Taille </th>
+      <th> Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let document of documents">
+      <td> {{document.createdAt | date:'dd.MM.YYYY'}}</td>
+      <td> {{document.name}}</td>
+      <td> {{document.type}}</td>
+      <td> 7.86 ko</td>
+      <td class="actions-buttons">
+        <button (click)="goToDetails(document.id)" class="btn btn-secondary">
+          <fa-icon  class="icon" [icon]="file"></fa-icon>
+        </button>
+        <button class="btn btn-danger">
+          <fa-icon class="icon" [icon]="trash"></fa-icon>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>
+

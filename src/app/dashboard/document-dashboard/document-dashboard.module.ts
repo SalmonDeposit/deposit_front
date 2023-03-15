@@ -6,9 +6,11 @@ import {DashboardSharedModule} from "../../../core/dashboard-shared/dashboard-sh
 import {GenericsModule} from "../../../core/generics/generic.module";
 import {DocumentDetailComponent} from "./document-details/document-detail.component";
 import {NgxDocViewerModule} from "ngx-doc-viewer";
+import { DocumentDashboardComponent } from './document-dashboard.component';
 
 const routes: Route[] = [
   { path: 'details/:id', component: DocumentDetailComponent},
+  { path: '', component: DocumentDashboardComponent},
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const routes: Route[] = [
     NgxDocViewerModule,
   ],
   declarations: [
-    DocumentDetailComponent
+    DocumentDetailComponent,
+    DocumentDashboardComponent
   ],
   providers: []
 })

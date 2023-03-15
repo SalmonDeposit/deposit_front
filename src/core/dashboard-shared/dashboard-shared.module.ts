@@ -8,6 +8,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 import { DocumentTypeImagePipePipe } from './document-card/document-type-image-pipe.pipe';
+import {RouterLink} from "@angular/router";
 
 
 @NgModule({
@@ -18,16 +19,17 @@ import { DocumentTypeImagePipePipe } from './document-card/document-type-image-p
     DocumentCardComponent,
     DocumentTypeImagePipePipe
   ],
-  imports: [
-    FormsModule,
-    ClrIconModule,
-    FontAwesomeModule,
-    JsonPipe,
-    DatePipe,
-    ClrProgressBarModule,
-    NgIf,
-    NgForOf
-  ],
+    imports: [
+        FormsModule,
+        ClrIconModule,
+        FontAwesomeModule,
+        JsonPipe,
+        DatePipe,
+        ClrProgressBarModule,
+        NgIf,
+        NgForOf,
+        RouterLink
+    ],
   providers: [],
     exports: [
         AsideMenuComponent,
