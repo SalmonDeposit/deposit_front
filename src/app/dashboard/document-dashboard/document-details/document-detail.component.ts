@@ -5,7 +5,6 @@ import {DepositDocument} from "../../classes/models/document";
 import {faTrash, faDownload} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {DownloadService} from "../../../../core/generics/services/download.service";
-import { saveAs } from 'file-saver';
 import {SnotifyService} from "ng-snotify";
 import {viewerType} from "ngx-doc-viewer";
 
@@ -35,7 +34,6 @@ export class DocumentDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.service.read(params['id']).subscribe({
         next: res => {
-          console.log(res.object)
           this.document = res.object
           this.isLoading = false
         }

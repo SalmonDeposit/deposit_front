@@ -28,4 +28,4 @@ const routes: Route[] = [
   ],
   providers: []
 })
-export class DocumentDashboardModule { }
+export class DocumentsDashboardModule { }

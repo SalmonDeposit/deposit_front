@@ -46,6 +46,7 @@ export class DepositEditorModalComponent implements OnInit {
       next: res => {
         this.sno.success(this.service?.updateNotify ?? '')
         this.isOpen = false
+        this.service?.updateRequested.next(null);
       }
     })
   }
@@ -54,6 +55,7 @@ export class DepositEditorModalComponent implements OnInit {
       next: res => {
         this.sno.success(this.service?.addNotify ?? '')
         this.isOpen = false
+        this.service?.updateRequested.next(null);
       }
     })
   }

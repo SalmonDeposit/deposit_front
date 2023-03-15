@@ -1,0 +1,18 @@
+.header-actions{
+  display: flex;
+  position: relative;
+  .add-button{
+    position: absolute;
+    top: 0.5rem;
+    left:9.5rem;
+  }
+}
+#profiles-container{
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  .no-profiles{
+    min-height: 60vh;
+  }
+}
