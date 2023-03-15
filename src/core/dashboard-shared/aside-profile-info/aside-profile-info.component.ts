@@ -16,7 +16,7 @@ export class AsideProfileInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadDocuments()
-    this.documentService.addSubject.subscribe({
+    this.documentService.updateRequested.subscribe({
       next: () => this.loadDocuments()
     })
   }

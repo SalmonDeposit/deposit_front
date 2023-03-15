@@ -18,7 +18,7 @@ export class UserLastDocumentsComponent implements OnInit{
 
   ngOnInit(): void {
     this.load();
-    this.service.addSubject.subscribe({
+    this.service.updateRequested.subscribe({
       next: () => this.load()
     })
   }

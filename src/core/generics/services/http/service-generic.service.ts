@@ -18,7 +18,7 @@ export class ServiceGeneric implements IServiceGeneric {
 
   updateNotify: string = '';
    addNotify: string = '';
-  addSubject = new Subject();
+  updateRequested = new Subject();
   read(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }

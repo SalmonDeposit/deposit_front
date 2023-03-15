@@ -16,10 +16,19 @@ export class DocumentDashboardComponent implements OnInit{
   isLoading = true;
   trash = faTrash as IconProp;
   file = faFileCircleCheck as IconProp;
-  constructor(private service: DocumentService, private router: Router) {
+  deleteModal = false;
+  currentDeleteDocumentId?: string;
+  constructor(public service: DocumentService, private router: Router) {
   }
 
   ngOnInit(): void {
+    this.load()
+    this.service.updateRequested.subscribe({
+      next : () => this.load()
+    })
+
+  }
+  load(){
     this.service.list().subscribe({
       next : res => {
         this.documents = res.object;
@@ -29,6 +38,10 @@ export class DocumentDashboardComponent implements OnInit{
   }
   goToDetails(id: any){
     this.router.navigate([`/dashboard/documents/details/${id}`]);
+  }
+  onDelete(id: any){
+    this.deleteModal = true;
+    this.currentDeleteDocumentId = id;
   }
 
 }

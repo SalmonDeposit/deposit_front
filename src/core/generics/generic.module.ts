@@ -6,6 +6,7 @@ import { DepositFormComponent } from './components/deposit-form/deposit-form.com
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DepositEditorModalComponent } from './components/deposit-editor-modal/deposit-editor-modal.component';
 import { DepositUploadFileComponent } from './components/deposit-upload-file/deposit-upload-file.component';
+import { DepositDeleteModalComponent } from './components/deposit-delete-modal/deposit-delete-modal.component';
 
 @NgModule({
   imports: [
@@ -19,13 +20,15 @@ import { DepositUploadFileComponent } from './components/deposit-upload-file/dep
         DepositModalComponent,
         DepositFormComponent,
         DepositEditorModalComponent,
-        DepositUploadFileComponent
+        DepositUploadFileComponent,
+        DepositDeleteModalComponent
     ],
   declarations: [
     DepositModalComponent,
     DepositFormComponent,
     DepositEditorModalComponent,
     DepositUploadFileComponent,
+    DepositDeleteModalComponent,
   ]
 })
 export class GenericsModule { }
