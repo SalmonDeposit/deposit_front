@@ -1,4 +1,9 @@
-<h1> Vos documents </h1>
+<div class="header-actions">
+  <h1>Vos documents</h1>
+  <button  (click)="addModal = true" class=" add-button btn btn-secondary">
+    <fa-icon class="icon" size="2x" [icon]="plus"></fa-icon>
+  </button>
+</div>
 <ng-container *ngIf="!isLoading && documents; else loading">
   <table class="table">
     <thead>
@@ -34,6 +39,13 @@
                             [service]="service">
   </app-deposit-delete-modal>
 </ng-container>
+<app-deposit-upload-file
+  [service]="service"
+  [title]="'Ajouter un document'"
+  [filename]="'document'"
+  [isOpen]="addModal"
+  (isOpenChange)="addModal = $event"
+>
 <ng-template #loading>
   <div class="loading-container">
     <span class="spinner"></span>

@@ -133,4 +133,13 @@ m-auto{
   align-items: center;
   min-height: 60vh
 }
+.header-actions{
+  display: flex;
+  position: relative;
+  .add-button{
+    position: absolute;
+    top: 0.5rem;
+    left:9.5rem;
+  }
+}
 
