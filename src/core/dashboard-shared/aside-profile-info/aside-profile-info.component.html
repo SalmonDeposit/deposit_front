@@ -1,0 +1,15 @@
+<aside id="aside-menu-profile">
+  <div>
+    <p>Espace de stockage</p>
+    <clr-progress-bar  clrValue="300" clrMax="500" ></clr-progress-bar>
+    <span> 300mo sur 500mo</span>
+  </div>
+  <div>
+    <p> Document récents</p>
+    <ng-container *ngIf="!isLoading && documents && documents.length > 0">
+      <span (click)="goToDetails(document.id)" *ngFor="let document of documents">{{document.name}}</span>
+    </ng-container>
+    <div *ngIf="isLoading" class="spinner m-auto"></div>
+  </div>
+
+</aside>

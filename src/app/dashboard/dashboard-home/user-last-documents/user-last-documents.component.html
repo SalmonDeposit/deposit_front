@@ -1,0 +1,16 @@
+<section id="last-documents">
+  <h3> Vos derniers documents </h3>
+  <div *ngIf="!isLoading; else loading">
+    <div *ngIf="documents.length != 0; else noDocuments" class="user-last-documents">
+      <div *ngFor="let document of documents">
+        <app-document-card [document]="document" ></app-document-card>
+      </div>
+    </div>
+    <ng-template #noDocuments>
+      <p>Vous n'avez pas encore ajouté de documents</p>
+    </ng-template>
+  </div>
+  <ng-template #loading>
+    <div class="spinner m-auto"></div>
+  </ng-template>
+</section>

@@ -1,5 +1,5 @@
-import {DepositFormBuilder} from "../../../core/generics/interfaces/form/deposit-form-builder.interface";
-import {DepositField} from "../../../core/generics/interfaces/form/deposit-field.interface";
+import {DepositFormBuilder} from "../../../../core/generics/interfaces/form/deposit-form-builder.interface";
+import {DepositField} from "../../../../core/generics/interfaces/form/deposit-field.interface";
 import {Validators} from "@angular/forms";
 
 

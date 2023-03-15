@@ -1,0 +1,40 @@
+@import "../../../styles/variables";
+
+$width: calc((100% - 1200px)/2);
+
+#aside-menu-dashboard{
+  min-height: 99vh;
+  position: fixed;
+  left:0;
+  min-width: $width;
+  max-width: $width;
+  border-right: 1px solid black;
+  padding: 0.5rem;
+  #logo{
+    width: 100%;
+    margin: auto auto 4rem;
+
+    img{
+      width: 100%;
+    }
+  }
+  #nav-dashboard{
+    a{
+      display: block;
+      font-size: 1rem;
+      font-weight: lighter;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 1.5rem;
+      .icon{
+        color: $salmon;
+      }
+    }
+    .deposit-active {
+      text-decoration: underline;
+      text-decoration-color: $salmon;
+      text-underline-offset: 0.4rem;
+    }
+
+  }
+}

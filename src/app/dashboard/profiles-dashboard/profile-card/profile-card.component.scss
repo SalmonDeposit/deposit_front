@@ -1,0 +1,12 @@
+.profile-card{
+  min-width: 17rem;
+  margin-right: 2rem;
+  .card-block{
+    padding-bottom: 2rem;
+  }
+  .card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

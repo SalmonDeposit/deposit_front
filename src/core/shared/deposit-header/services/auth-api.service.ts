@@ -1,7 +1,7 @@
 import {Inject, Injectable} from "@angular/core";
 import {Environment} from "../../../generics/classes/environment";
 import {DepositHttpService} from "../../../generics/services/http/deposit-http.service";
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {IServiceGeneric} from "../../../generics/interfaces/service.generic.interface";
 import {SocialUser} from "@abacritt/angularx-social-login";
 import {SocialUserBuilder} from "../builders/social-user.builder";
@@ -11,13 +11,15 @@ import {SocialUserBuilder} from "../builders/social-user.builder";
 })
 export class AuthApiService implements IServiceGeneric {
   private baseUrl: string;
+
   constructor(
     @Inject('env') protected environment: Environment,
     protected http: DepositHttpService,
   ) {
-    console.log(this.environment);
     this.baseUrl = `${this.environment.apiUrl}`;
   }
+
+  updateRequested = new Subject();
 
   register(user: any) : Observable<any>{
     const registerUrl = `${this.baseUrl}/register`
@@ -27,6 +29,10 @@ export class AuthApiService implements IServiceGeneric {
   signIn(connectionInformation: any) : Observable<any>{
     const connectionUrl = `${this.baseUrl}/login`
     return this.http.post(connectionUrl, connectionInformation)
+  }
+  logout(): Observable<any>{
+    const logoutUrl = `${this.baseUrl}/logout`
+    return this.http.post(logoutUrl, {})
   }
 
   connectWithGoogle(socialUser: SocialUser, registerMode = false){

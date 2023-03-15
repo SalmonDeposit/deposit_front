@@ -1,0 +1,9 @@
+#profiles-container{
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  .no-profiles{
+    min-height: 60vh;
+  }
+}
