@@ -6,7 +6,7 @@ import { UserButtonsComponent } from './user-buttons/user-buttons.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {DashboardSharedModule} from "../../../core/dashboard-shared/dashboard-shared.module";
 import { UserLastDocumentsComponent } from './user-last-documents/user-last-documents.component';
-import { UserQuickAccessComponent } from './user-quick-access/user-quick-access.component';
+import { UserQuickAccessComponent } from '../../../core/dashboard-shared/user-quick-access/user-quick-access.component';
 import {GenericsModule} from "../../../core/generics/generic.module";
 
 const routes: Route[] = [
@@ -25,8 +25,8 @@ const routes: Route[] = [
     DashboardHomeComponent,
     UserButtonsComponent,
     UserLastDocumentsComponent,
-    UserQuickAccessComponent
   ],
+  exports: [],
   providers: []
 })
 export class DashboardHomeModule { }

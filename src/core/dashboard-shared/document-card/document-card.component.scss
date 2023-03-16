@@ -3,10 +3,6 @@
 .deposit-card{
   max-width: 12rem;
   min-width: 12rem;
-  border: 1px solid $salmon;
-  border-radius: 2rem;
-  box-shadow: 0px 3px 6px #00000029;
-  padding: 0.7rem;
   margin-bottom: 2rem;
   cursor: pointer;
   span{
@@ -19,12 +15,11 @@
     color: black;
     font-weight: bold;
   }
-
-
   .deposit-card-footer{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-top: 2rem;
     .img-document-type{
       min-width: 1.5rem;
       max-width: 1.5rem;

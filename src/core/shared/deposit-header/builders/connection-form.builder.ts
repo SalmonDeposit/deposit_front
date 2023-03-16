@@ -23,7 +23,7 @@ export class ConnectionFormBuilder implements DepositFormBuilder{
       name: "email"
     },
       {
-        placeholder: "password",
+        placeholder: "mot de passe",
         type:  "password",
         required: true,
         validators: [

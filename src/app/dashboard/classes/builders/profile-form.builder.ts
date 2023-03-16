@@ -28,7 +28,7 @@ export class ProfileFormBuilder implements DepositFormBuilder{
           Validators.required,
         ]
       },{
-        name: 'phone_number',
+        name: 'phoneNumber',
         placeholder: 'N° Téléphone',
         required: true,
         type: 'tel',

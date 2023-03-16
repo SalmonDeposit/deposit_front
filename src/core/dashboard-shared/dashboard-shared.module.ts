@@ -9,6 +9,9 @@ import { DocumentCardComponent } from './document-card/document-card.component';
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 import { DocumentTypeImagePipePipe } from './document-card/document-type-image-pipe.pipe';
 import {RouterLink} from "@angular/router";
+import {DashboardHomeModule} from "../../app/dashboard/dashboard-home/dashboard-home.module";
+import {UserQuickAccessComponent} from "./user-quick-access/user-quick-access.component";
+import {GenericsModule} from "../generics/generic.module";
 
 
 @NgModule({
@@ -17,25 +20,28 @@ import {RouterLink} from "@angular/router";
     AsideProfileInfoComponent,
     DepositSearchDocumentBarComponent,
     DocumentCardComponent,
-    DocumentTypeImagePipePipe
+    DocumentTypeImagePipePipe,
+    UserQuickAccessComponent
   ],
-    imports: [
-        FormsModule,
-        ClrIconModule,
-        FontAwesomeModule,
-        JsonPipe,
-        DatePipe,
-        ClrProgressBarModule,
-        NgIf,
-        NgForOf,
-        RouterLink
-    ],
+  imports: [
+    FormsModule,
+    ClrIconModule,
+    FontAwesomeModule,
+    JsonPipe,
+    DatePipe,
+    ClrProgressBarModule,
+    NgIf,
+    NgForOf,
+    RouterLink,
+    GenericsModule,
+  ],
   providers: [],
     exports: [
         AsideMenuComponent,
         AsideProfileInfoComponent,
         DepositSearchDocumentBarComponent,
-        DocumentCardComponent
+        DocumentCardComponent,
+      UserQuickAccessComponent
     ],
   bootstrap: []
 })
