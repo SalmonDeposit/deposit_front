@@ -30,7 +30,7 @@ steps:
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'ssh-deposit'
-    sourceFolder: '$(Build.SourcesDirectory)/dist/deposit_front/'
+    sourceFolder: '$(Build.SourcesDirectory)/dist/'
     contents: '**'
     targetFolder: '$(targetFolder)'
     readyTimeout: '20000'
