@@ -6,6 +6,6 @@
 >
 </app-deposit-modal>
 <ng-template #fileUploadContent>
-  <input type="file"
+  <input type="file" [accept]="authorizedExtensions"
          (change)="onFileSelected($event)">
 </ng-template>
