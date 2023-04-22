@@ -9,11 +9,11 @@ import {FolderService} from "../services/folder.service";
 import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 
 @Component({
-  selector: 'app-document-dashboard',
-  templateUrl: './document-dashboard.component.html',
-  styleUrls: ['./document-dashboard.component.scss']
+  selector: 'app-chest-home',
+  templateUrl: './chest-home.component.html',
+  styleUrls: ['./chest-home.component.scss']
 })
-export class DocumentDashboardComponent implements OnInit{
+export class ChestHomeComponent implements OnInit{
   addDocumentModal = false;
   addFolderModal = false;
   documents?: DepositDocument[];

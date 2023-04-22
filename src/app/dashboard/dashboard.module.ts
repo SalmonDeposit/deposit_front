@@ -19,7 +19,7 @@ const routes: Route[] = [
       loadChildren: () => import('./dashboard-home/dashboard-home.module').then((x) => x.DashboardHomeModule)
     },
     {path: 'documents',
-      loadChildren: () => import('./document-dashboard/documents-dashboard.module').then((x) => x.DocumentsDashboardModule )
+      loadChildren: () => import('./chest-home/chest-home.module').then((x) => x.ChestHomeModule )
     },
     {path: 'profiles',
       loadChildren: () => import('./profiles-dashboard/profile-dashboard.module').then((x) => x.ProfilesDashboardModule)
