@@ -19,11 +19,8 @@ export class ChestHomeComponent implements OnInit{
   documents?: DepositDocument[];
   folders?: any[]
   isLoading = true;
-  trash = faTrash as IconProp;
   file = faFileCircleCheck as IconProp;
   plus = faPlus as IconProp;
-  deleteModal = false;
-  currentDeleteDocumentId?: string;
   constructor(public service: FileService,
               private router: Router,
               public folderService: FolderService,
@@ -47,21 +44,6 @@ export class ChestHomeComponent implements OnInit{
         this.isLoading = false
       }
     })
-  }
-  goToDetails(id: any, type: string){
-    switch (type) {
-      case 'file':
-        this.router.navigate([`/dashboard/documents/details/${id}`]);
-        return
-      case 'folder':
-        this.router.navigate([`/dashboard/folders/details/${id}`])
-        return
-    }
-
-  }
-  onDelete(id: any){
-    this.deleteModal = true;
-    this.currentDeleteDocumentId = id;
   }
 
 }

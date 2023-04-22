@@ -12,53 +12,10 @@
       Ajouter un dossier
     </button>
   </div>
-  <table class="table">
-    <thead>
-    <tr>
-      <th> Date de création</th>
-      <th> Nom </th>
-      <th> Type </th>
-      <th> Taille </th>
-      <th> Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let folder of folders">
-      <td> {{folder.createdAt | date:'dd.MM.YYYY'}}</td>
-      <td> {{folder.name}}</td>
-      <td> {{folder.type}}</td>
-      <td> 7.86 ko</td>
-      <td class="actions-buttons">
-        <button (click)="goToDetails(folder.id, 'folder')" class="btn btn-secondary">
-          <fa-icon  class="icon" [icon]="file"></fa-icon>
-        </button>
-        <button (click)="onDelete(folder.id)" class="btn btn-danger">
-          <fa-icon class="icon" [icon]="trash"></fa-icon>
-        </button>
-      </td>
-    </tr>
-    <tr *ngFor="let document of documents">
-      <td> {{document.createdAt | date:'dd.MM.YYYY'}}</td>
-      <td> {{document.name}}</td>
-      <td> {{document.type}}</td>
-      <td> 7.86 ko</td>
-      <td class="actions-buttons">
-        <button (click)="goToDetails(document.id, 'file')" class="btn btn-secondary">
-          <fa-icon  class="icon" [icon]="file"></fa-icon>
-        </button>
-        <button (click)="onDelete(document.id)" class="btn btn-danger">
-          <fa-icon class="icon" [icon]="trash"></fa-icon>
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <app-deposit-delete-modal title="Supprimer l'element"
-                            [objectId]="currentDeleteDocumentId"
-                            [isOpen]="deleteModal"
-                            (isOpenChange)="deleteModal = $event"
-                            [service]="service">
-  </app-deposit-delete-modal>
+<app-files-table [folders]="folders" [documents]="documents" >
+
+</app-files-table>
+
 </ng-container>
 <app-deposit-upload-file
   [service]="service"

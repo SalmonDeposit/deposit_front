@@ -7,7 +7,7 @@ import {ClrIconModule, ClrProgressBarModule} from "@clr/angular";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
-import { DocumentTypeImagePipePipe } from './document-card/document-type-image-pipe.pipe';
+import { FileTypeImagePipe } from '../generics/pipes/file-type-image.pipe';
 import {RouterLink} from "@angular/router";
 import {DashboardHomeModule} from "../../app/dashboard/dashboard-home/dashboard-home.module";
 import {UserQuickAccessComponent} from "./user-quick-access/user-quick-access.component";
@@ -20,7 +20,6 @@ import {GenericsModule} from "../generics/generic.module";
     AsideProfileInfoComponent,
     DepositSearchDocumentBarComponent,
     DocumentCardComponent,
-    DocumentTypeImagePipePipe,
     UserQuickAccessComponent
   ],
   imports: [

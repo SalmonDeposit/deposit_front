@@ -8,6 +8,9 @@ import {DocumentDetailComponent} from "./document-details/document-detail.compon
 import {NgxDocViewerModule} from "ngx-doc-viewer";
 import { ChestHomeComponent } from './chest-home.component';
 import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
+import { FilesTableComponent } from './files-table/files-table.component';
+import {FileTypeImagePipe} from "../../../core/generics/pipes/file-type-image.pipe";
+import {SharedModule} from "../../../core/shared/shared.module";
 
 const routes: Route[] = [
   { path: 'details/:id', component: DocumentDetailComponent},
@@ -25,10 +28,11 @@ const routes: Route[] = [
   ],
   declarations: [
     DocumentDetailComponent,
-    ChestHomeComponent
+    ChestHomeComponent,
+    FilesTableComponent
   ],
   providers: [
-    FolderFormBuilder
+    FolderFormBuilder,
   ]
 })
 export class ChestHomeModule { }
