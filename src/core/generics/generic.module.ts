@@ -8,6 +8,7 @@ import { DepositEditorModalComponent } from './components/deposit-editor-modal/d
 import { DepositUploadFileComponent } from './components/deposit-upload-file/deposit-upload-file.component';
 import { DepositDeleteModalComponent } from './components/deposit-delete-modal/deposit-delete-modal.component';
 import {FileTypeImagePipe} from "./pipes/file-type-image.pipe";
+import { FileSizePipe } from './pipes/file-size.pipe';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {FileTypeImagePipe} from "./pipes/file-type-image.pipe";
         DepositEditorModalComponent,
         DepositUploadFileComponent,
         DepositDeleteModalComponent,
-        FileTypeImagePipe
+        FileTypeImagePipe,
+      FileSizePipe
 
     ],
   declarations: [
@@ -32,7 +34,8 @@ import {FileTypeImagePipe} from "./pipes/file-type-image.pipe";
     DepositEditorModalComponent,
     DepositUploadFileComponent,
     DepositDeleteModalComponent,
-    FileTypeImagePipe
+    FileTypeImagePipe,
+    FileSizePipe
   ]
 })
 export class GenericsModule { }

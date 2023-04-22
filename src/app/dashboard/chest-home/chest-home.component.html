@@ -2,35 +2,8 @@
   <h1>Votre coffre</h1>
 </div>
 <ng-container *ngIf="!isLoading && documents; else loading">
-  <div>
-    <button  (click)="addDocumentModal = true" class=" add-button btn btn-secondary">
-      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-      Ajouter un document
-    </button>
-    <button  (click)="addFolderModal = true" class=" add-button btn btn-secondary">
-      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-      Ajouter un dossier
-    </button>
-  </div>
-<app-files-table [folders]="folders" [documents]="documents" >
-
-</app-files-table>
-
+<app-files-table [folders]="folders" [documents]="documents" ></app-files-table>
 </ng-container>
-<app-deposit-upload-file
-  [service]="service"
-  [title]="'Ajouter un document'"
-  [filename]="'document'"
-  [isOpen]="addDocumentModal"
-  (isOpenChange)="addDocumentModal = $event"
-/>
-<app-deposit-editor-modal
-[service]="folderService"
-[title]="'Créer un nouveau dossier'"
-[isOpen]="addFolderModal"
-(isOpenChange)="addFolderModal = $event"
-[formBuilder]="folderFormBuilder"
-></app-deposit-editor-modal>
 <ng-template #loading>
   <div class="loading-container">
     <span class="spinner"></span>

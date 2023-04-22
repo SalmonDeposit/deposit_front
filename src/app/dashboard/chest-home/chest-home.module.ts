@@ -11,6 +11,7 @@ import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 import { FilesTableComponent } from './files-table/files-table.component';
 import {FileTypeImagePipe} from "../../../core/generics/pipes/file-type-image.pipe";
 import {SharedModule} from "../../../core/shared/shared.module";
+import { FilesTableHeaderComponent } from './files-table/files-table-header/files-table-header.component';
 
 const routes: Route[] = [
   { path: 'details/:id', component: DocumentDetailComponent},
@@ -29,7 +30,8 @@ const routes: Route[] = [
   declarations: [
     DocumentDetailComponent,
     ChestHomeComponent,
-    FilesTableComponent
+    FilesTableComponent,
+    FilesTableHeaderComponent
   ],
   providers: [
     FolderFormBuilder,

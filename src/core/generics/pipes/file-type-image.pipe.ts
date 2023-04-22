@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {DocumentTypeEnum} from "../../../app/dashboard/classes/models/document-type.enum";
 
 @Pipe({
-  name: 'FileTypeImagePipe'
+  name: 'fileTypeImagePipe'
 })
 export class FileTypeImagePipe implements PipeTransform {
 

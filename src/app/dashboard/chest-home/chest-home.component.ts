@@ -14,19 +14,12 @@ import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
   styleUrls: ['./chest-home.component.scss']
 })
 export class ChestHomeComponent implements OnInit{
-  addDocumentModal = false;
-  addFolderModal = false;
+
   documents?: DepositDocument[];
   folders?: any[]
   isLoading = true;
-  file = faFileCircleCheck as IconProp;
-  plus = faPlus as IconProp;
-  constructor(public service: FileService,
-              private router: Router,
-              public folderService: FolderService,
-              public folderFormBuilder: FolderFormBuilder
 
-  ) {
+  constructor(public service: FileService) {
   }
 
   ngOnInit(): void {
