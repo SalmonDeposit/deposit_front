@@ -7,6 +7,7 @@ import {GenericsModule} from "../../../core/generics/generic.module";
 import {DocumentDetailComponent} from "./document-details/document-detail.component";
 import {NgxDocViewerModule} from "ngx-doc-viewer";
 import { DocumentDashboardComponent } from './document-dashboard.component';
+import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 
 const routes: Route[] = [
   { path: 'details/:id', component: DocumentDetailComponent},
@@ -26,6 +27,8 @@ const routes: Route[] = [
     DocumentDetailComponent,
     DocumentDashboardComponent
   ],
-  providers: []
+  providers: [
+    FolderFormBuilder
+  ]
 })
 export class DocumentsDashboardModule { }

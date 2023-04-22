@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {DocumentService} from "../services/document.service";
 import {DepositDocument} from "../classes/models/document";
 import {faTrash, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {faFileCircleCheck} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {Router} from "@angular/router";
+import {FileService} from "../services/file.service";
+import {FolderService} from "../services/folder.service";
+import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 
 @Component({
   selector: 'app-document-dashboard',
@@ -12,15 +14,22 @@ import {Router} from "@angular/router";
   styleUrls: ['./document-dashboard.component.scss']
 })
 export class DocumentDashboardComponent implements OnInit{
-  addModal = false;
+  addDocumentModal = false;
+  addFolderModal = false;
   documents?: DepositDocument[];
+  folders?: any[]
   isLoading = true;
   trash = faTrash as IconProp;
   file = faFileCircleCheck as IconProp;
   plus = faPlus as IconProp;
   deleteModal = false;
   currentDeleteDocumentId?: string;
-  constructor(public service: DocumentService, private router: Router) {
+  constructor(public service: FileService,
+              private router: Router,
+              public folderService: FolderService,
+              public folderFormBuilder: FolderFormBuilder
+
+  ) {
   }
 
   ngOnInit(): void {
@@ -33,13 +42,22 @@ export class DocumentDashboardComponent implements OnInit{
   load(){
     this.service.list().subscribe({
       next : res => {
-        this.documents = res.object;
+        this.documents = res.documents;
+        this.folders = res.folders
         this.isLoading = false
       }
     })
   }
-  goToDetails(id: any){
-    this.router.navigate([`/dashboard/documents/details/${id}`]);
+  goToDetails(id: any, type: string){
+    switch (type) {
+      case 'file':
+        this.router.navigate([`/dashboard/documents/details/${id}`]);
+        return
+      case 'folder':
+        this.router.navigate([`/dashboard/folders/details/${id}`])
+        return
+    }
+
   }
   onDelete(id: any){
     this.deleteModal = true;
