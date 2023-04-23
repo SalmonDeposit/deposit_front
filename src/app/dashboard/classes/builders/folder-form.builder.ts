@@ -17,8 +17,7 @@ export class FolderFormBuilder implements DepositFormBuilder{
         controlErrors : [],
         type: "text",
         required: true
-      }
+      },
     ];
   }
-
 }

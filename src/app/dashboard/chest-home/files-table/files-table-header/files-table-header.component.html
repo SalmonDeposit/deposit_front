@@ -22,4 +22,6 @@
   [isOpen]="addFolderModal"
   (isOpenChange)="addFolderModal = $event"
   [formBuilder]="folderFormBuilder"
+  (onSubmitForm)="addNewFolder($event)"
+  [customForm]="true"
 ></app-deposit-editor-modal>

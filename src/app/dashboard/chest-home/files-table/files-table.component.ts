@@ -21,9 +21,11 @@ import {DocumentService} from "../../services/document.service";
 export class FilesTableComponent implements OnInit, OnChanges {
   @Input() documents: DepositDocument[]
   @Input() folders: Folder[]
+  @Input() currentFolder:Folder;
 
   filesDisplay: FileTableDisplay[]
-  deleteModal = false;
+  deleteFolderModal = false;
+  deleteDocumentModal = false;
   currentDeleteDocumentId?: string;
   trash = faTrash as IconProp;
   file = faFileCircleCheck as IconProp;
@@ -38,7 +40,6 @@ export class FilesTableComponent implements OnInit, OnChanges {
       this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);
   }
   ngOnChanges(changes: SimpleChanges) {
-    console.log("je suis appelée")
     this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);
   }
 
@@ -55,8 +56,13 @@ export class FilesTableComponent implements OnInit, OnChanges {
     }
 
   }
-  onDelete(id: any){
-    this.deleteModal = true;
+  onDelete(id: string, type:string){
+    if(type == 'folder'){
+      this.deleteFolderModal = true
+    }
+    if(type == 'document'){
+      this.deleteDocumentModal = true
+    }
     this.currentDeleteDocumentId = id;
   }
 

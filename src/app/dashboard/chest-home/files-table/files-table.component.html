@@ -1,4 +1,4 @@
-<app-files-table-header></app-files-table-header>
+<app-files-table-header [currentFolder]="currentFolder"></app-files-table-header>
 <table class="table files-table" cdkDropList (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
   <thead>
   <tr>
@@ -23,7 +23,7 @@
     <td> {{fileDisplay.createdAt | date:'dd.MM.YYYY HH:mm'}}</td>
     <td> 7.86 ko</td>
     <td class="actions-buttons">
-      <button (click)="onDelete(fileDisplay.id)" class="btn btn-danger">
+      <button (click)="onDelete(fileDisplay.id, fileDisplay.elementType)" class="btn btn-danger">
         <fa-icon class="icon" [icon]="trash"></fa-icon>
       </button>
     </td>
@@ -33,9 +33,15 @@
   </tr>
   </tbody>
 </table>
-<app-deposit-delete-modal title="Supprimer l'element"
+<app-deposit-delete-modal title="Supprimer le dossier"
                           [objectId]="currentDeleteDocumentId"
-                          [isOpen]="deleteModal"
-                          (isOpenChange)="deleteModal = $event"
-                          [service]="service">
+                          [isOpen]="deleteFolderModal"
+                          (isOpenChange)="deleteFolderModal = $event"
+                          [service]="folderService">
+</app-deposit-delete-modal>
+<app-deposit-delete-modal title="Supprimer le document"
+                          [objectId]="currentDeleteDocumentId"
+                          [isOpen]="deleteDocumentModal"
+                          (isOpenChange)="deleteDocumentModal = $event"
+                          [service]="documentService">
 </app-deposit-delete-modal>
