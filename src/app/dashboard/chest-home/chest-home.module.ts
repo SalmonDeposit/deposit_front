@@ -9,12 +9,14 @@ import {NgxDocViewerModule} from "ngx-doc-viewer";
 import { ChestHomeComponent } from './chest-home.component';
 import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 import { FilesTableComponent } from './files-table/files-table.component';
-import {FileTypeImagePipe} from "../../../core/generics/pipes/file-type-image.pipe";
-import {SharedModule} from "../../../core/shared/shared.module";
 import { FilesTableHeaderComponent } from './files-table/files-table-header/files-table-header.component';
+import {ClarityModule} from "@clr/angular";
+import {CdkDrag, CdkDragHandle, CdkDropList} from "@angular/cdk/drag-drop";
+import { FolderDetailsComponent } from './folder-details/folder-details.component';
 
 const routes: Route[] = [
-  { path: 'details/:id', component: DocumentDetailComponent},
+  { path: 'folder/:id', component: FolderDetailsComponent},
+  { path: 'document/:id', component: DocumentDetailComponent},
   { path: '', component: ChestHomeComponent},
 ];
 
@@ -26,12 +28,17 @@ const routes: Route[] = [
     DashboardSharedModule,
     GenericsModule,
     NgxDocViewerModule,
+    ClarityModule,
+    CdkDropList,
+    CdkDragHandle,
+    CdkDrag,
   ],
   declarations: [
     DocumentDetailComponent,
     ChestHomeComponent,
     FilesTableComponent,
-    FilesTableHeaderComponent
+    FilesTableHeaderComponent,
+    FolderDetailsComponent
   ],
   providers: [
     FolderFormBuilder,

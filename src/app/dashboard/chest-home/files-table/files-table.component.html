@@ -1,5 +1,5 @@
 <app-files-table-header></app-files-table-header>
-<table class="table files-table">
+<table class="table files-table" cdkDropList (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
   <thead>
   <tr>
     <th> Type </th>
@@ -10,41 +10,26 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let folder of folders">
-    <td>
-      <div class="img-document-type">
-        <img src="{{'folder'| fileTypeImagePipe}}"/>
+  <tr *ngFor="let fileDisplay of filesDisplay" cdkDrag cdkDragLockAxis="y"
+      [cdkDragData]="fileDisplay"
+      class="tr-files"
+  >
+    <td cdkDragHandle (click)="goToDetails(fileDisplay.id, fileDisplay.elementType)">
+      <div class="img-document-type m-auto" >
+        <img src="{{fileDisplay.type| fileTypeImagePipe}}"/>
       </div>
     </td>
-    <td> {{folder.name}}</td>
-    <td> {{folder.createdAt | date:'dd.MM.YYYY HH:mm'}}</td>
+    <td> {{fileDisplay.name}}</td>
+    <td> {{fileDisplay.createdAt | date:'dd.MM.YYYY HH:mm'}}</td>
     <td> 7.86 ko</td>
     <td class="actions-buttons">
-      <button (click)="goToDetails(folder.id, 'folder')" class="btn btn-secondary">
-        <fa-icon  class="icon" [icon]="file"></fa-icon>
-      </button>
-      <button (click)="onDelete(folder.id)" class="btn btn-danger">
+      <button (click)="onDelete(fileDisplay.id)" class="btn btn-danger">
         <fa-icon class="icon" [icon]="trash"></fa-icon>
       </button>
     </td>
-  </tr>
-  <tr *ngFor="let document of documents">
-    <td>
-      <div class="img-document-type">
-      <img src="{{document?.type | fileTypeImagePipe}}"/>
+    <div *cdkDragPreview matchSize="true" class="container dragdrop-placeholder">
+      {{fileDisplay.name}}
     </div>
-    </td>
-    <td> {{document.name}}</td>
-    <td> {{document.createdAt | date:'dd.MM.YYYY'}}</td>
-    <td>{{document.size | fileSize}}</td>
-    <td class="actions-buttons">
-      <button (click)="goToDetails(document.id, 'file')" class="btn btn-secondary">
-        <fa-icon  class="icon" [icon]="file"></fa-icon>
-      </button>
-      <button (click)="onDelete(document.id)" class="btn btn-danger">
-        <fa-icon class="icon" [icon]="trash"></fa-icon>
-      </button>
-    </td>
   </tr>
   </tbody>
 </table>

@@ -15,8 +15,8 @@ import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
 })
 export class ChestHomeComponent implements OnInit{
 
-  documents?: DepositDocument[];
-  folders?: any[]
+  documents: DepositDocument[];
+  folders: any[]
   isLoading = true;
 
   constructor(public service: FileService) {
