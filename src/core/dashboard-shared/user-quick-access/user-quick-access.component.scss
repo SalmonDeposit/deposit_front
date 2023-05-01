@@ -1,31 +1,36 @@
 @import "../../../styles/variables";
 
-.user-quick-access{
+.user-quick-access {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 4rem;
-  .document-buttons{
+  background-color: #fecfa3;
+  padding: 2rem;
+  border-radius: 10px;
+
+  .document-buttons {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    button{
+
+    button {
       min-width: 8rem;
     }
-
   }
-  .user-simon-coin{
+
+  .user-simon-coin {
     width: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: $salmon;
+    color: var(--clr-p1-color, hsl(198deg, 0%, 40%));
     font-weight: bold;
     font-size: 1.2rem;
-    img{
+
+    img {
       width: 100%;
       margin-bottom: 1rem;
     }

@@ -1,9 +1,9 @@
-<section id="last-documents">
-  <h3> Vos derniers documents </h3>
+<h3> Vos derniers documents </h3>
+<section id="last-documents" [ngClass]="isLoading ? 'loading' : ''">
   <div *ngIf="!isLoading; else loading">
     <div *ngIf="documents.length != 0; else noDocuments" class="user-last-documents">
       <div *ngFor="let document of documents">
-        <app-document-card [document]="document" ></app-document-card>
+        <app-document-card [document]="document"></app-document-card>
       </div>
     </div>
     <ng-template #noDocuments>

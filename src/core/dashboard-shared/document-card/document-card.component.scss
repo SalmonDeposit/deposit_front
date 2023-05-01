@@ -1,29 +1,50 @@
 @import "src/styles/variables";
 
-.deposit-card{
-  max-width: 12rem;
-  min-width: 12rem;
+.deposit-card {
+  width: 10rem;
+  height: 12rem;
   margin-bottom: 2rem;
   cursor: pointer;
-  span{
+  display: flex;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    background-color: #f3f3f3;
+
+    &:hover {
+      transition: 0.7s;
+      background-color: initial;
+      box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 25%);
+    }
+  }
+
+  span {
     display: block;
   }
-  .date-document{
+
+  .date-document {
     color: $grey_dark
   }
-  .name-document{
+
+  .name-document {
     color: black;
     font-weight: bold;
   }
-  .deposit-card-footer{
+
+  .deposit-card-footer {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-top: 2rem;
-    .img-document-type{
+
+    .img-document-type {
       min-width: 1.5rem;
       max-width: 1.5rem;
-      img{
+
+      img {
         width: 100%;
       }
     }

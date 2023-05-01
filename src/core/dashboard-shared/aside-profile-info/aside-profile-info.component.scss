@@ -1,23 +1,32 @@
 @import "src/styles/variables";
 
-$width: calc((100% - 1200px)/2);
-
-#aside-menu-profile{
-  min-height: 99vh;
-  position: fixed;
-  right:0;
-  min-width: $width;
-  max-width: $width;
-  top:0;
+#dashboard-profile-infos-recents {
   display: flex;
   flex-direction: column;
-  padding: 0 0.5rem;
-  p{
-    color: $blue;
-    font-weight: bold;
+  align-items: center;
+  background-color: #fecfa3;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+
+  #dashboard-profile-infos-recents-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    span {
+      padding: .25rem;
+    }
   }
-  span{
-    cursor:pointer;
-    display: block;
+
+  h5 {
+    font-weight: bold;
+    margin: 0 0 .5rem;
+  }
+
+  #dashboard-profile-infos-recents-spinner {
+    margin-top: .5rem;
   }
 }
