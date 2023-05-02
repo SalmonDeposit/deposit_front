@@ -46,7 +46,7 @@ export class FilesTableHeaderComponent implements OnInit{
       next: () => {
         this.sno.success("Dossier ajouté")
         this.addFolderModal = false;
-        this.fileService.updateRequested.next(null)
+        this.folderService.updateRequested.next(null)
       }
     })
   }

@@ -15,12 +15,18 @@ export class FolderDetailsComponent implements OnInit{
   }
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.service.read(params['id']).subscribe({
-        next: res => {
-          this.folder = res.object;
-          this.isLoading = false
-        }
+      this.load(params['id'])
+      this.service.updateRequested.subscribe({
+        next: () => this.load(params['id'])
       })
+    })
+  }
+  load(id:string){
+    this.service.read(id).subscribe({
+      next: res => {
+        this.folder = res.object;
+        this.isLoading = false
+      }
     })
   }
 
