@@ -8,6 +8,6 @@ export interface DepositField{
   helper?: string;
   controlErrors?:DepositFieldError[];
   validators ?: ValidatorFn[]
-  type: 'text' | 'email' | 'password' | 'number' | 'date' | 'file' | 'tel';
+  type: 'text' | 'email' | 'password' | 'number' | 'date' | 'file' | 'tel' | 'textarea';
 
 }

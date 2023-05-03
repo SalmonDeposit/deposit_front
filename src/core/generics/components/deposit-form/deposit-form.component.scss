@@ -8,6 +8,15 @@ form{
   clr-input-container{
     width: 80%
   }
+  clr-textarea-container{
+    width: 80%;
+    .clr-textarea{
+      max-width: 100%;
+      width: 100%;
+      border: 1px solid $blue;
+      border-radius: 1rem;
+    }
+  }
 }
 .span-errors{
   color: var(--clr-forms-invalid-color, #c21d00);
