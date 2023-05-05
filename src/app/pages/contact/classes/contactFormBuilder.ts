@@ -29,7 +29,7 @@ export class ContactFormBuilder implements DepositFormBuilder{
       },
       {
         name: 'lastname',
-        placeholder: 'Nom',
+        placeholder: 'Nom*',
         required: true,
         type: 'text',
         controlErrors: [
@@ -44,7 +44,7 @@ export class ContactFormBuilder implements DepositFormBuilder{
       },
       {
         name: 'asked_question',
-        placeholder: 'Votre demande',
+        placeholder: 'Votre demande*',
         required: true,
         type: 'textarea',
         controlErrors: [
