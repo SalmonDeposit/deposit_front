@@ -1,13 +1,25 @@
 <form clrForm [formGroup]="depositForm" (ngSubmit)="onSubmit()">
   <ng-container *ngFor="let field of formFields">
-    <clr-input-container>
-      <input clrInput [type]="field.type" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name"/>
+    <clr-textarea-container *ngIf="field.type == 'textarea',else inputContainer">
+      <textarea clrTextarea [name]="field.name" rows="5" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name">
+      </textarea>
+      <clr-control-error *ngFor="let error of field.controlErrors">
+          <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+          {{error.display}}
+          </span>
+      </clr-control-error>
+    </clr-textarea-container>
+    <ng-template #inputContainer >
+      <clr-input-container>
+        <input clrInput [type]="field.type" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name"/>
         <clr-control-error *ngFor="let error of field.controlErrors">
           <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
           {{error.display}}
           </span>
         </clr-control-error>
-    </clr-input-container>
+      </clr-input-container>
+    </ng-template>
+
   </ng-container>
   <div class="tooltip tooltip-md" role="tooltip" aria-haspopup="true">
     <button type="submit" class="btn btn-primary" [disabled]="!depositForm.valid">
