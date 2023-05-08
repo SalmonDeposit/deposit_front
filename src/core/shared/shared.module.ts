@@ -22,11 +22,11 @@ import { RouterModule } from '@angular/router';
     RegisterModalComponent,
     ConnectionModalComponent
   ],
-    imports: [
-        GenericsModule,
-        SocialLoginModule,
-        RouterModule
-    ],
+  imports: [
+    GenericsModule,
+    SocialLoginModule,
+    RouterModule
+  ],
   providers: [
     ConnectionFormBuilder,
     RegisterFormBuilder,

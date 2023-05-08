@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ServiceGeneric} from "../../services/http/service-generic.service";
 import {SnotifyService} from "ng-snotify";
 import {DownloadService} from "../../services/download.service";
+import {DepositDocument} from "../../../../app/dashboard/classes/models/document";
 
 @Component({
   selector: 'app-deposit-upload-file',
@@ -46,10 +47,10 @@ export class DepositUploadFileComponent {
       const formData = new FormData();
       formData.append(this.filename, file, file.name);
       this.service?.create(formData).subscribe({
-        next: () => {
+        next: (res) => {
           this.isOpenChange.emit(false);
           this.sno.success("Fichier ajouté")
-          this.service?.updateRequested.next(null);
+          this.service?.updateRequested.next(res.object.id);
         }
       });
     }

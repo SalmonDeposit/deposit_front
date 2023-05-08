@@ -1,15 +1,13 @@
-<div class="deposit-card" (click)="navigateToDocument()">
-  <div class="card">
-    <div class="deposit-card-header">
-      <span class="date-document">{{document?.createdAt | date: 'dd.MM.yyyy' }}</span>
-      <span class="name-document">{{document?.name}}</span>
-    </div>
-    <div class="deposit-card-footer">
-      <div>7.96 ko</div>
-      <div class="img-document-type">
-        <img src="{{document?.type | documentTypeImagePipe}}"/>
-      </div>
-    </div>
-  </div>
-</div>
+ <div class="deposit-card" (click)="navigateToDocument()">
+   <div class="card">
+     <span class="date-document">{{document?.createdAt | date: 'dd.MM.yyyy' }}</span>
+     <span class="name-document">{{document?.name}}</span>
+     <div class="deposit-card-footer">
+       <div>7.96 ko</div>
+       <div class="img-document-type">
+         <img src="{{document?.type | fileTypeImagePipe}}"/>
+       </div>
+     </div>
+     </div>
+ </div>
 
