@@ -30,7 +30,10 @@ export class FilesTableHeaderComponent implements OnInit{
 
   ngOnInit(): void {
     this.documentService.updateRequested.subscribe({
-      next: () => this.fileService.updateRequested.next(null)
+      next: (res) => {
+        this.fileService.updateRequested.next(null)
+        this.addNewFile(res)
+      }
     })
     this.folderService.updateRequested.subscribe({
       next: () => this.fileService.updateRequested.next(null)
@@ -41,7 +44,6 @@ export class FilesTableHeaderComponent implements OnInit{
       ...data,
       folder_id: this.currentFolder.id
     }
-    console.log(newFolder);
     this.folderService.create(newFolder).subscribe({
       next: () => {
         this.sno.success("Dossier ajouté")
@@ -49,6 +51,16 @@ export class FilesTableHeaderComponent implements OnInit{
         this.folderService.updateRequested.next(null)
       }
     })
+  }
+  addNewFile(id: any){
+    if(id == null){
+      return;
+    }
+    this.documentService.update(id, {folder_id: this.currentFolder.id}).subscribe({
+      next: () => {
+        this.folderService.updateRequested.next(null)
+      }
+    });
   }
 
 }
