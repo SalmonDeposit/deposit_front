@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FolderService} from "../../services/folder.service";
 import {ActivatedRoute} from "@angular/router";
 import {Folder} from "../../classes/models/folder";
+import {FileService} from "../../services/file.service";
 
 @Component({
   selector: 'app-folder-details',
@@ -11,12 +12,12 @@ import {Folder} from "../../classes/models/folder";
 export class FolderDetailsComponent implements OnInit{
   folder: Folder;
   isLoading = true;
-  constructor(public service: FolderService, private route: ActivatedRoute,) {
+  constructor(public service: FolderService, private route: ActivatedRoute, public fileService: FileService) {
   }
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.load(params['id'])
-      this.service.updateRequested.subscribe({
+      this.fileService.updateRequested.subscribe({
         next: () => this.load(params['id'])
       })
     })
