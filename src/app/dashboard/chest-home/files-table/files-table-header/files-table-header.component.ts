@@ -42,7 +42,9 @@ export class FilesTableHeaderComponent implements OnInit{
   addNewFolder(data: any){
     const newFolder = {
       ...data,
-      folder_id: this.currentFolder.id
+    }
+    if(this.currentFolder){
+      newFolder.folder_id = this.currentFolder.id
     }
     this.folderService.create(newFolder).subscribe({
       next: () => {

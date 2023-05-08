@@ -45,7 +45,6 @@ export class FilesTableComponent implements OnInit, OnChanges {
 
 
   goToDetails(id: any, type: string){
-    console.log(type)
     switch (type) {
       case 'document':
         this.router.navigate([`/dashboard/files/document/${id}`]);

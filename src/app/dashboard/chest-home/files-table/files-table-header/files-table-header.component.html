@@ -1,13 +1,17 @@
-<div>
-  <button  (click)="addDocumentModal = true" class=" add-button btn btn-secondary">
-    <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-    Ajouter un document
-  </button>
-  <button  (click)="addFolderModal = true" class=" add-button btn btn-secondary">
-    <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-    Ajouter un dossier
-  </button>
+<div class="header-details">
+  <h1>{{currentFolder?.name}}</h1>
+  <div class="btn-group btn-primary">
+    <button  (click)="addDocumentModal = true" class="btn">
+      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
+      Charger
+    </button>
+    <button  (click)="addFolderModal = true" class="btn btn-secondary">
+      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
+      Créer un dossier
+    </button>
+  </div>
 </div>
+
 
 <app-deposit-upload-file
   [service]="documentService"

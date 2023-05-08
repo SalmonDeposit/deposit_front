@@ -1,5 +1,4 @@
 <ng-container *ngIf="!isLoading && folder; else loading">
-  <h1>{{folder.name}}</h1>
   <app-files-table
   [documents]="folder.documents"
   [folders]="folder.folders"
