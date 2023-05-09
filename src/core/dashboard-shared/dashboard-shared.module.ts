@@ -12,6 +12,7 @@ import {RouterLink} from "@angular/router";
 import {DashboardHomeModule} from "../../app/dashboard/dashboard-home/dashboard-home.module";
 import {UserQuickAccessComponent} from "./user-quick-access/user-quick-access.component";
 import {GenericsModule} from "../generics/generic.module";
+import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {GenericsModule} from "../generics/generic.module";
     AsideProfileInfoComponent,
     DepositSearchDocumentBarComponent,
     DocumentCardComponent,
-    UserQuickAccessComponent
+    UserQuickAccessComponent,
+    UserButtonsComponent
   ],
   imports: [
     FormsModule,
@@ -40,7 +42,8 @@ import {GenericsModule} from "../generics/generic.module";
         AsideProfileInfoComponent,
         DepositSearchDocumentBarComponent,
         DocumentCardComponent,
-      UserQuickAccessComponent
+      UserQuickAccessComponent,
+      UserButtonsComponent
     ],
   bootstrap: []
 })

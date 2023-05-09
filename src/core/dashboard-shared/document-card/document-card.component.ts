@@ -13,7 +13,7 @@ export class DocumentCardComponent {
   }
 
   navigateToDocument(){
-      this.router.navigate([`dashboard/documents/details/${this.document?.id}`])
+      this.router.navigate([`dashboard/files/document/${this.document?.id}`])
   }
 
 }

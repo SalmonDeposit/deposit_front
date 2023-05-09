@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {DepositAuthService} from "../../../../core/generics/services/http/deposit-auth.service";
+import {DepositAuthService} from "../../generics/services/http/deposit-auth.service";
 import {Router} from "@angular/router";
 import {SnotifyService} from "ng-snotify";
-import {User} from "../../classes/models/user";
+import {User} from "../../../app/dashboard/classes/models/user";
 import { faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
@@ -26,6 +26,7 @@ export class UserButtonsComponent {
         this.sno.success("Vous êtes déconnecté");
         this.router.navigate(['/']);
         localStorage.removeItem('token');
+        this.authService.logout$.next(null);
       }
     });
   }

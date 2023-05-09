@@ -25,7 +25,6 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     FontAwesomeModule,
-    DashboardSharedModule,
     GenericsModule,
     NgxDocViewerModule,
     ClarityModule,
