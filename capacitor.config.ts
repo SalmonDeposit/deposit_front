@@ -5,6 +5,10 @@ const config: CapacitorConfig = {
   appName: 'Deposit',
   webDir: 'dist',
   bundledWebRuntime: false,
+  server: {
+    "hostname": "m.test.deposit.ovh",
+    "androidScheme": "https"
+  }
 };
 
 export default config;
