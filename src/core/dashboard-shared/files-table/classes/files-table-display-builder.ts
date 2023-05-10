@@ -1,6 +1,6 @@
 import {FileTableDisplay} from "./file-table-display";
-import {DepositDocument} from "../../../classes/models/document";
-import {Folder} from "../../../classes/models/folder";
+import {DepositDocument} from "../../../../app/dashboard/classes/models/document";
+import {Folder} from "../../../../app/dashboard/classes/models/folder";
 
 export class FilesTableDisplayBuilder{
   public static build(documents: DepositDocument[], folders: Folder[] ) : FileTableDisplay[]{

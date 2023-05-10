@@ -16,4 +16,8 @@ export class FileService extends ServiceGeneric {
     super(environment, http, 'files');
   }
 
+  search(searchTerm: string): Observable<any>{
+    return this.http.get(`${this.baseUrl}?search=${searchTerm}`);
+  }
+
 }

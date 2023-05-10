@@ -8,10 +8,8 @@ import {DocumentDetailComponent} from "./document-details/document-detail.compon
 import {NgxDocViewerModule} from "ngx-doc-viewer";
 import { ChestHomeComponent } from './chest-home.component';
 import {FolderFormBuilder} from "../classes/builders/folder-form.builder";
-import { FilesTableComponent } from './files-table/files-table.component';
-import { FilesTableHeaderComponent } from './files-table/files-table-header/files-table-header.component';
 import {ClarityModule} from "@clr/angular";
-import {CdkDrag, CdkDragHandle, CdkDropList} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDragHandle, CdkDragPreview, CdkDropList} from "@angular/cdk/drag-drop";
 import { FolderDetailsComponent } from './folder-details/folder-details.component';
 
 const routes: Route[] = [
@@ -31,12 +29,12 @@ const routes: Route[] = [
     CdkDropList,
     CdkDragHandle,
     CdkDrag,
+    CdkDragPreview,
+    DashboardSharedModule,
   ],
   declarations: [
     DocumentDetailComponent,
     ChestHomeComponent,
-    FilesTableComponent,
-    FilesTableHeaderComponent,
     FolderDetailsComponent
   ],
   providers: [

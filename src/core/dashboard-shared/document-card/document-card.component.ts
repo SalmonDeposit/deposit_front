@@ -8,12 +8,12 @@ import {Router} from "@angular/router";
   styleUrls: ['./document-card.component.scss']
 })
 export class DocumentCardComponent {
-  @Input() document?: DepositDocument;
+  @Input() document: DepositDocument;
   constructor(public router: Router) {
   }
 
   navigateToDocument(){
-      this.router.navigate([`dashboard/files/document/${this.document?.id}`])
+      this.router.navigate([`dashboard/files/document/${this.document.id}`])
   }
 
 }

@@ -1,17 +1,17 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Folder} from "../../classes/models/folder";
-import {DepositDocument} from "../../classes/models/document";
-import {FileService} from "../../services/file.service";
 import {Router} from "@angular/router";
-import {FolderService} from "../../services/folder.service";
-import {FolderFormBuilder} from "../../classes/builders/folder-form.builder";
-import {faFileCircleCheck, faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faFileCircleCheck, faTrash, faBars} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {CdkDrag, CdkDragDrop, CdkDropList} from "@angular/cdk/drag-drop";
+import {CdkDragDrop} from "@angular/cdk/drag-drop";
 import {FileTableDisplay} from "./classes/file-table-display";
 import {FilesTableDisplayBuilder} from "./classes/files-table-display-builder";
 import {SnotifyService} from "ng-snotify";
-import {DocumentService} from "../../services/document.service";
+import {DepositDocument} from "../../../app/dashboard/classes/models/document";
+import {Folder} from "../../../app/dashboard/classes/models/folder";
+import {FileService} from "../../../app/dashboard/services/file.service";
+import {FolderService} from "../../../app/dashboard/services/folder.service";
+import {DocumentService} from "../../../app/dashboard/services/document.service";
+import {DateComparator, NameComparator} from "../../generics/grid-comparators/type-comparator";
 
 @Component({
   selector: 'app-files-table',
@@ -22,6 +22,11 @@ export class FilesTableComponent implements OnInit, OnChanges {
   @Input() documents: DepositDocument[]
   @Input() folders: Folder[]
   @Input() currentFolder:Folder;
+  @Input() searchMode:boolean;
+
+  dateComparator = new DateComparator();
+  nameComparator = new NameComparator();
+
 
   filesDisplay: FileTableDisplay[]
   deleteFolderModal = false;
@@ -29,6 +34,7 @@ export class FilesTableComponent implements OnInit, OnChanges {
   currentDeleteDocumentId?: string;
   trash = faTrash as IconProp;
   file = faFileCircleCheck as IconProp;
+  bars = faBars as IconProp
   constructor(public service: FileService,
               private router: Router,
               public folderService: FolderService,
@@ -38,6 +44,7 @@ export class FilesTableComponent implements OnInit, OnChanges {
   }
   ngOnInit() {
       this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);
+      console.log(this.filesDisplay)
   }
   ngOnChanges(changes: SimpleChanges) {
     this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);
@@ -87,5 +94,4 @@ export class FilesTableComponent implements OnInit, OnChanges {
       })
     }
   }
-
 }

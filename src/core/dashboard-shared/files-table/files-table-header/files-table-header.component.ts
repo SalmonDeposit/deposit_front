@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {faFileCircleCheck, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {FolderService} from "../../../services/folder.service";
-import {FolderFormBuilder} from "../../../classes/builders/folder-form.builder";
-import {DocumentService} from "../../../services/document.service";
-import {FileService} from "../../../services/file.service";
-import {Folder} from "../../../classes/models/folder";
 import {SnotifyService} from "ng-snotify";
+import {Folder} from "../../../../app/dashboard/classes/models/folder";
+import {DocumentService} from "../../../../app/dashboard/services/document.service";
+import {FolderService} from "../../../../app/dashboard/services/folder.service";
+import {FolderFormBuilder} from "../../../../app/dashboard/classes/builders/folder-form.builder";
+import {FileService} from "../../../../app/dashboard/services/file.service";
 
 @Component({
   selector: 'app-files-table-header',
@@ -15,6 +15,8 @@ import {SnotifyService} from "ng-snotify";
 })
 export class FilesTableHeaderComponent implements OnInit{
   @Input() currentFolder : Folder;
+  @Input() searchMode = true;
+
   addDocumentModal = false;
   addFolderModal = false;
   file = faFileCircleCheck as IconProp;
@@ -30,7 +32,7 @@ export class FilesTableHeaderComponent implements OnInit{
 
   ngOnInit(): void {
     this.documentService.updateRequested.subscribe({
-      next: (res) => {
+      next: (res : any) => {
         this.fileService.updateRequested.next(null)
         this.addNewFile(res)
       }

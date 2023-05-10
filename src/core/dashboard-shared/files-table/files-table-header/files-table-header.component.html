@@ -1,6 +1,6 @@
 <div class="header-details">
-  <h1>{{currentFolder?.name}}</h1>
-  <div class="btn-group btn-primary">
+  <h1 *ngIf="currentFolder">{{currentFolder.name}}</h1>
+  <div class="btn-group btn-primary" *ngIf="!searchMode">
     <button  (click)="addDocumentModal = true" class="btn">
       <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
       Charger

@@ -1,6 +1,16 @@
 <div class="deposit-search-bar">
-  <input placeholder="Rechercher un document..." name="filter" [(ngModel)]="filter"/>
+  <input placeholder="Rechercher un document..." name="filter" (keyup)="debouncedOnSearch()" [(ngModel)]="filter"/>
   <span class="search-button">
-    <fa-icon class="icon" size="lg" [icon]="search"></fa-icon>
+    <fa-icon class="icon" size="lg" [icon]="search" *ngIf="!isLoading"></fa-icon>
+    <fa-icon class="icon" size="lg" [icon]="spinner" [spin]="true" *ngIf="isLoading"></fa-icon>
   </span>
 </div>
+<ng-container *ngIf="folders.length > 0 || documents.length > 0">
+  <h3>Recherche</h3>
+  <app-files-table
+    [documents]="documents"
+    [folders]="folders"
+    [searchMode]="true">
+  </app-files-table>
+</ng-container>
+
