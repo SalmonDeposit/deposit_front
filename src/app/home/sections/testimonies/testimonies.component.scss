@@ -1,35 +1,40 @@
 @import "src/styles/variables";
 
-#testimonies{
+#testimonies {
   background-color: rgba($salmon, 0.3);
   margin-top: 8rem;
-  .container{
+
+  .container {
     display: flex;
     padding: 5rem;
-    aside{
+
+    aside {
       width: 50%;
       position: relative;
-      .quote-character{
-        color: $blue;
-        font-size: 12.5rem;
+
+      .quote-character {
+        color: #428fc3;
+        font-size: 7.5rem;
         position: absolute;
-        top:-9.5rem;
-        left:0;
+        top: -5.5rem;
+        left: 0;
         font-family: none;
         max-height: 100px;
       }
-      .testimony-container{
+
+      .testimony-container {
         width: 70%;
         margin: auto;
-        .author-name{
+
+        .author-name {
           font-weight: bold;
           text-align: right;
         }
       }
     }
   }
-  h3{
+
+  h3 {
     text-align: center;
   }
-
 }

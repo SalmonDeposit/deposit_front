@@ -1,39 +1,48 @@
 @import "src/styles/variables";
 
-#values{
+#values {
   width: 70%;
   margin: 8rem auto 12rem auto;
 
-  h2{
+  &.container {
+    margin: 6rem auto 8rem auto;
+  }
+
+  h2 {
     text-align: center;
   }
-  hr{
+
+  hr {
     border: 1px solid $blue;
     margin-bottom: 4rem;
     width: 4rem;
-    background-color:$blue;
+    background-color: $blue;
   }
-  .asides-containers{
+
+  .asides-containers {
     display: flex;
     justify-content: space-between;
     width: 80%;
     margin: auto;
-    .aside-deposit-support{
+
+    .aside-deposit-support {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 10rem;
-      p{
+
+      p {
+        font-size: .85rem;
         text-align: center;
       }
 
-      .imgs-container{
-        max-width: 2rem;
-        img{
+      .imgs-container {
+        max-width: 3rem;
+
+        img {
           max-width: 100%;
         }
       }
     }
-
   }
 }

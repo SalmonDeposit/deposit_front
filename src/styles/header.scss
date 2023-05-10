@@ -1,40 +1,64 @@
-header{
-  min-height: 220px;
-  max-height: 220px;
-  background-size: cover;
-  background: white url("/assets/img/waves-header.svg") no-repeat center top;
+header {
+  height: 250px;
+  background: white url("/assets/img/waves-header.svg") no-repeat center/cover;
 
-  .container{
-    margin-top: 1rem;
+  .container {
+    margin-top: 0;
+    padding: 1.5rem 0 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  #header-links-container{
+
+  #header-links-container {
     display: flex;
     align-items: center;
-    #logo{
+
+    #logo {
       max-width: 200px;
-      img{
+      margin-right: 2rem;
+
+      img {
         width: 100%;
+        mix-blend-mode: plus-lighter;
       }
     }
-    .menu-links{
-      display: block;
-      margin-top: 0.4rem;
-      margin-left: 2rem;
+
+    ul {
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 0 0 -.75rem;
+
+      li {
+        a {
+          padding: 1rem .5rem;
+
+          &:hover {
+
+          }
+        }
+      }
+    }
+
+    .menu-links {
       text-decoration: none;
       color: white;
       font-size: 1rem;
     }
   }
-  #header-auth-buttons-container{
+
+  #header-auth-buttons-container {
     display: flex;
-    .btn-primary{
+    margin-bottom: -.75rem;
+
+    .btn-primary {
       border: none;
     }
   }
 }
+
 #user-buttons {
   display: flex;
   justify-content: space-between;

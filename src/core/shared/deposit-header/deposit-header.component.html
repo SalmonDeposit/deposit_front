@@ -3,18 +3,24 @@
     <section id="header-links-container">
       <div id="logo">
         <a href="/">
-          <img src="/assets/img/logo/logo_blanc.png"/>
+          <img src="/assets/img/logo/logo_blanc.png" alt="deposit logo" />
         </a>
       </div>
-      <a [routerLink]="['/pages/qui-sommes-nous']" class="menu-links"> A propos</a>
-      <a [routerLink]="['/pages/contact']" class="menu-links"> Contact</a>
+      <ul>
+        <li>
+          <a [routerLink]="['/pages/qui-sommes-nous']" class="menu-links">A propos</a>
+        </li>
+        <li>
+          <a [routerLink]="['/pages/contact']" class="menu-links">Contact</a>
+        </li>
+      </ul>
     </section>
     <section id="header-auth-buttons-container" *ngIf="!isConnected else userConnected">
       <app-register-modal></app-register-modal>
       <app-connection-modal></app-connection-modal>
     </section>
     <ng-template #userConnected>
-     <app-user-buttons></app-user-buttons>
+      <app-user-buttons></app-user-buttons>
     </ng-template>
   </div>
 </header>
