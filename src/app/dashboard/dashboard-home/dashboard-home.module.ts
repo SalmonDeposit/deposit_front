@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
 import {DashboardHomeComponent} from "./dashboard-home.component";
-import { UserButtonsComponent } from './user-buttons/user-buttons.component';
+import { UserButtonsComponent } from '../../../core/dashboard-shared/user-buttons/user-buttons.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {DashboardSharedModule} from "../../../core/dashboard-shared/dashboard-shared.module";
 import { UserLastDocumentsComponent } from './user-last-documents/user-last-documents.component';
@@ -18,15 +18,14 @@ const routes: Route[] = [
     CommonModule,
     RouterModule.forChild(routes),
     FontAwesomeModule,
-    DashboardSharedModule,
     GenericsModule,
+    DashboardSharedModule,
   ],
   declarations: [
     DashboardHomeComponent,
-    UserButtonsComponent,
     UserLastDocumentsComponent,
   ],
-  exports: [],
+    exports: [],
   providers: []
 })
 export class DashboardHomeModule { }

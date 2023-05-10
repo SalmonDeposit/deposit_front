@@ -13,6 +13,8 @@ import {
 } from "@abacritt/angularx-social-login";
 import { ConnectionModalComponent } from './deposit-header/connection-modal/connection-modal.component';
 import { RouterModule } from '@angular/router';
+import {NgIf} from "@angular/common";
+import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module";
 
 
 @NgModule({
@@ -22,11 +24,13 @@ import { RouterModule } from '@angular/router';
     RegisterModalComponent,
     ConnectionModalComponent
   ],
-    imports: [
-        GenericsModule,
-        SocialLoginModule,
-        RouterModule
-    ],
+  imports: [
+    GenericsModule,
+    SocialLoginModule,
+    RouterModule,
+    NgIf,
+    DashboardSharedModule,
+  ],
   providers: [
     ConnectionFormBuilder,
     RegisterFormBuilder,

@@ -1,16 +1,10 @@
-<aside id="aside-menu-profile">
-  <div>
-    <p>Espace de stockage</p>
-    <clr-progress-bar  clrValue="300" clrMax="500" ></clr-progress-bar>
-    <span> 300mo sur 500mo</span>
-  </div>
-  <div>
-    <p> Document récents</p>
+<app-user-quick-access></app-user-quick-access>
+<div id="dashboard-profile-infos-recents">
+  <h5>Document récents</h5>
+  <div *ngIf="!isLoading" id="dashboard-profile-infos-recents-list">
     <ng-container *ngIf="!isLoading && documents && documents.length > 0">
       <span (click)="goToDetails(document.id)" *ngFor="let document of documents">{{document.name}}</span>
     </ng-container>
-    <div *ngIf="isLoading" class="spinner m-auto"></div>
   </div>
-  <app-user-quick-access></app-user-quick-access>
-
-</aside>
+  <div id="dashboard-profile-infos-recents-spinner" *ngIf="isLoading" class="spinner"></div>
+</div>

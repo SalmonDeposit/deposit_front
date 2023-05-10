@@ -1,0 +1,15 @@
+<app-deposit-header></app-deposit-header>
+<main class="container">
+  <div class="header-contact">
+    <h1> Contact </h1>
+    <p> Une question ? Un avis ?</p>
+    <p> N'hésitez pas à nous contacter</p>
+  </div>
+  <app-deposit-form
+    [formBuilder]="contactFormBuilder"
+    (submitted)="onSubmit($event)">
+  </app-deposit-form>
+</main>
+
+
+<app-deposit-footer></app-deposit-footer>

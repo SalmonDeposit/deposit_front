@@ -1,7 +1,13 @@
+#last-documents {
+  &.loading {
+    display: flex;
+    justify-content: center;
+    padding: 20% 0;
+  }
+}
+
 .user-last-documents{
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 2rem;
-  width: 85%;
+  gap: 30px;
 }

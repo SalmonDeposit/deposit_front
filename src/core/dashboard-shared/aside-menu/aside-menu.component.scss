@@ -1,39 +1,58 @@
 @import "../../../styles/variables";
 
-$width: calc((100% - 1200px)/2);
+#logo {
+  display: flex;
+  justify-content: center;
 
-#aside-menu-dashboard{
-  min-height: 99vh;
-  position: fixed;
-  left:0;
-  min-width: $width;
-  max-width: $width;
-  padding: 0.5rem;
-  #logo{
-    width: 100%;
-    margin: auto auto 4rem;
-
-    img{
-      width: 100%;
-    }
+  img {
+    max-width: 250px;
   }
-  #nav-dashboard{
-    a{
-      display: block;
-      font-size: 1rem;
-      font-weight: lighter;
-      text-decoration: none;
-      color: black;
-      margin-bottom: 1.5rem;
-      .icon{
-        color: $salmon;
+}
+
+#dashboard-storage-infos {
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+#nav-dashboard {
+  display: flex;
+  flex-direction: column;
+  background-color: #fecfa3;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+
+  ul, li, a {
+    list-style: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-left: 1px solid rgba(255, 255, 255, 0);
+      border-right: 1px solid rgba(255, 255, 255, 0);
+      display: flex;
+      align-items: center;
+      padding: 0 .5rem;
+
+      a {
+        color: #CE8C69;
+        text-decoration: none;
+        font-size: .8rem;
+        padding: .5rem;
+
+        .ng-fa-icon {
+          margin-right: .3rem;
+        }
+      }
+
+      &:hover {
+        border-left: 1px solid #fecfa3;
+        border-right: 1px solid #fecfa3;
+        background-color: #FFFFFF;
+        transition: .3s;
+        cursor: pointer;
       }
     }
-    .deposit-active {
-      text-decoration: underline;
-      text-decoration-color: $salmon;
-      text-underline-offset: 0.4rem;
-    }
-
   }
 }

@@ -1,6 +1,12 @@
-<app-aside-menu></app-aside-menu>
-<main class="container">
-  <router-outlet></router-outlet>
-</main>
-<app-aside-profile-info></app-aside-profile-info>
+<div id="dashboard-wrapper">
+  <aside id="dashboard-menu-container">
+    <app-aside-menu></app-aside-menu>
+  </aside>
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
+  <aside id="dashboard-infos-container">
+    <app-aside-profile-info></app-aside-profile-info>
+  </aside>
+</div>
 <app-deposit-footer></app-deposit-footer>

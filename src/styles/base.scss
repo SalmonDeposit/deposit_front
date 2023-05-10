@@ -172,5 +172,19 @@ body,
     display: none;
   }
 }
+.img-document-type{
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  cursor: pointer;
+  img{
+    width: 100%;
+  }
+}
+.m-auto{
+  margin: auto;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
 
 

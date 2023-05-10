@@ -1,13 +1,18 @@
 import { Inject, Injectable } from '@angular/core';
 import {Token} from "../../interfaces/token.interface";
 import {AuthApiService} from "../../../shared/deposit-header/services/auth-api.service";
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepositAuthService {
   constructor(@Inject('env') private env: any, private apiService: AuthApiService) {
+  }
+  public logout$ = new Subject();
+
+  public isConnected() : boolean {
+    return this.getToken() != null
   }
   public getToken(): Token | null{
     const token = this.getTokenFromStorage();

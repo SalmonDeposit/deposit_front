@@ -1,10 +1,12 @@
 <div id="user-buttons">
   <div class="user-button">
-    <img src="assets/img/default-user.jpg"/>
+    <a [routerLink]="['/dashboard/home']">
+      <img src="../../../assets/img/default-user.jpg"/>
+    </a>
   </div>
   <div class="user-coin">
     <div class="user-button">
-      <img src="assets/img/simon_coin.png"/>
+      <img src="../../../assets/img/simon_coin.png"/>
     </div>
     {{currentUser?.simon_coin_stock}} sc
   </div>

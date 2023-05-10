@@ -1,19 +1,21 @@
 @import "src/styles/variables";
 
-.deposit-search-bar{
-  width: 70%;
-  margin: 3rem auto;
+.deposit-search-bar {
   position: relative;
-  input{
+
+  input {
     width: 100%;
-    min-height:1.8rem;
-    border: 1px solid $salmon;
-    border-radius: 1rem;
+    min-height: 1.8rem;
+    border: 1px solid #CE8C69;
+    border-radius: 10px;
+    padding-left: 0.5rem;
+    height: 50px;
   }
-  .search-button{
+
+  .search-button {
     position: absolute;
     right: 0.8rem;
-    top:0.3rem;
-    color : $salmon;
+    top: 0.7rem;
+    color: $salmon;
   }
 }

@@ -9,7 +9,7 @@ import {SnotifyService} from "ng-snotify";
 import {viewerType} from "ngx-doc-viewer";
 
 @Component({
-  selector: 'app-document-dashboard',
+  selector: 'app-chest-home',
   templateUrl: './document-detail.component.html',
   styleUrls: ['./document-detail.component.scss']
 })
