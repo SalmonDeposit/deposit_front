@@ -13,8 +13,10 @@ import {
 } from "@abacritt/angularx-social-login";
 import { ConnectionModalComponent } from './deposit-header/connection-modal/connection-modal.component';
 import { RouterModule } from '@angular/router';
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module";
+import { HeaderResponsiveComponent } from './deposit-header/header-responsive/header-responsive.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module
     DepositHeaderComponent,
     DepositFooterComponent,
     RegisterModalComponent,
-    ConnectionModalComponent
+    ConnectionModalComponent,
+    HeaderResponsiveComponent
   ],
   imports: [
     GenericsModule,
@@ -30,6 +33,8 @@ import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module
     RouterModule,
     NgIf,
     DashboardSharedModule,
+    NgClass,
+    FontAwesomeModule,
   ],
   providers: [
     ConnectionFormBuilder,
