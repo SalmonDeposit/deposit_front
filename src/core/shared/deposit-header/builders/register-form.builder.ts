@@ -4,6 +4,7 @@ import {Validators} from "@angular/forms";
 
 export class RegisterFormBuilder implements DepositFormBuilder {
   textAddBtnSubmit: string = "S'inscrire";
+  optIn = true;
 
   build(): DepositField[] {
     return [{
@@ -54,5 +55,7 @@ export class RegisterFormBuilder implements DepositFormBuilder {
       }
     ];
   }
+
+
 
 }

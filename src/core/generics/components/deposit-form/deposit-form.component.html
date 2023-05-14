@@ -1,16 +1,27 @@
 <form clrForm [formGroup]="depositForm" (ngSubmit)="onSubmit()">
   <ng-container *ngFor="let field of formFields">
-    <clr-textarea-container *ngIf="field.type == 'textarea',else inputContainer">
+    <ng-container [ngSwitch]="field.type">
+      <clr-textarea-container *ngSwitchCase="'textarea'">
       <textarea clrTextarea [name]="field.name" rows="5" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name">
       </textarea>
-      <clr-control-error *ngFor="let error of field.controlErrors">
+        <clr-control-error *ngFor="let error of field.controlErrors">
           <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
           {{error.display}}
           </span>
-      </clr-control-error>
-    </clr-textarea-container>
-    <ng-template #inputContainer >
-      <clr-input-container>
+        </clr-control-error>
+      </clr-textarea-container>
+
+      <clr-checkbox-wrapper *ngSwitchCase="'checkbox'">
+        <label [innerHTML]="field.placeholder"></label>
+        <input type="checkbox" clrCheckbox [formControlName]="field.name">
+        <clr-control-error *ngFor="let error of field.controlErrors">
+    <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
+      {{ error.display }}
+    </span>
+        </clr-control-error>
+      </clr-checkbox-wrapper>
+
+      <clr-input-container *ngSwitchDefault>
         <input clrInput [type]="field.type" placeholder="{{ field.placeholder || '' }}" [formControlName]="field.name"/>
         <clr-control-error *ngFor="let error of field.controlErrors">
           <span class="span-errors" *ngIf="depositForm.controls[field.name]?.errors?.[error.name]">
@@ -18,8 +29,7 @@
           </span>
         </clr-control-error>
       </clr-input-container>
-    </ng-template>
-
+    </ng-container>
   </ng-container>
   <div class="tooltip tooltip-md" role="tooltip" aria-haspopup="true">
     <button type="submit" class="btn btn-primary" [disabled]="!depositForm.valid">

@@ -7,7 +7,10 @@
   </div>
   <app-deposit-form
     [formBuilder]="contactFormBuilder"
-    (submitted)="onSubmit($event)">
+    [resetForm]="resetForm"
+    (submitted)="onSubmit($event)"
+    (resetted)="onReset()"
+  >
   </app-deposit-form>
 </main>
 

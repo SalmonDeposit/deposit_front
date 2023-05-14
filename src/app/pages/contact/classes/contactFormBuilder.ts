@@ -3,7 +3,8 @@ import {DepositField} from "../../../../core/generics/interfaces/form/deposit-fi
 import {Validators} from "@angular/forms";
 
 export class ContactFormBuilder implements DepositFormBuilder{
-  textAddBtnSubmit: string = "Envoyer"
+  textAddBtnSubmit: string = "Envoyer";
+  optIn = true;
 
   build(): DepositField[] {
     return [

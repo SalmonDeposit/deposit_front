@@ -4,4 +4,5 @@ export interface DepositFormBuilder {
   build(): DepositField[];
   textUpdateBtnSubmit?:string;
   textAddBtnSubmit: string
+  optIn?: boolean;
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DepositModalComponent } from './components/deposit-modal/deposit-modal.component';
-import {ClrInputModule, ClrModalModule, ClrTextareaModule} from "@clr/angular";
+import {ClrCheckboxModule, ClrInputModule, ClrModalModule, ClrTextareaModule} from "@clr/angular";
 import {CommonModule} from "@angular/common";
 import { DepositFormComponent } from './components/deposit-form/deposit-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -18,6 +18,7 @@ import { FileSizePipe } from './pipes/file-size.pipe';
         FormsModule,
         ReactiveFormsModule,
         ClrTextareaModule,
+        ClrCheckboxModule,
     ],
     exports: [
         DepositModalComponent,
