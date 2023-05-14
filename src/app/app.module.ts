@@ -10,6 +10,8 @@ import {
 import {ErrorInterceptor} from "../core/generics/interceptors/error.interceptor";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UserGuard} from "../core/generics/guards/user.guard";
+import { PrivacyPolicyManagementComponent } from './privacy-policy-management/privacy-policy-management.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 const routes: Route[] = [
   {
@@ -29,13 +31,15 @@ const routes: Route[] = [
 @NgModule({
   declarations: [
     AppComponent,
+    PrivacyPolicyManagementComponent,
   ],
   imports: [
     BrowserAnimationsModule,
     RouterModule,
     SnotifyModule,
-    RouterModule.forRoot(routes, {scrollPositionRestoration:"top"}),
-    HttpClientModule
+    RouterModule.forRoot(routes, {scrollPositionRestoration: "top"}),
+    HttpClientModule,
+    FontAwesomeModule
 
   ],
   providers: [

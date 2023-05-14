@@ -6,6 +6,9 @@
     "deposit_front": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -33,7 +36,12 @@
               "node_modules/ng-snotify/styles/material.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/scripts/custom_tac.js",
+              "./node_modules/tarteaucitronjs/tarteaucitron.services.js",
+              "./node_modules/tarteaucitronjs/lang/tarteaucitron.fr.js",
+              "src/scripts/config_tac.js"
+            ]
           },
           "configurations": {
             "production": {

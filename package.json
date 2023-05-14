@@ -38,6 +38,7 @@
     "ngx-doc-viewer": "^15.0.1",
     "rxjs": "~7.4.0",
     "swiper": "^8.4.6",
+    "tarteaucitronjs": "^1.11.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
