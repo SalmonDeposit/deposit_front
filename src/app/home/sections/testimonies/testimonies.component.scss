@@ -38,3 +38,22 @@
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  #testimonies{
+    .container{
+      flex-direction: column;
+      padding: 2rem 20px;
+      :last-child{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        .quote-character{
+          display: none;
+        }
+      }
+      aside{
+        width: 100%;
+      }
+    }
+  }
+}
+
