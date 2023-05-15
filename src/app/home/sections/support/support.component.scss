@@ -37,3 +37,18 @@
 
   }
 }
+@media (max-width: 768px) {
+  #deposit-support{
+    width: 100%;
+    margin: 4rem auto auto;
+    .asides-containers{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .aside-deposit-support{
+        margin-bottom: 2rem;
+
+      }
+    }
+  }
+}
