@@ -25,12 +25,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: -20px;
-    margin-left: -20px;
     margin-top: 1rem;
     @include bg-salmon;
     padding: 1.5rem 0;
 
+  }
+  #bp-web-widget{
+    display: none;
+  }
+  .tarteaucitronIconBottomLeft {
+    bottom: 1rem;
+    left: 1rem;
   }
 
 
