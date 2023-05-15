@@ -55,10 +55,12 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
       } as SocialAuthServiceConfig,
     }
   ],
-    exports: [
-        DepositHeaderComponent,
-        DepositFooterComponent
-    ],
+  exports: [
+    DepositHeaderComponent,
+    DepositFooterComponent,
+    RegisterModalComponent,
+    ConnectionModalComponent
+  ],
   bootstrap: []
 })
 export class SharedModule { }

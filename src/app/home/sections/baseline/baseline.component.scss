@@ -59,6 +59,70 @@
       min-height: 300px;
     }
   }
+  @media (max-width: 768px) {
+
+    .baseline-right {
+      #baseline-right{
+        min-height: 200px;
+        background-position: bottom right;
+        background-size: contain;
+        height: 100%;
+      }
+      #baseline-left {
+        min-height: 200px;
+        background-position: bottom left;
+        background-size: contain;
+        height: 100%;
+      }
+    }
+    .title-text {
+      flex-direction: column;
+
+      p {
+        display: none;
+      }
+    }
+    .baseline-left {
+      h1 {
+        color: $salmon;
+        line-height: 2.4rem;
+        font-size: 1.2rem;
+      }
+
+      .title-text {
+        flex-direction: column;
+
+        p {
+          font-size: 1.2rem;
+          font-weight: 300;
+          line-height: 1.8rem;
+        }
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &:nth-child(2) {
+          margin-top: 3.5rem;
+        }
+
+        button {
+          display: none;
+
+          &:hover {
+          }
+
+          img {
+            max-width: 25px;
+          }
+        }
+      }
+
+
+    }
+  }
 
 
 

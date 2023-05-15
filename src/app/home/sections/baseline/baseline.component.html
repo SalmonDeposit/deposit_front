@@ -1,7 +1,7 @@
 <section id="baseline" class="container">
   <aside class="baseline-left">
     <div class="title-text">
-      <h1> Depos'it, la gestion de vos documents personnels simplifiée et sécurisée</h1>
+      <h1> <b>Depos'it</b>, la gestion de vos documents personnels simplifiée et sécurisée</h1>
       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nisl tellus, lacinia ac nisl sed, tincidunt condimentum.</p>
     </div>
   <div>
@@ -16,3 +16,11 @@
     <div id="baseline-left"></div>
   </aside>
 </section>
+
+<section id="section-auth-buttons-container" *ngIf="!isConnected else userConnected">
+  <app-register-modal></app-register-modal>
+  <app-connection-modal></app-connection-modal>
+</section>
+<ng-template #userConnected>
+  <app-user-buttons class="app-user-button-desktop"></app-user-buttons>
+</ng-template>
