@@ -8,11 +8,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './contact/contact.component';
 import {GenericsModule} from "../../core/generics/generic.module";
 import {ContactFormBuilder} from "./contact/classes/contactFormBuilder";
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 const routes: Route[] = [
   { path: 'qui-sommes-nous', component: WhoYouAreComponent},
-  { path: 'legal-notice', component: LegalNoticeComponent},
-  {path : 'contact', component: ContactComponent }
+  { path: 'mentions-legales', component: LegalNoticeComponent},
+  {path : 'contact', component: ContactComponent },
+  {path: 'politique-de-confidentialite', component: PrivacyPolicyComponent}
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Route[] = [
   declarations: [
     WhoYouAreComponent,
     LegalNoticeComponent,
-    ContactComponent
+    ContactComponent,
+    PrivacyPolicyComponent
   ],
   providers: [
     ContactFormBuilder
