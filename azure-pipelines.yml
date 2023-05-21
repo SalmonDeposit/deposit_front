@@ -23,6 +23,10 @@ steps:
   displayName: 'npm install'
   workingDirectory: $(Build.SourcesDirectory)
 
+- script: ng test --watch=false
+  displayName: 'execute test'
+  workingDirectory: $(Build.SourcesDirectory)
+
 - script: npm run build
   displayName: 'npm build'
   workingDirectory: $(Build.SourcesDirectory)
