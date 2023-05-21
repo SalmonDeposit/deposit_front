@@ -198,5 +198,18 @@ body,
     }
   }
 }
+@media (max-width: 768px) {
+  h1{
+    line-height: 2.4rem;
+    font-size: 1.5rem!important;
+  }
+  h2{
+    font-size: 1.15rem!important;
+  }
+  h3{
+    font-size: 1.1rem!important;
+  }
+}
+
 
 
