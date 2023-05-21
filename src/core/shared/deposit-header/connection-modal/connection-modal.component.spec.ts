@@ -1,16 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConnectionModalComponent } from './connection-modal.component';
+import {DEPOSIT_TEST_BED} from "../../../../deposit.testbed";
+import {ConnectionFormBuilder} from "../builders/connection-form.builder";
 
 describe('ConnectionModalComponent', () => {
   let component: ConnectionModalComponent;
   let fixture: ComponentFixture<ConnectionModalComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ConnectionModalComponent ]
-    })
-    .compileComponents();
+    const tb = DEPOSIT_TEST_BED.forComponent(ConnectionModalComponent);
+    tb.providers.push(ConnectionFormBuilder)
+    await TestBed.configureTestingModule(tb)
+      .compileComponents();
 
     fixture = TestBed.createComponent(ConnectionModalComponent);
     component = fixture.componentInstance;

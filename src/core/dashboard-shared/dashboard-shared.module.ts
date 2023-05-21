@@ -7,9 +7,7 @@ import {ClrDatagridModule, ClrIconModule, ClrProgressBarModule} from "@clr/angul
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
 import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
-import { FileTypeImagePipe } from '../generics/pipes/file-type-image.pipe';
 import {RouterLink} from "@angular/router";
-import {DashboardHomeModule} from "../../app/dashboard/dashboard-home/dashboard-home.module";
 import {UserQuickAccessComponent} from "./user-quick-access/user-quick-access.component";
 import {GenericsModule} from "../generics/generic.module";
 import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
@@ -17,6 +15,7 @@ import {FilesTableComponent} from "./files-table/files-table.component";
 import {FilesTableHeaderComponent} from "./files-table/files-table-header/files-table-header.component";
 import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-form.builder";
+import {PipeModule} from "../generics/pipes/pipe.module";
 
 
 @NgModule({
@@ -44,6 +43,7 @@ import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-for
     ClrDatagridModule,
     CdkDropList,
     CdkDrag,
+    PipeModule.forRoot(),
   ],
   providers: [
     FolderFormBuilder

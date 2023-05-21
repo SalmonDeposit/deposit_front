@@ -7,8 +7,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DepositEditorModalComponent } from './components/deposit-editor-modal/deposit-editor-modal.component';
 import { DepositUploadFileComponent } from './components/deposit-upload-file/deposit-upload-file.component';
 import { DepositDeleteModalComponent } from './components/deposit-delete-modal/deposit-delete-modal.component';
-import {FileTypeImagePipe} from "./pipes/file-type-image.pipe";
-import { FileSizePipe } from './pipes/file-size.pipe';
 
 @NgModule({
     imports: [
@@ -26,8 +24,6 @@ import { FileSizePipe } from './pipes/file-size.pipe';
         DepositEditorModalComponent,
         DepositUploadFileComponent,
         DepositDeleteModalComponent,
-        FileTypeImagePipe,
-      FileSizePipe
 
     ],
   declarations: [
@@ -36,8 +32,6 @@ import { FileSizePipe } from './pipes/file-size.pipe';
     DepositEditorModalComponent,
     DepositUploadFileComponent,
     DepositDeleteModalComponent,
-    FileTypeImagePipe,
-    FileSizePipe
   ]
 })
 export class GenericsModule { }

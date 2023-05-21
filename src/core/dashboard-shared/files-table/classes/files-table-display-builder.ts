@@ -4,8 +4,8 @@ import {Folder} from "../../../../app/dashboard/classes/models/folder";
 
 export class FilesTableDisplayBuilder{
   public static build(documents: DepositDocument[], folders: Folder[] ) : FileTableDisplay[]{
-    const documentsDisplay = documents.map(d => FilesTableDisplayBuilder.buildForDocument(d))
-    const foldersDisplay = folders.map(f => FilesTableDisplayBuilder.buildForFolders(f))
+    const documentsDisplay = documents?.map(d => FilesTableDisplayBuilder.buildForDocument(d))
+    const foldersDisplay = folders?.map(f => FilesTableDisplayBuilder.buildForFolders(f))
     return [
       ...foldersDisplay,
       ...documentsDisplay
