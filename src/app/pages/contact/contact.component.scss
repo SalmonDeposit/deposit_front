@@ -10,3 +10,13 @@ h1{
 .container{
   margin-bottom: 7rem;
 }
+.smiley-p{
+  position: relative;
+  width: fit-content;
+  span{
+    font-size: 1.5rem;
+    position: absolute;
+    right: -2.2rem;
+    top:-0.5rem;
+  }
+}

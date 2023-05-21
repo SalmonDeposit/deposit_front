@@ -9,6 +9,7 @@ import { DepositUploadFileComponent } from './components/deposit-upload-file/dep
 import { DepositDeleteModalComponent } from './components/deposit-delete-modal/deposit-delete-modal.component';
 import {FileTypeImagePipe} from "./pipes/file-type-image.pipe";
 import { FileSizePipe } from './pipes/file-size.pipe';
+import {EmojiDirective} from "./directives/emojy.directive";
 
 @NgModule({
     imports: [
@@ -27,8 +28,8 @@ import { FileSizePipe } from './pipes/file-size.pipe';
         DepositUploadFileComponent,
         DepositDeleteModalComponent,
         FileTypeImagePipe,
-      FileSizePipe
-
+      FileSizePipe,
+      EmojiDirective
     ],
   declarations: [
     DepositModalComponent,
@@ -37,7 +38,8 @@ import { FileSizePipe } from './pipes/file-size.pipe';
     DepositUploadFileComponent,
     DepositDeleteModalComponent,
     FileTypeImagePipe,
-    FileSizePipe
+    FileSizePipe,
+    EmojiDirective
   ]
 })
 export class GenericsModule { }
