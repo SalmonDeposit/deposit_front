@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { AppComponent } from './app.component';
 import { Route, RouterModule } from '@angular/router';
@@ -12,7 +12,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UserGuard} from "../core/generics/guards/user.guard";
 import { PrivacyPolicyManagementComponent } from './privacy-policy-management/privacy-policy-management.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import localeFr from '@angular/common/locales/fr';
+import {registerLocaleData} from "@angular/common";
 
+registerLocaleData(localeFr);
 const routes: Route[] = [
   {
     path: 'pages',
@@ -46,6 +49,7 @@ const routes: Route[] = [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
     { provide: HTTP_INTERCEPTORS, useClass: DepositTokenCrsfInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {provide: LOCALE_ID, useValue: 'fr-FR'},
     SnotifyService,
     {
       provide: 'env',
