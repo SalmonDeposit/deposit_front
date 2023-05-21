@@ -10,7 +10,7 @@ describe('ConnectionModalComponent', () => {
 
   beforeEach(async () => {
     const tb = DEPOSIT_TEST_BED.forComponent(ConnectionModalComponent);
-    tb.providers.push(ConnectionFormBuilder)
+    // tb.providers.push(ConnectionFormBuilder)
     await TestBed.configureTestingModule(tb)
       .compileComponents();
 
