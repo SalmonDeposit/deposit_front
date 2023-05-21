@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {SnotifyService} from "ng-snotify";
 import {ServiceGeneric} from "../../services/http/service-generic.service";
 
@@ -11,7 +11,10 @@ export class DepositDeleteModalComponent {
   @Input() service?: ServiceGeneric;
   @Input() title?: string;
   @Input() objectId?: string;
+  @Input() extraInformations: TemplateRef<any>;
+  @Input() deleteSnotify: string = "Element bien supprimé"
   @Output() isOpenChange = new EventEmitter();
+
   openValue = false
   file?: any
 
@@ -36,7 +39,7 @@ export class DepositDeleteModalComponent {
     if(!this.objectId){return;}
     this.service?.delete(this.objectId).subscribe({
       next: () => {
-        this.sno.success("Element bien supprimé");
+        this.sno.success(this.deleteSnotify);
         this.isOpenChange.emit(false);
         this.service?.updateRequested.next(null);
       }

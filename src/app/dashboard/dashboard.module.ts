@@ -11,6 +11,7 @@ import {SharedModule} from "../../core/shared/shared.module";
 import {ClrIconModule} from "@clr/angular";
 import {FormsModule} from "@angular/forms";
 import {DashboardSharedModule} from "../../core/dashboard-shared/dashboard-shared.module";
+import { AccountManagementComponent } from './account-management/account-management.component';
 
 const routes: Route[] = [
   { path: '', component: DashboardComponent,
@@ -23,7 +24,11 @@ const routes: Route[] = [
     },
     {path: 'profiles',
       loadChildren: () => import('./profiles-dashboard/profile-dashboard.module').then((x) => x.ProfilesDashboardModule)
+    },
+    {path: 'my-account',
+      loadChildren: () => import('./account-management/account-management.module').then((x) => x.AccountManagementModule)
     }
+
   ]}
 ];
 
