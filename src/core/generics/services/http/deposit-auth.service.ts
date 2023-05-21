@@ -39,5 +39,8 @@ export class DepositAuthService {
   public logout() : Observable<any>{
     return this.apiService.logout()
   }
+  public removeToken(){
+    localStorage.removeItem('token')
+  }
 
 }
