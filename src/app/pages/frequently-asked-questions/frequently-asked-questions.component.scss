@@ -1,15 +1,13 @@
 @import "src/styles/variables.scss";
-@import "~@clr/ui/clr-ui.min.css";
 
 h1{
   color: $blue;
-
 }
+
 .clr-accordion-panel {
   background-color: blue;
 
 }
-
 
 #frequently-asked-questions {
   width: 100%;
@@ -23,10 +21,10 @@ h1{
 
 
   }
-  
+
   /* Style pour la question */
   .faq-question {
-    
+
     margin: 1rem auto auto auto;
     cursor: pointer;
     font-size: 18px;
@@ -39,12 +37,12 @@ h1{
   /* Style pour la réponse */
   .faq-answer {
     padding: 10px;
-    
+
     margin-left: 2opx;
   }
-  
+
   /* Style pour la réponse affichée */
-  
+
   .faq-answer.active {
     display: block;
   }

@@ -17,7 +17,7 @@ const routes: Route[] = [
   { path: 'mentions-legales', component: LegalNoticeComponent},
   {path : 'contact', component: ContactComponent },
   {path: 'politique-de-confidentialite', component: PrivacyPolicyComponent},
-  {path: 'frequently-asked-questions', component: FrequentlyAskedQuestionsComponent}
+  {path: 'foire-aux-questions', component: FrequentlyAskedQuestionsComponent}
 ];
 
 @NgModule({
