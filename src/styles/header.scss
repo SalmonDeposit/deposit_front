@@ -58,7 +58,6 @@ header {
     }
   }
 }
-
 #user-buttons {
   display: flex;
   justify-content: space-between;
@@ -111,7 +110,6 @@ header {
 #logo-responsive{
   display: none;
 }
-
 @media (max-width: 768px) {
   header{
     height: 90px;

@@ -6,10 +6,8 @@ import {FormsModule} from "@angular/forms";
 import {ClrDatagridModule, ClrIconModule, ClrProgressBarModule} from "@clr/angular";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { DocumentCardComponent } from './document-card/document-card.component';
-import {DatePipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
-import { FileTypeImagePipe } from '../generics/pipes/file-type-image.pipe';
+import {DatePipe, JsonPipe, NgClass, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
-import {DashboardHomeModule} from "../../app/dashboard/dashboard-home/dashboard-home.module";
 import {UserQuickAccessComponent} from "./user-quick-access/user-quick-access.component";
 import {GenericsModule} from "../generics/generic.module";
 import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
@@ -17,6 +15,7 @@ import {FilesTableComponent} from "./files-table/files-table.component";
 import {FilesTableHeaderComponent} from "./files-table/files-table-header/files-table-header.component";
 import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-form.builder";
+import { AsideMenuResponsiveComponent } from './aside-menu-responsive/aside-menu-responsive.component';
 
 
 @NgModule({
@@ -28,7 +27,8 @@ import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-for
     UserQuickAccessComponent,
     UserButtonsComponent,
     FilesTableComponent,
-    FilesTableHeaderComponent
+    FilesTableHeaderComponent,
+    AsideMenuResponsiveComponent
   ],
   imports: [
     FormsModule,
@@ -44,19 +44,21 @@ import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-for
     ClrDatagridModule,
     CdkDropList,
     CdkDrag,
+    NgClass,
   ],
   providers: [
     FolderFormBuilder
   ],
-    exports: [
-        AsideMenuComponent,
-        AsideProfileInfoComponent,
-        DepositSearchDocumentBarComponent,
-        DocumentCardComponent,
-      UserQuickAccessComponent,
-      UserButtonsComponent,
-      FilesTableComponent
-    ],
+  exports: [
+    AsideMenuComponent,
+    AsideProfileInfoComponent,
+    DepositSearchDocumentBarComponent,
+    DocumentCardComponent,
+    UserQuickAccessComponent,
+    UserButtonsComponent,
+    FilesTableComponent,
+    AsideMenuResponsiveComponent
+  ],
   bootstrap: []
 })
 export class DashboardSharedModule { }

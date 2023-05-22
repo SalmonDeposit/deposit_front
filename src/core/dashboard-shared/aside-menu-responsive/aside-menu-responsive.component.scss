@@ -1,0 +1,93 @@
+@import "src/styles/variables";
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: white;
+}
+.header-responsive{
+  display: none;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-top: 1rem;
+  }
+  .isMenuOpen{
+    color:$salmon;
+    position: absolute;
+    z-index: 9999;
+  }
+  nav{
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: white;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 1036;
+    background-image: url("/assets/img/waves-modals.svg");
+    background-position: bottom -1rem center;
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    .user-modals{
+      display: flex;
+      margin-top: 6rem;
+      justify-content: space-around;
+    }
+    #user-buttons{
+      margin: auto;
+      margin-top: 6rem;
+
+    }
+    .links-responsive{
+      margin-top: 8rem;
+      a{
+        text-decoration: none;
+        color: $blue;
+        font-size: 1rem;
+        display: flex;
+        margin-bottom: 0.5rem;
+        fa-icon{
+          margin-right: 0.5rem;
+          color: $salmon_dark;
+        }
+      }
+      h4{
+        color: $salmon_dark;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+    }
+    hr{
+      margin-top : 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #428fc3;
+      width: 8rem;
+      background-color: #428fc3;
+    }
+    #dashboard-storage-infos{
+      width: 80%;
+      margin: auto;
+    }
+    #nav-responsive-logo{
+      width: 7rem;
+      position: absolute;
+      right: 10px;
+      top:10px;
+      img{
+        width: 100%
+      }
+    }
+  }
+  .open{
+    display: block;
+
+  }
+  .user-simon-coin{
+    margin: auto;
+    margin-top: 5rem
+  }
+}

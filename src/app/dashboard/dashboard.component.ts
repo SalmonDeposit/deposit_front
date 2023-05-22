@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent{
-
-  constructor(
-              public router: Router,
-  ) {
-  }
+  constructor(public router: Router) {}
 
 
 }

@@ -1,0 +1,32 @@
+<nav class="header-responsive" [ngClass]="{'open': isMenuOpen}">
+  <div id="nav-responsive-logo">
+    <a href="/" (click)="toggleMenu()">
+      <img src="/assets/img/logo/logo_saumon.png" alt="deposit logo" />
+    </a>
+  </div>
+  <div class="links-responsive">
+    <div>
+      <a (click)="toggleMenu()" [routerLink]="['/dashboard/files']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mon coffre</a>
+      <a (click)="toggleMenu()" [routerLink]="['/dashboard/profiles']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mes profils</a>
+      <a (click)="toggleMenu()" [routerLink]="['/dashboard/my-account']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mes profils</a>
+    </div>
+  </div>
+  <hr>
+  <div id="dashboard-storage-infos">
+    <p>Espace de stockage</p>
+    <clr-progress-bar  clrValue="300" clrMax="500" ></clr-progress-bar>
+    <span> 300mo sur 500mo</span>
+  </div>
+  <div class="user-simon-coin">
+    <div>
+      <img src="../../../assets/img/simon_coin.png">
+    </div>
+    27 sc
+  </div>
+
+
+
+</nav>
+<div class="menu-toggle" [ngClass]="{'isMenuOpen': isMenuOpen}" (click)="toggleMenu()">
+  <fa-icon [icon]="isMenuOpen ? times : bars" size="2x"></fa-icon>
+</div>
