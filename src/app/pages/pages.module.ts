@@ -9,12 +9,15 @@ import { ContactComponent } from './contact/contact.component';
 import {GenericsModule} from "../../core/generics/generic.module";
 import {ContactFormBuilder} from "./contact/classes/contactFormBuilder";
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { ClarityModule } from '@clr/angular';
+import { FrequentlyAskedQuestionsComponent } from './frequently-asked-questions/frequently-asked-questions.component';
 
 const routes: Route[] = [
   { path: 'qui-sommes-nous', component: WhoYouAreComponent},
   { path: 'mentions-legales', component: LegalNoticeComponent},
   {path : 'contact', component: ContactComponent },
-  {path: 'politique-de-confidentialite', component: PrivacyPolicyComponent}
+  {path: 'politique-de-confidentialite', component: PrivacyPolicyComponent},
+  {path: 'frequently-asked-questions', component: FrequentlyAskedQuestionsComponent}
 ];
 
 @NgModule({
@@ -24,13 +27,15 @@ const routes: Route[] = [
     SharedModule,
     FontAwesomeModule,
     GenericsModule,
+    ClarityModule
 
   ],
   declarations: [
     WhoYouAreComponent,
     LegalNoticeComponent,
     ContactComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    FrequentlyAskedQuestionsComponent
   ],
   providers: [
     ContactFormBuilder

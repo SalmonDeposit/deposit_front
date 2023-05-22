@@ -1,0 +1,33 @@
+<app-deposit-header></app-deposit-header>
+<div class="container">
+  <h1> Foire aux questions </h1> 
+
+
+<section id="frequently-asked-questions">
+  <div class="faq" *ngFor="let category of faq"> 
+    <h3>{{category.category}}</h3>
+
+  
+    <clr-accordion *ngFor="let question of category.questions">
+      <clr-accordion-panel>
+        <clr-accordion-title>
+          {{ question.question }}        
+        </clr-accordion-title>
+        <clr-accordion-content *clrIfExpanded>
+          <div   class="faq-answer">{{ question.answer }}  </div>
+        </clr-accordion-content>
+      </clr-accordion-panel>
+    
+     
+  
+ 
+ </clr-accordion>
+ </div>
+</section>
+      
+     
+
+
+
+
+<app-deposit-footer></app-deposit-footer>
