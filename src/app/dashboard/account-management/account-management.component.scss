@@ -1,7 +1,22 @@
+fa-icon{
+  margin-right: 1rem;
+}
+.card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .card-footer{
   display: flex;
   justify-content: flex-end;
-  fa-icon{
-    margin-right: 1rem;
-  }
+
+}
+.header-account{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.account-container{
+  display: flex;
+  gap: 1rem
 }

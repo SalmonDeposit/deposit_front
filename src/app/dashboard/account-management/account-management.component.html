@@ -1,17 +1,29 @@
 <ng-container *ngIf="user">
-  <h1>Mon compte</h1>
-  <div class="card" *ngIf="user">
-    <h3 class="card-header">Mon profil</h3>
-    <div class="card-block">
-      <div class="card-text">
-        <p><b>Email : </b> {{user.email}}</p>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-danger" (click)="deleteModal = true"><fa-icon [icon]="trash"></fa-icon>  Supprimer</button>
+  <div class="header-account">
+    <h1>Mon compte</h1>
+    <button class="btn btn-danger" (click)="deleteModal = true"><fa-icon [icon]="trash"></fa-icon>  Supprimer</button>
+  </div>
+  <div *ngIf="user" class="account-container">
+    <div class="card">
+      <h3 class="card-header">
+        Mon profil
+        <button class="btn btn-primary" (click)="dlRgpdData()"> <fa-icon [icon]="dl"></fa-icon>Télécharger mes données </button>
+      </h3>
+      <div class="card-block">
+        <div class="card-text">
+          <p><b>Email : </b> {{user.email}}</p>
+        </div>
       </div>
     </div>
-
+    <div class="card">
+      <h3 class="card-header">Changer mon mot de passe</h3>
+      <div class="card-block">
+        <div class="card-text">
+        </div>
+      </div>
+    </div>
   </div>
+
 
   <app-deposit-delete-modal title="Supprimer mon compte utilisateur"
                             [objectId]="user.id"
