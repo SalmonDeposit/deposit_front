@@ -19,3 +19,16 @@
     color: $salmon;
   }
 }
+@media (max-width: 768px) {
+  .deposit-search-bar{
+    width: 80%;
+    margin: auto;
+    input{
+      border-radius: 5rem;
+      height: 36px;
+    }
+    .search-button{
+      top: 0.35rem
+    }
+  }
+}

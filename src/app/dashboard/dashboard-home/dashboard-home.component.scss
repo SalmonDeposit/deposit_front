@@ -17,3 +17,12 @@
     margin: 1rem 0;
   }
 }
+@media (max-width: 768px) {
+  #dashboard-home-header {
+    #dashboard-home-header-greetings {
+      display: none;
+    }
+  }
+
+
+}

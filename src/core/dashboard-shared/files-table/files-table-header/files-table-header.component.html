@@ -1,11 +1,11 @@
 <div class="header-details">
   <h1 *ngIf="currentFolder">{{currentFolder.name}}</h1>
-  <div class="btn-group btn-primary" *ngIf="!searchMode">
+  <div class="btn-group btn-primary btn-deposit" *ngIf="!searchMode">
     <button  (click)="addDocumentModal = true" class="btn">
       <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
       Charger
     </button>
-    <button  (click)="addFolderModal = true" class="btn btn-secondary">
+    <button  (click)="addFolderModal = true" class="btn btn-secondary btn-deposit">
       <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
       Créer un dossier
     </button>
