@@ -16,6 +16,7 @@ import {FilesTableHeaderComponent} from "./files-table/files-table-header/files-
 import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
 import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-form.builder";
 import { AsideMenuResponsiveComponent } from './aside-menu-responsive/aside-menu-responsive.component';
+import {PipeModule} from "../generics/pipes/pipe.module";
 
 
 @NgModule({
@@ -30,22 +31,23 @@ import { AsideMenuResponsiveComponent } from './aside-menu-responsive/aside-menu
     FilesTableHeaderComponent,
     AsideMenuResponsiveComponent
   ],
-  imports: [
-    FormsModule,
-    ClrIconModule,
-    FontAwesomeModule,
-    JsonPipe,
-    DatePipe,
-    ClrProgressBarModule,
-    NgIf,
-    NgForOf,
-    RouterLink,
-    GenericsModule,
-    ClrDatagridModule,
-    CdkDropList,
-    CdkDrag,
-    NgClass,
-  ],
+    imports: [
+        FormsModule,
+        ClrIconModule,
+        FontAwesomeModule,
+        JsonPipe,
+        DatePipe,
+        ClrProgressBarModule,
+        NgIf,
+        NgForOf,
+        RouterLink,
+        GenericsModule,
+        ClrDatagridModule,
+        CdkDropList,
+        CdkDrag,
+        PipeModule.forRoot(),
+        NgClass,
+    ],
   providers: [
     FolderFormBuilder
   ],

@@ -20,6 +20,10 @@ export class UserService extends ServiceGeneric {
     const url = this.baseUrl.substring(0, this.baseUrl.length-1);
     return this.http.get(url);
   }
+  rgpd() : Observable<any>{
+    const url = `${this.baseUrl.substring(0, this.baseUrl.length-1)}/data`;
+    return this.http.get(url);
+  }
 
 
 }

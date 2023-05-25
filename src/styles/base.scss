@@ -206,6 +206,12 @@ body,
   color: var(--clr-p1-color, hsl(198deg, 0%, 40%));
   font-weight: bold;
   font-size: 1.2rem;
+.clr-accordion-header{
+  border-bottom-left-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+  border-top-left-radius: 0!important;
+  border-top-right-radius: 0!important;
+}
 
   img {
     width: 100%;

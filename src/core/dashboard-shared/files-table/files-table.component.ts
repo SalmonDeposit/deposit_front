@@ -19,8 +19,8 @@ import {DateComparator, NameComparator} from "../../generics/grid-comparators/ty
   styleUrls: ['./files-table.component.scss']
 })
 export class FilesTableComponent implements OnInit, OnChanges {
-  @Input() documents: DepositDocument[]
-  @Input() folders: Folder[]
+  @Input() documents: DepositDocument[] = [];
+  @Input() folders: Folder[] = [];
   @Input() currentFolder:Folder;
   @Input() searchMode:boolean;
 
@@ -44,7 +44,6 @@ export class FilesTableComponent implements OnInit, OnChanges {
   }
   ngOnInit() {
       this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);
-      console.log(this.filesDisplay)
   }
   ngOnChanges(changes: SimpleChanges) {
     this.filesDisplay = FilesTableDisplayBuilder.build(this.documents, this.folders);

@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserQuickAccessComponent } from './user-quick-access.component';
-
+import {DEPOSIT_TEST_BED} from "../../../deposit.testbed";
 describe('UserQuickAccessComponent', () => {
   let component: UserQuickAccessComponent;
   let fixture: ComponentFixture<UserQuickAccessComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ UserQuickAccessComponent ]
-    })
-    .compileComponents();
+    const tb = DEPOSIT_TEST_BED.forComponent(UserQuickAccessComponent);
+    await TestBed.configureTestingModule(tb)
+      .compileComponents();
 
     fixture = TestBed.createComponent(UserQuickAccessComponent);
     component = fixture.componentInstance;

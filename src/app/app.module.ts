@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UserGuard} from "../core/generics/guards/user.guard";
 import { PrivacyPolicyManagementComponent } from './privacy-policy-management/privacy-policy-management.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {AdminGuard} from "../core/generics/guards/admin.guard";
 import localeFr from '@angular/common/locales/fr';
 import {registerLocaleData} from "@angular/common";
 
@@ -25,6 +26,11 @@ const routes: Route[] = [
     path: 'dashboard',
     canActivate: [UserGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then((x) => x.DashboardModule)
+  },
+  {
+    path: 'admin',
+    canActivate: [AdminGuard],
+    loadChildren: () => import('./admin/admin.module').then((x) => x.AdminModule)
   },
   {
     path: '',

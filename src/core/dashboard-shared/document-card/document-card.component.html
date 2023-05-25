@@ -1,4 +1,4 @@
- <div class="deposit-card" (click)="navigateToDocument()">
+ <div class="deposit-card" (click)="navigateToDocument()" *ngIf="document">
    <div class="card">
      <span class="date-document">{{document.createdAt | date: 'dd.MM.yyyy' }}</span>
      <span class="name-document">{{document.name}}</span>

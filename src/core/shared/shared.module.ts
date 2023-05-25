@@ -15,8 +15,8 @@ import { ConnectionModalComponent } from './deposit-header/connection-modal/conn
 import { RouterModule } from '@angular/router';
 import {NgClass, NgIf} from "@angular/common";
 import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module";
-import { HeaderResponsiveComponent } from './deposit-header/header-responsive/header-responsive.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {HeaderResponsiveComponent} from "./deposit-header/header-responsive/header-responsive.component";
 
 
 @NgModule({

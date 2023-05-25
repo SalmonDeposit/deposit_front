@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../classes/models/user";
 import {UserService} from "../services/user.service";
-import {faTrash} from "@fortawesome/free-solid-svg-icons";
+import {faDownload, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {Router} from "@angular/router";
 import {DepositAuthService} from "../../../core/generics/services/http/deposit-auth.service";
-import {SnotifyService} from "ng-snotify";
+import {saveAs} from "file-saver";
 
 @Component({
   selector: 'app-account-management',
@@ -16,6 +16,7 @@ export class AccountManagementComponent implements OnInit{
   user:User;
   deleteModal= false;
   trash = faTrash as IconProp;
+  dl = faDownload as IconProp;
 
   constructor(public userService: UserService,
               public router: Router,
@@ -32,5 +33,14 @@ export class AccountManagementComponent implements OnInit{
         this.authService.removeToken()
       }
     })
+  }
+  dlRgpdData(){
+    this.userService.rgpd().subscribe({
+      next: res => {
+        let file = new Blob([JSON.stringify(res)])
+        saveAs(file, `${this.user.email}_data.json`);
+      }
+    })
+
   }
 }
