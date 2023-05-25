@@ -1,7 +1,32 @@
 .files-table{
   margin-bottom: 5rem;
 }
-@media (max-width: 768px) {
+.files-table-responsive{
+  display: none;
+}
 
+@media (max-width: 768px) {
+  .files-datagrid{
+    display: none;
+  }
+  .files-table-responsive{
+    display: block;
+    padding: 0 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .responsive-row-file{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .infos-file{
+        p{
+          margin: 0;
+        }
+        display: flex;
+        align-items: center;
+        gap: 1rem
+      }
+    }
+  }
 
 }

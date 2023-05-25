@@ -2,5 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  h1{
+    margin: 0;
+  }
+}
+.position-header{
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+}
+@media (max-width: 768px) {
+  .btn-deposit{
+    span{
+      display: none;
+    }
+    fa-icon{
+      margin: 0
+    }
+  }
+  .position-header{
+    top: 0.3rem;
+  }
+
 }

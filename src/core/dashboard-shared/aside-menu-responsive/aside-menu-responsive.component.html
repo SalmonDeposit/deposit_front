@@ -1,6 +1,6 @@
 <nav class="header-responsive" [ngClass]="{'open': isMenuOpen}">
   <div id="nav-responsive-logo">
-    <a href="/" (click)="toggleMenu()">
+    <a href="/dashboard/home" (click)="toggleMenu()">
       <img src="/assets/img/logo/logo_saumon.png" alt="deposit logo" />
     </a>
   </div>
@@ -8,7 +8,7 @@
     <div>
       <a (click)="toggleMenu()" [routerLink]="['/dashboard/files']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mon coffre</a>
       <a (click)="toggleMenu()" [routerLink]="['/dashboard/profiles']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mes profils</a>
-      <a (click)="toggleMenu()" [routerLink]="['/dashboard/my-account']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mes profils</a>
+      <a (click)="toggleMenu()" [routerLink]="['/dashboard/my-account']"><fa-icon class="icon" [icon]="caretRight"></fa-icon> Mon compte</a>
     </div>
   </div>
   <hr>

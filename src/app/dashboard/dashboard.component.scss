@@ -36,6 +36,7 @@
 }
 
 @media (max-width: 768px) {
+
   app-aside-menu{
     display: none;
   }
@@ -68,5 +69,11 @@
       display: none;
     }
   }
-
+}
+@media (max-width: 768px) {
+  #dashboard-wrapper{
+    main{
+      padding-left: 20px;
+    }
+  }
 }

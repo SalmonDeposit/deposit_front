@@ -1,6 +1,6 @@
   <app-files-table-header [currentFolder]="currentFolder" [searchMode]="searchMode"></app-files-table-header>
   <ng-container *ngIf="filesDisplay && filesDisplay.length > 0 else noFiles">
-    <clr-datagrid [clrDgRowSelection]="false" cdkDropList (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
+    <clr-datagrid class="files-datagrid" [clrDgRowSelection]="false" cdkDropList (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
       <clr-dg-column>Type</clr-dg-column>
       <clr-dg-column [clrDgSortBy]="nameComparator">Nom</clr-dg-column>
       <clr-dg-column [clrDgSortBy]="dateComparator">Date de création</clr-dg-column>
@@ -30,6 +30,31 @@
       </clr-dg-row>
     </clr-datagrid>
 
+   <div class="files-table-responsive">
+     <ng-container *ngFor="let file of filesDisplay">
+       <div class="responsive-row-file">
+         <div class="infos-file">
+           <div class="img-document-type" (click)="goToDetails(file.id, file.elementType)">
+             <img src="{{file.type| fileTypeImagePipe}}"/>
+           </div>
+           <div>
+             <p>{{file.name}}</p>
+             <span>
+      <span> {{file.size}}</span>
+      <span>{{ file.createdAt | date:'dd.MM.YYYY HH:mm' }} </span>
+    </span>
+           </div>
+         </div>
+         <div>
+           <button (click)="onDelete(file.id, file.elementType)" class="btn btn-danger">
+             <fa-icon class="icon" [icon]="trash"></fa-icon>
+           </button>
+         </div>
+       </div>
+       <hr>
+     </ng-container>
+   </div>
+
     <app-deposit-delete-modal title="Supprimer le dossier"
                               [objectId]="currentDeleteDocumentId"
                               [isOpen]="deleteFolderModal"
@@ -45,7 +70,7 @@
   </ng-container>
   <ng-template #noFiles>
     <p>
-      Y a pas de fichier de tes morts
+      Il n'y a aucun fichier pour l'instant
     </p>
 
   </ng-template>
