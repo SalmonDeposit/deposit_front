@@ -70,10 +70,31 @@
     }
   }
 }
+#btn-return-responsive{
+ display: none;
+}
+
 @media (max-width: 768px) {
   #dashboard-wrapper{
     main{
       padding-left: 20px;
+    }
+  }
+  #btn-return-responsive{
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    button{
+      padding: 0;
+      margin: 0;
+      color: white;
+      background-color: $blue;
+      max-width: 2.5rem;
+      min-width: 2.5rem;
+      fa-icon{
+        margin-top: 5px;
+      }
     }
   }
 }

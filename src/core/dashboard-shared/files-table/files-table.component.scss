@@ -4,6 +4,11 @@
 .files-table-responsive{
   display: none;
 }
+.actions-buttons{
+  button{
+    margin:auto;
+  }
+}
 
 @media (max-width: 768px) {
   .files-datagrid{

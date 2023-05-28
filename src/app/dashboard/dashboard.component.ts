@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRotateLeft} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent{
-  constructor(public router: Router) {}
+  returnIcon = faArrowRotateLeft as IconProp;
+  constructor(public router: Router, private location: Location) {}
 
+  return(){
+    this.location.back()
+  }
 
 }
