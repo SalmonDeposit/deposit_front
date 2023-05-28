@@ -1,7 +1,10 @@
 <ng-container *ngIf="user">
   <div class="header-account">
     <h1>Mon compte</h1>
-    <button class="btn btn-danger" (click)="deleteModal = true"><fa-icon [icon]="trash"></fa-icon>  Supprimer</button>
+    <button class="btn btn-danger btn-deposit" (click)="deleteModal = true">
+      <fa-icon [icon]="trash"></fa-icon>
+      <span> Supprimer</span>
+      </button>
   </div>
   <div *ngIf="user" class="account-container">
     <div class="card">

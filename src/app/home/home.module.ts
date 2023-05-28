@@ -14,31 +14,37 @@ import { ValuesComponent } from './sections/values/values.component';
 import {SocialLoginModule
 } from "@abacritt/angularx-social-login";
 import { SwiperModule } from 'swiper/angular';
+import { PlansComponent } from './sections/plans/plans.component';
+import {PlanService} from "./sections/plans/plan.service";
+import {DashboardSharedModule} from "../../core/dashboard-shared/dashboard-shared.module";
 
 const routes: Route[] = [
   { path: '', component: HomeComponent},
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    GenericsModule,
-    ReactiveFormsModule,
-    SharedModule,
-    SocialLoginModule,
-    SwiperModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        GenericsModule,
+        ReactiveFormsModule,
+        SharedModule,
+        SocialLoginModule,
+        SwiperModule,
+        DashboardSharedModule
+    ],
   declarations: [
     HomeComponent,
     BaselineComponent,
     SupportComponent,
     TestimoniesComponent,
-    ValuesComponent
+    ValuesComponent,
+    PlansComponent
   ],
   providers: [
     SignInFormBuilder,
     AuthApiService,
+    PlanService
   ]
 })
 export class HomeModule { }

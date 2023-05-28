@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 #dashboard-wrapper {
   display: flex;
   align-items: stretch;
@@ -27,5 +29,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+#user-buttons{
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  app-aside-menu{
+    display: none;
+  }
+  app-aside-profile-info{
+    display: none;
+  }
+  #dashboard-menu-container{
+    background-color: $salmon;
+    min-width: 3rem;
+    max-width: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #user-buttons{
+      .user-button{
+        border-color: white;
+        margin-top: 3rem;
+      }
+      .user-coin{
+        color: white;
+      }
+      width: fit-content;
+    }
+
+    padding: 0!important;
+
+  }
+  #dashboard-wrapper{
+    #dashboard-infos-container{
+      display: none;
+    }
+  }
+}
+#btn-return-responsive{
+ display: none;
+}
+
+@media (max-width: 768px) {
+  #dashboard-wrapper{
+    main{
+      padding-left: 20px;
+    }
+  }
+  #btn-return-responsive{
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    button{
+      padding: 0;
+      margin: 0;
+      color: white;
+      background-color: $blue;
+      max-width: 2.5rem;
+      min-width: 2.5rem;
+      fa-icon{
+        margin-top: 5px;
+      }
+    }
   }
 }

@@ -4,19 +4,19 @@
 #mentions-Legales{
   margin: auto;
   h1{
-    text-align: center;
-  }
-  hr{
-    border: 1px solid $blue;
     margin-bottom: 4rem;
-    width: 8rem;
-    background-color:$blue;
+    color: $blue;
   }
   .text{
-
     width: 80%;
     margin: auto;
   }
   margin-bottom: 8rem;
 }
-
+@media (max-width: 768px) {
+  #mentions-Legales{
+    .text{
+      width: 100%;
+    }
+  }
+}

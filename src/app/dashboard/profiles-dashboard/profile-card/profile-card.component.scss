@@ -10,3 +10,10 @@
     align-items: center;
   }
 }
+@media (max-width: 768px) {
+  .profile-card{
+    min-width: 14.5rem;
+    max-width: 14.5rem;
+    margin-right: 0;
+  }
+}

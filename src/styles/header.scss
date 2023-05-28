@@ -58,7 +58,6 @@ header {
     }
   }
 }
-
 #user-buttons {
   display: flex;
   justify-content: space-between;
@@ -100,5 +99,122 @@ header {
   img {
     width: 100%;
   }
+}
+.header-responsive{
+  display: none;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+#logo-responsive{
+  display: none;
+}
+@media (max-width: 768px) {
+  header{
+    height: 90px;
+    background-position: center top;
+
+    .container{
+      padding: 1rem 20px;
+    }
+    #header-links-container, #header-auth-buttons-container{
+      display: none;
+    }
+    .app-user-button-desktop{
+      display: none;
+    }
+  }
+  #logo-responsive{
+    display: block;
+    max-width: 1.5rem;
+    position: absolute;
+    top: 8px;
+    img{
+      width: 100%;
+    }
+
+  }
+  #logo {
+    display: none;
+  }
+
+  app-header-responsive{
+    position: relative;
+    min-height: 90px;
+    width: 100%;
+    .menu-toggle {
+      display: block;
+      color: white;
+      position: absolute;
+      right: 20px;
+      top:20px;
+      z-index: 1037;
+    }
+    .isMenuOpen{
+      color: $blue;
+    }
+    nav{
+      min-height: 100vh;
+      min-width: 100vw;
+      background-color: white;
+      position: fixed;
+      top:0;
+      left: 0;
+      z-index: 1036;
+      background-image: url("/assets/img/waves-modals.svg");
+      background-position: bottom -1rem center;
+      background-repeat: no-repeat;
+      padding: 0 20px;
+      .user-modals{
+        display: flex;
+        margin-top: 6rem;
+        justify-content: space-around;
+      }
+      #user-buttons{
+        margin: auto;
+        margin-top: 6rem;
+
+      }
+      .links-responsive{
+        a{
+          text-decoration: none;
+          color: $blue;
+          font-size: 0.8rem;
+          display: flex;
+          fa-icon{
+            margin-right: 0.5rem;
+            color: $salmon_dark;
+          }
+        }
+        h4{
+          color: $salmon_dark;
+          font-weight: 400;
+          margin-bottom: 1rem;
+        }
+      }
+      hr{
+        margin-top : 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid #428fc3;
+        width: 8rem;
+        background-color: #428fc3;
+      }
+      #nav-responsive-logo{
+        width: 7rem;
+        position: absolute;
+        left: 10px;
+        top:10px;
+        img{
+          width: 100%
+        }
+      }
+    }
+    .open{
+      display: block;
+    }
+  }
+
+
 }
 

@@ -2,11 +2,11 @@
   <h2> Depos'It vous accompagne</h2>
   <hr>
   <div class="asides-containers">
-    <aside *ngFor="let i of [1, 2, 3]" class="aside-deposit-support">
+    <aside *ngFor="let item of supportItems" class="aside-deposit-support">
       <div class="imgs-container">
-        <img src="assets/img/home/deposit_icon.png">
+        <img [src]="item.icon">
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      <p>{{item.description}}</p>
     </aside>
   </div>
 </section>

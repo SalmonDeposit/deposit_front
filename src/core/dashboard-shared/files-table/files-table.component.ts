@@ -75,6 +75,9 @@ export class FilesTableComponent implements OnInit, OnChanges {
     const currentItem: FileTableDisplay = event.item.data; // récupère l'objet en cours
     const destinationIndex = event.currentIndex; // récupère l'index de la position de destination
     const destinationItem: FileTableDisplay = this.filesDisplay[destinationIndex-1]; // récupère l'objet de destination
+    console.log(event.item)
+    console.log(event.currentIndex)
+
     if(currentItem.elementType == "document" && destinationItem.elementType == "document"){
       this.sno.error("Impossible de transférer un fichier ds un fichier")
     }

@@ -1,13 +1,13 @@
-<div class="header-details">
+<div class="header-details" [ngClass]="{'position-header': isChestMode()}">
   <h1 *ngIf="currentFolder">{{currentFolder.name}}</h1>
-  <div class="btn-group btn-primary" *ngIf="!searchMode">
+  <div class="btn-group btn-primary btn-deposit" *ngIf="!searchMode">
     <button  (click)="addDocumentModal = true" class="btn">
-      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-      Charger
+      <fa-icon class="icon" [icon]="upload"> </fa-icon>
+      <span> Charger </span>
     </button>
-    <button  (click)="addFolderModal = true" class="btn btn-secondary">
-      <fa-icon class="icon" size="2x" [icon]="plus"> </fa-icon>
-      Créer un dossier
+    <button  (click)="addFolderModal = true" class="btn btn-secondary btn-deposit">
+      <fa-icon class="icon" [icon]="folder"> </fa-icon>
+      <span> Créer un dossier </span>
     </button>
   </div>
 </div>

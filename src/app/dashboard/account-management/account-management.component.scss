@@ -20,3 +20,35 @@ fa-icon{
   display: flex;
   gap: 1rem
 }
+@media (max-width: 768px) {
+  .account-container{
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .header-account{
+    .btn-deposit{
+      fa-icon{
+        margin: 0;
+      }
+      span{
+        display: none;
+      }
+    }
+    h1{
+      margin:0;
+    }
+  }
+  .card{
+    max-width: 15rem;
+    .card-header{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0.5rem;
+    }
+    h3{
+      font-size: 1rem;
+    }
+  }
+}

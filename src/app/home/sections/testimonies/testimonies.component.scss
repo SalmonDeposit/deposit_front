@@ -1,7 +1,7 @@
 @import "src/styles/variables";
 
 #testimonies {
-  background-color: rgba($salmon, 0.3);
+  @include bg-salmon;
   margin-top: 8rem;
 
   .container {
@@ -38,3 +38,22 @@
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  #testimonies{
+    .container{
+      flex-direction: column;
+      padding: 2rem 20px;
+      :last-child{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        .quote-character{
+          display: none;
+        }
+      }
+      aside{
+        width: 100%;
+      }
+    }
+  }
+}
+

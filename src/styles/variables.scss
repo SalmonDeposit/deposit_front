@@ -33,3 +33,6 @@ $purple_font: #7433FF;
 @mixin shadow-large {
   box-shadow: 0 .7rem 2rem rgba(0, 0, 0, 0.15);
 }
+@mixin bg-salmon{
+  background-color: rgba($salmon, 0.3);
+}

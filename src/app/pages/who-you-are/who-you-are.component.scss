@@ -8,13 +8,28 @@ h1{
 
 #qui-sommes-nous{
   display: flex;
-  justify-content: space-between;
-  margin-top: 4rem;
+
+  p{
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    line-height: 1.6rem;
+  }
+  :last-child{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
   aside{
-    width: 40%;
+    width: 50%;
+    .aside-img{
+      width: 70%;
+      img{
+        width: 100%;
+      }
+    }
   }
-  .text{
-  }
+
 }
 
 #notre-equipe{
@@ -49,8 +64,22 @@ h1{
   }
 }
 #notre-entreprise{
-  width: 70%;
   margin: 8rem auto auto;
+  .quote{
+    position: relative;
+    p{
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-left: 2.8rem;
+    }
+    .quote-character{
+      position: absolute;
+      color: $blue;
+      font-size: 6rem;
+      top:-80px
+
+    }
+  }
 
   h2{
     text-align: center;
@@ -68,7 +97,7 @@ h1{
 
 #nos-services{
   margin: 8rem auto;
-  width: 70%;
+  margin-bottom: 16rem;
 
   h2{
   text-align: center;
@@ -82,17 +111,21 @@ h1{
   p{
     .icon{
       color: salmon;
+      margin-right: 1rem;
     }
   }
 
   #services-images{
     display: flex;
     justify-content: space-between;
-    margin-top: 5rem;
     margin: auto;
+    margin-top: 2rem;
     padding-top: 4rem;
+    width: 70%;
     p{
       text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
     }
       div{
         width: 10rem;
@@ -106,3 +139,35 @@ h1{
 
   }
 }
+@media (max-width: 768px) {
+  #qui-sommes-nous{
+    flex-direction: column;
+    :last-child{
+      display: none;
+    }
+    aside{
+      width: 100%;
+    }
+  }
+  #notre-equipe{
+    #teams-images{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      div{
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  #services-images{
+  flex-direction: column;
+    align-items: center;
+    width: 100%;
+    div{
+      margin-bottom: 1.5rem;
+    }
+
+  }
+}
+

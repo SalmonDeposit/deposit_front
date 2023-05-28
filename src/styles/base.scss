@@ -190,11 +190,46 @@ body,
 #credential_picker_container {
   display: none;
 }
+#plans{
+  app-register-modal{
+    button{
+      margin: auto;
+      margin-top: 2rem;
+    }
+  }
+}
+.user-simon-coin {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--clr-p1-color, hsl(198deg, 0%, 40%));
+  font-weight: bold;
+  font-size: 1.2rem;
 .clr-accordion-header{
   border-bottom-left-radius: 0!important;
   border-bottom-right-radius: 0!important;
   border-top-left-radius: 0!important;
   border-top-right-radius: 0!important;
 }
+
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  h1{
+    line-height: 2.4rem;
+    font-size: 1.5rem!important;
+  }
+  h2{
+    font-size: 1.15rem!important;
+  }
+  h3{
+    font-size: 1.1rem!important;
+  }
+}
+
 
 

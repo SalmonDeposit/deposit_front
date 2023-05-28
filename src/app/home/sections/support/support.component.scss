@@ -2,7 +2,7 @@
 
 #deposit-support{
   width: 70%;
-  margin: 8rem auto auto;
+  margin: 8rem auto 13rem;
 
   h2{
     text-align: center;
@@ -18,6 +18,7 @@
     justify-content: space-between;
     width: 80%;
     margin: auto;
+
     .aside-deposit-support{
       display: flex;
       flex-direction: column;
@@ -25,15 +26,35 @@
       width: 10rem;
       p{
         text-align: center;
+        font-size: 0.85rem;
       }
 
       .imgs-container{
-        max-width: 2rem;
+        min-width: 3.4rem;
+        max-width: 3.4rem;
+        background-color: $blue;
+        border-radius: 1.7rem;
+        padding: 0.7rem;
         img{
           max-width: 100%;
         }
       }
     }
 
+  }
+}
+@media (max-width: 768px) {
+  #deposit-support{
+    width: 100%;
+    margin: 4rem auto auto;
+    .asides-containers{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .aside-deposit-support{
+        margin-bottom: 2rem;
+
+      }
+    }
   }
 }

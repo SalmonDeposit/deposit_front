@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {faFileCircleCheck, faPlus} from "@fortawesome/free-solid-svg-icons";
+import {faFileCircleCheck, faPlus, faUpload, faFolderPlus} from "@fortawesome/free-solid-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 import {SnotifyService} from "ng-snotify";
 import {Folder} from "../../../../app/dashboard/classes/models/folder";
@@ -7,6 +7,7 @@ import {DocumentService} from "../../../../app/dashboard/services/document.servi
 import {FolderService} from "../../../../app/dashboard/services/folder.service";
 import {FolderFormBuilder} from "../../../../app/dashboard/classes/builders/folder-form.builder";
 import {FileService} from "../../../../app/dashboard/services/file.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-files-table-header',
@@ -21,12 +22,15 @@ export class FilesTableHeaderComponent implements OnInit{
   addFolderModal = false;
   file = faFileCircleCheck as IconProp;
   plus = faPlus as IconProp;
+  upload =  faUpload as IconProp;
+  folder =  faFolderPlus as IconProp;
 
   constructor(public documentService: DocumentService,
               public folderService: FolderService,
               public folderFormBuilder: FolderFormBuilder,
               public fileService: FileService,
               public sno: SnotifyService,
+              public router: Router
   ) {
   }
 
@@ -65,6 +69,9 @@ export class FilesTableHeaderComponent implements OnInit{
         this.folderService.updateRequested.next(null)
       }
     });
+  }
+  isChestMode(){
+    return this.router.url.endsWith('dashboard/files');
   }
 
 }

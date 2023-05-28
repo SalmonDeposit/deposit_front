@@ -60,9 +60,39 @@ footer{
         color: $grey_dark
       }
     }
-
-
   }
-
-
 }
+@media (max-width: 768px) {
+  footer {
+    margin-top: 6rem;
+    .container {
+      width: 100%;
+
+      .links {
+        display: none !important;
+      }
+
+      .head-footer {
+        margin-bottom: 4rem;
+
+        .logos {
+          max-width: 10rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-left: 0;
+          margin: auto;
+        }
+      }
+
+      .legal-notice {
+        flex-direction: column;
+        text-align: center;
+        .legal-links{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
