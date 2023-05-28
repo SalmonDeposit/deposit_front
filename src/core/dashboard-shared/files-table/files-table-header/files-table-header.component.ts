@@ -71,7 +71,7 @@ export class FilesTableHeaderComponent implements OnInit{
     });
   }
   isChestMode(){
-    return this.router.url.endsWith('dashboard/files');
+    return this.router.url?.endsWith('dashboard/files');
   }
 
 }
