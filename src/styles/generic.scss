@@ -135,11 +135,22 @@ m-auto{
 }
 .header-actions{
   display: flex;
-  position: relative;
-  .add-button{
-    position: absolute;
-    top: 0.5rem;
-    left:9.5rem;
+  justify-content: space-between;
+  align-items: center;
+  h1{
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .header-actions{
+    .btn-deposit{
+      span{
+        display: none;
+      }
+      fa-icon{
+        margin: 0
+      }
+    }
   }
 }
 

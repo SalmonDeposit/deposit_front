@@ -20,7 +20,11 @@
 @media (max-width: 768px) {
   #dashboard-home-header {
     #dashboard-home-header-greetings {
-      display: none;
+     padding: 0;
+      padding-right: 1rem;
+      #user-buttons{
+        margin: 0;
+      }
     }
   }
 
