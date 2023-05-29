@@ -32,6 +32,8 @@
   .name-document {
     color: black;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .deposit-card-footer {
@@ -54,5 +56,8 @@
   .deposit-card{
     max-width: 7.5rem;
     max-height: 7.5rem;
+    .deposit-card-footer{
+      margin-top: 1rem;
+    }
   }
 }

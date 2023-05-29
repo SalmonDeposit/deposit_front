@@ -44,7 +44,10 @@
     display: none;
   }
   #dashboard-menu-container{
-    background-color: $salmon;
+    background-image: url("/assets/img/waves_menu.png");
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
     min-width: 3rem;
     max-width: 3rem;
     display: flex;
@@ -75,11 +78,6 @@
 }
 
 @media (max-width: 768px) {
-  #dashboard-wrapper{
-    main{
-      padding-left: 20px;
-    }
-  }
   #btn-return-responsive{
     display: block;
     position: fixed;

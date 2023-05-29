@@ -153,6 +153,7 @@ header {
     }
     .isMenuOpen{
       color: $blue;
+      position:fixed;
     }
     nav{
       min-height: 100vh;
@@ -162,9 +163,6 @@ header {
       top:0;
       left: 0;
       z-index: 1036;
-      background-image: url("/assets/img/waves-modals.svg");
-      background-position: bottom -1rem center;
-      background-repeat: no-repeat;
       padding: 0 20px;
       .user-modals{
         display: flex;
@@ -172,8 +170,8 @@ header {
         justify-content: space-around;
       }
       #user-buttons{
-        margin: auto;
-        margin-top: 6rem;
+        margin: auto!important;
+        margin-top: 6rem!important;
 
       }
       .links-responsive{
