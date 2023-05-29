@@ -17,6 +17,7 @@ import {NgClass, NgIf} from "@angular/common";
 import {DashboardSharedModule} from "../dashboard-shared/dashboard-shared.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {HeaderResponsiveComponent} from "./deposit-header/header-responsive/header-responsive.component";
+import {ResetPasswordFormBuilder} from "./deposit-header/builders/reset-password-form.builder";
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {HeaderResponsiveComponent} from "./deposit-header/header-responsive/head
   providers: [
     ConnectionFormBuilder,
     RegisterFormBuilder,
+    ResetPasswordFormBuilder,
     SocialAuthService,
     {
       provide: 'SocialAuthServiceConfig',
@@ -59,7 +61,7 @@ import {HeaderResponsiveComponent} from "./deposit-header/header-responsive/head
     DepositHeaderComponent,
     DepositFooterComponent,
     RegisterModalComponent,
-    ConnectionModalComponent
+    ConnectionModalComponent,
   ],
   bootstrap: []
 })

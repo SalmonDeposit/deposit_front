@@ -5,6 +5,7 @@ import {CommonModule} from "@angular/common";
 import {DashboardSharedModule} from "../../../core/dashboard-shared/dashboard-shared.module";
 import {GenericsModule} from "../../../core/generics/generic.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {UpdatePasswordFormBuilder} from "../classes/builders/update-password-form-builder";
 
 const routes: Route[] = [
   { path: '', component: AccountManagementComponent},
@@ -22,6 +23,8 @@ const routes: Route[] = [
     AccountManagementComponent
   ],
   exports: [],
-  providers: []
+  providers: [
+    UpdatePasswordFormBuilder
+  ]
 })
 export class AccountManagementModule { }

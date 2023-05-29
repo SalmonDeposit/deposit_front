@@ -7,13 +7,27 @@
   [service]="authApiService"
   (onSubmitForm)="onConnectionSubmit($event)"
   [customForm]="true"
-  [extraContent]="registerWithGoogle"
+  [extraContent]="extraContent"
 >
 </app-deposit-editor-modal>
 
-<ng-template #registerWithGoogle>
+<ng-template #extraContent>
+  <div class="reset-password" (click)="resetModal = true; connectionModal = false">
+    <span> J'ai oublié mon mot de passe </span>
+  </div>
+
   <div class="auth-with-google">
     <hr>
     <asl-google-signin-button type='standard' size='medium'></asl-google-signin-button>
   </div>
 </ng-template>
+
+<app-deposit-editor-modal
+  [title]="'Réinitialiser mon mot de passe'"
+  [formBuilder]="resetPasswordFormBuilder"
+  [isOpen]="resetModal"
+  (isOpenChange)="resetModal = $event"
+  (onSubmitForm)="onResetSubmit($event)"
+  [customForm]="true"
+>
+</app-deposit-editor-modal>

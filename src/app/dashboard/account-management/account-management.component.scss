@@ -20,6 +20,12 @@ fa-icon{
   display: flex;
   gap: 1rem
 }
+@media (max-width: 1600px) {
+  .account-container{
+    flex-direction: column;
+  }
+
+}
 @media (max-width: 768px) {
   .account-container{
     flex-direction: column;
