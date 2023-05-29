@@ -218,6 +218,11 @@ body,
     margin-bottom: 1rem;
   }
 }
+app-baseline{
+  .app-user-button-desktop{
+    display: none;
+  }
+}
 @media (max-width: 768px) {
   h1{
     line-height: 2.4rem;

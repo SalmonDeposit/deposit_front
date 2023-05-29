@@ -17,10 +17,7 @@
   </aside>
 </section>
 
-<section id="section-auth-buttons-container" *ngIf="!isConnected else userConnected">
+<section id="section-auth-buttons-container" *ngIf="!isConnected">
   <app-register-modal></app-register-modal>
   <app-connection-modal></app-connection-modal>
 </section>
-<ng-template #userConnected>
-  <app-user-buttons class="app-user-button-desktop"></app-user-buttons>
-</ng-template>
