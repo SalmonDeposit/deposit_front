@@ -18,13 +18,6 @@ export class TestimoniesComponent implements OnInit {
   constructor() {
     this.testimonies = TestimoniesFactory.get();
   }
-  onSwiper(swiper: any) {
-    console.log(swiper);
-  }
-  onSlideChange() {
-    console.log('slide change');
-  }
-
   ngOnInit(): void {
 
   }
