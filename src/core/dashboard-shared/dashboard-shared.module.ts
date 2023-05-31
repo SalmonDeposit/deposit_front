@@ -13,7 +13,7 @@ import {GenericsModule} from "../generics/generic.module";
 import {UserButtonsComponent} from "./user-buttons/user-buttons.component";
 import {FilesTableComponent} from "./files-table/files-table.component";
 import {FilesTableHeaderComponent} from "./files-table/files-table-header/files-table-header.component";
-import {CdkDrag, CdkDropList} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDragPreview, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
 import {FolderFormBuilder} from "../../app/dashboard/classes/builders/folder-form.builder";
 import { AsideMenuResponsiveComponent } from './aside-menu-responsive/aside-menu-responsive.component';
 import {PipeModule} from "../generics/pipes/pipe.module";
@@ -47,6 +47,8 @@ import {PipeModule} from "../generics/pipes/pipe.module";
         CdkDrag,
         PipeModule.forRoot(),
         NgClass,
+        CdkDragPreview,
+        CdkDropListGroup,
     ],
   providers: [
     FolderFormBuilder

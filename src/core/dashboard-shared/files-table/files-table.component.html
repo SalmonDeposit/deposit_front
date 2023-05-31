@@ -1,6 +1,6 @@
   <app-files-table-header [currentFolder]="currentFolder" [searchMode]="searchMode"></app-files-table-header>
-  <ng-container *ngIf="filesDisplay && filesDisplay.length > 0 else noFiles">
-    <clr-datagrid class="files-datagrid" [clrDgRowSelection]="false" cdkDropList (cdkDropListDropped)="onDrop($event)" cdkDropListSortingDisabled>
+  <ng-container *ngIf="filesDisplay && filesDisplay.length > 0 else noFiles" >
+    <clr-datagrid class="files-datagrid" [clrDgRowSelection]="false">
       <clr-dg-column>Type</clr-dg-column>
       <clr-dg-column [clrDgSortBy]="nameComparator">Nom</clr-dg-column>
       <clr-dg-column [clrDgSortBy]="dateComparator">Date de création</clr-dg-column>
@@ -8,8 +8,11 @@
       <clr-dg-column>Action</clr-dg-column>
 
       <clr-dg-row *clrDgItems="let fileDisplay of filesDisplay; let i = index"
-                  [clrDgItem]="fileDisplay">
-        <clr-dg-cell cdkDrag cdkDragLockAxis="y">
+                  [clrDgItem]="fileDisplay" cdkDropList (cdkDropListDropped)="onDrop($event, fileDisplay)"
+      (mouseenter)="currentFileHover = fileDisplay" (mouseleave)="currentFileHover = null"
+
+      >
+        <clr-dg-cell cdkDrag cdkDragLockAxis="y" >
           <div   class="img-document-type m-auto" (click)="goToDetails(fileDisplay.id, fileDisplay.elementType)">
             <img src="{{fileDisplay.type| fileTypeImagePipe}}"/>
           </div>
@@ -74,6 +77,5 @@
     </p>
 
   </ng-template>
-
 
 
