@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'dist',
   bundledWebRuntime: false,
   server: {
-    "hostname": "m.test.deposit.ovh",
+    "hostname": "m.deposit.ovh",
     "androidScheme": "https"
   }
 };
