@@ -6,8 +6,13 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 <body>
   <app-root></app-root>
+  <script src="https://bot.deposit.ovh/assets/modules/channel-web/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({ host: 'https://bot.deposit.ovh/', botId: 'simon_deposit', hideWidget: false })
+  </script>
 </body>
 </html>

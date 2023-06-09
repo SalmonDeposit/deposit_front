@@ -1,0 +1,57 @@
+<ng-container *ngIf="user">
+  <div class="header-account">
+    <h1>Mon compte</h1>
+    <button class="btn btn-danger btn-deposit" (click)="deleteModal = true">
+      <fa-icon [icon]="trash"></fa-icon>
+      <span> Supprimer</span>
+      </button>
+  </div>
+  <div *ngIf="user" class="account-container">
+    <div class="card">
+      <h3 class="card-header">
+        Mon profil
+        <button class="btn btn-primary" (click)="dlRgpdData()"> <fa-icon [icon]="dl"></fa-icon>Télécharger mes données </button>
+      </h3>
+      <div class="card-block">
+        <div class="card-text">
+          <p><b>Email : </b> {{user.email}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="card-header">Changer mon mot de passe</h3>
+      <div class="card-block">
+        <div class="card-text">
+          <app-deposit-form
+          [formBuilder]="updatePasswordFormBuilder"
+          (submitted)="updatePassword($event)"
+          (resetted)="onReset()"
+          [resetForm]="resetForm"
+          >
+          </app-deposit-form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-deposit-delete-modal title="Supprimer mon compte utilisateur"
+                            [objectId]="user.id"
+                            [isOpen]="deleteModal"
+                            (isOpenChange)="deleteModal = $event"
+                            [service]="userService"
+                            [extraInformations]="deleteUser"
+                            [deleteSnotify]="'Votre compte a bien été supprimé'"
+  >
+  </app-deposit-delete-modal>
+  <ng-template #deleteUser>
+    <p>Attention vous êtes entrain de demander la suppression de votre compte utilisateur. </p>
+    <p>Vous n'aurez plus accès à vos documents, vos profils et vos Simon Coin seront définitivement perdus</p>
+    <p> En lien avec notre <a [routerLink]="'/pages/politique-de-confidentialite'"> politique de confidentialité</a> vos données seront anonymisées à des fins de statistiques et d'intégrité de notre système de données
+      et vos documents supprimés</p>
+  </ng-template>
+</ng-container>
+
+
+
+

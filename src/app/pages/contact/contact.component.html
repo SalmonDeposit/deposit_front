@@ -1,0 +1,18 @@
+<app-deposit-header></app-deposit-header>
+<main class="container">
+  <div class="header-contact">
+    <h1> Contact </h1>
+    <p> Une question ? Un avis ?</p>
+    <p class="smiley-p"> N'hésitez pas à nous contacter <span emoji="😊"> </span></p>
+  </div>
+  <app-deposit-form
+    [formBuilder]="contactFormBuilder"
+    [resetForm]="resetForm"
+    (submitted)="onSubmit($event)"
+    (resetted)="onReset()"
+  >
+  </app-deposit-form>
+</main>
+
+
+<app-deposit-footer></app-deposit-footer>

@@ -1,0 +1,12 @@
+<section id="values" class="container">
+  <h2> Nos engagements </h2>
+  <hr>
+  <div class="asides-containers">
+    <aside *ngFor="let item of valuesItem" class="aside-deposit-support">
+      <div class="imgs-container">
+        <img [src]="item.icon">
+      </div>
+      <p>{{item.description}}</p>
+    </aside>
+  </div>
+</section>

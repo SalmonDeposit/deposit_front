@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+
+.deposit-search-bar {
+  position: relative;
+
+  input {
+    width: 100%;
+    min-height: 1.8rem;
+    border: 1px solid #CE8C69;
+    border-radius: 10px;
+    padding-left: 0.5rem;
+    height: 50px;
+  }
+
+  .search-button {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.7rem;
+    color: $salmon;
+  }
+}
+@media (max-width: 768px) {
+  .deposit-search-bar{
+    width: 100%;
+    margin: auto;
+    padding-right: 20px;
+    input{
+      border-radius: 5rem;
+      height: 36px;
+    }
+    .search-button{
+      top: 0.35rem;
+      right: 1.8rem;
+    }
+  }
+}

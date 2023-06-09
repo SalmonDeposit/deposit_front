@@ -1,0 +1,22 @@
+@import "src/styles/variables";
+@import "../../../styles/variables.scss";
+
+#mentions-Legales{
+  margin: auto;
+  h1{
+    margin-bottom: 4rem;
+    color: $blue;
+  }
+  .text{
+    width: 80%;
+    margin: auto;
+  }
+  margin-bottom: 8rem;
+}
+@media (max-width: 768px) {
+  #mentions-Legales{
+    .text{
+      width: 100%;
+    }
+  }
+}

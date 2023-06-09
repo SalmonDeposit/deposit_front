@@ -1,0 +1,26 @@
+<section id="testimonies">
+  <div class="container">
+    <aside>
+      <h3> Un service utile pour <br> nos utilisateurs</h3>
+    </aside>
+    <aside>
+      <div class="quote-character">
+        “
+      </div>
+      <swiper
+        [slidesPerView]="1"
+        [spaceBetween]="50"
+        [navigation]="true"
+        [pagination]="{ clickable: true }"
+        [scrollbar]="{ draggable: true }">
+        <ng-template *ngFor="let testimony of testimonies" swiperSlide>
+          <div class="testimony-container">
+            <p class="testimony">{{testimony.content}} </p>
+            <p class="author-name">{{testimony.author}}</p>
+          </div>
+        </ng-template>
+      </swiper>
+
+    </aside>
+  </div>
+</section>

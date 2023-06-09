@@ -1,0 +1,44 @@
+<h1>Demandes de contacts</h1>
+<ng-container *ngIf="messages && messages.length > 0 else noMessages">
+  <clr-datagrid>
+    <clr-dg-column>Date de la demande</clr-dg-column>
+    <clr-dg-column>Nom</clr-dg-column>
+    <clr-dg-column [clrDgSortBy]="nameComparator">Email</clr-dg-column>
+    <clr-dg-column>Demande</clr-dg-column>
+    <clr-dg-column>Action</clr-dg-column>
+
+
+    <clr-dg-row *clrDgItems="let message of messages"
+                [clrDgItem]="message">
+      <clr-dg-cell >
+        {{message.createdAt| date:'dd.MM.YYYY'}}
+      </clr-dg-cell>
+      <clr-dg-cell >
+        {{message.lastName}}
+      </clr-dg-cell>
+      <clr-dg-cell >
+        {{message.email}}
+      </clr-dg-cell>
+      <clr-dg-cell >
+        {{message.askedQuestion}}
+      </clr-dg-cell>
+      <clr-dg-cell class="actions-buttons">
+        <button class="btn btn-danger" (click)="onDelete(message.id)">
+          <fa-icon class="icon" [icon]="trash"></fa-icon>
+        </button>
+      </clr-dg-cell>
+    </clr-dg-row>
+  </clr-datagrid>
+</ng-container>
+<div class="loading" *ngIf="isLoading">
+  <span class="spinner"></span>
+</div>
+<ng-template #noMessages>
+  <p *ngIf="!isLoading">Pas de nouveaux message</p>
+</ng-template>
+<app-deposit-delete-modal title="Supprimer le message"
+                          [objectId]="currentMessageId"
+                          [isOpen]="deleteMessageModal"
+                          (isOpenChange)="deleteMessageModal = $event"
+                          [service]="service">
+</app-deposit-delete-modal>

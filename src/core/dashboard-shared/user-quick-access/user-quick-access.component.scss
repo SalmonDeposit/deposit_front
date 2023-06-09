@@ -1,0 +1,23 @@
+@import "../../../styles/variables";
+
+.user-quick-access {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fecfa3;
+  padding: 2rem;
+  border-radius: 10px;
+
+  .document-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      min-width: 8rem;
+    }
+  }
+}

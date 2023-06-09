@@ -1,0 +1,33 @@
+<div class="profile-card" *ngIf="profile">
+    <div class="card">
+      <h3 class="card-header">{{profile.firstname}} {{profile.lastname}}</h3>
+      <div class="card-block">
+        <div class="card-text">
+          <p>Email : {{profile.email}}</p>
+          <p> N° de téléphone : {{profile.phoneNumber}}</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary" (click)="updateModal = true">Modifier</button>
+        <button class="btn btn-danger" (click)="deleteModal = true">Supprimer</button>
+      </div>
+    </div>
+  <app-deposit-delete-modal title="Supprimer l'element"
+                            [objectId]="profile.id"
+                            [isOpen]="deleteModal"
+                            (isOpenChange)="deleteModal = $event"
+                            [service]="service">
+  </app-deposit-delete-modal>
+  <app-deposit-editor-modal
+    [title]="'Modifier un profil'"
+    [formBuilder]="formBuilder"
+    [isOpen]="updateModal"
+    (isOpenChange)="updateModal = $event"
+    [service]="service"
+    (onSubmitForm)="onUpdateProfile()"
+    [object]="profile"
+    [editMode]="true"
+  >
+  </app-deposit-editor-modal>
+</div>
+

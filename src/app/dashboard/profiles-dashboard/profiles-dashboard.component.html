@@ -1,0 +1,28 @@
+<div class="header-actions">
+  <h1>Vos profils</h1>
+  <div class="btn-group  btn-primary btn-deposit">
+    <button  (click)="addModal = true" class="btn ">
+      <fa-icon class="icon" size="2x" [icon]="plus"></fa-icon>
+      <span> Ajouter un profil</span>
+    </button>
+  </div>
+
+</div>
+<section id="profiles-container" *ngIf="!isLoading; else loading">
+  <div class="no-profiles" *ngIf="profiles && profiles.length === 0"> Vous n'avez pas de profil pour le moment</div>
+  <app-profile-card *ngFor="let profile of profiles" [profile]="profile"></app-profile-card>
+</section>
+
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>
+<app-deposit-editor-modal
+  [title]="'Ajouter un profil'"
+  [formBuilder]="formBuilder"
+  [isOpen]="addModal"
+  (isOpenChange)="addModal = $event"
+  [service]="service"
+>
+</app-deposit-editor-modal>

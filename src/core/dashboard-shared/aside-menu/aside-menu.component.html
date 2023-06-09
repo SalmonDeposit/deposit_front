@@ -1,0 +1,23 @@
+<div id="logo">
+  <a [routerLink]="['/dashboard/home']">
+    <img src="../../../assets/img/logo/logo_saumon.png" alt="Deposit's Logo"/>
+  </a>
+</div>
+<div id="dashboard-storage-infos">
+  <p>Espace de stockage</p>
+  <clr-progress-bar  clrValue="300" clrMax="500" ></clr-progress-bar>
+  <span> 300mo sur 500mo</span>
+</div>
+<nav id="nav-dashboard">
+  <ul>
+    <li>
+      <a [routerLink]="['/dashboard/files']">&nbsp;<fa-icon class="icon" [icon]="caretRight"></fa-icon>&nbsp;Mon coffre&nbsp;</a>
+    </li>
+    <li>
+      <a [routerLink]="['/dashboard/profiles']">&nbsp;<fa-icon class="icon" [icon]="caretRight"></fa-icon>&nbsp;Mes profils&nbsp;</a>
+    </li>
+    <li>
+      <a [routerLink]="['/dashboard/my-account']">&nbsp;<fa-icon class="icon" [icon]="caretRight"></fa-icon>&nbsp;Mon compte&nbsp;</a>
+    </li>
+  </ul>
+</nav>

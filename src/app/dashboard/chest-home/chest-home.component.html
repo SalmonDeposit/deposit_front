@@ -1,0 +1,13 @@
+<div class="chest-home">
+<div class="header-actions">
+  <h1>Votre coffre</h1>
+</div>
+<ng-container *ngIf="!isLoading && documents; else loading">
+<app-files-table [folders]="folders" [documents]="documents" ></app-files-table>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>
+</div>

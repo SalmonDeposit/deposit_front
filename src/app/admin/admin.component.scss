@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+#admin-page{
+  #logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    img {
+      max-width: 150px;
+    }
+  }
+  display: flex;
+  min-height: 100vh;
+  margin-bottom: 10rem;
+  #router{
+    padding-left: 2rem;
+  }
+  .clr-vertical-nav{
+    background-color: rgba($salmon, 0.2);
+    .nav-link:hover{
+      background-color: rgba($salmon, 0.4);
+    }
+    .nav-link{
+      font-size: 1rem;
+      color: $blue;
+    }
+  }
+
+}

@@ -1,0 +1,13 @@
+ <div class="deposit-card" (click)="navigateToDocument()" *ngIf="document">
+   <div class="card">
+     <span class="date-document">{{document.createdAt | date: 'dd.MM.yyyy' }}</span>
+     <span class="name-document">{{document.name}}</span>
+     <div class="deposit-card-footer">
+       <div>{{document.size | fileSize}}</div>
+       <div class="img-document-type">
+         <img src="{{document.type | fileTypeImagePipe}}"/>
+       </div>
+     </div>
+     </div>
+ </div>
+

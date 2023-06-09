@@ -1,14 +1,25 @@
-# DepositFront
+![img](src/assets/img/logo/logo_saumon.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+## About Despos'It Front
 
-## Development server
+### Development Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### <ins>1. Requirements</ins>
 
-## Code scaffolding
+This application use Angular 15. You will need to install [Node](https://nodejs.org/en/download) in order to start using it. Windows, Linux and MacOS are supported.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### <ins>2. Clone and build</ins>
+Clone the repository to your local machine. 
+```shell
+> git clone git@github.com:SalmonDeposit/deposit_front.git
+```
+Next, go to your installation directory, and build the application.
+```shell
+> cd deposit_front
+> npm i --legacy-peer-deps
+```
+This project uses ng-snotify, this library was build for Angular 9 however there is no problem to use it with Angular 15. \
+That it ! Deposit run on localhost:4200 :) 
 
 ## Build
 
@@ -22,6 +33,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

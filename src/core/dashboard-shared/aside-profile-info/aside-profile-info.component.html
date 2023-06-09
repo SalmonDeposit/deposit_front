@@ -1,0 +1,10 @@
+<app-user-quick-access></app-user-quick-access>
+<div *ngIf="!isLoading && documents && documents.length > 0" id="dashboard-profile-infos-recents">
+  <h5>Document récents</h5>
+  <div id="dashboard-profile-infos-recents-list">
+    <ng-container >
+      <span (click)="goToDetails(document.id)" *ngFor="let document of documents">{{document.name}}</span>
+    </ng-container>
+  </div>
+  <div id="dashboard-profile-infos-recents-spinner" *ngIf="isLoading" class="spinner"></div>
+</div>

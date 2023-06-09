@@ -1,0 +1,36 @@
+<ng-container *ngIf="!isLoading && document; else loading">
+  <div class="header-details">
+    <h1>{{document.name}}</h1>
+    <div class="btn-group btn-primary btn-deposit">
+      <button (click)="dlFile()" class="btn">
+        <fa-icon class="icon" [icon]="dl"></fa-icon>
+        <span>
+          Télécharger
+        </span>
+      </button>
+      <button (click)="deleteModal = true" class="btn btn-danger">
+        <fa-icon class="icon" [icon]="trash"></fa-icon>
+        <span>
+          Supprimer
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <ngx-doc-viewer *ngIf="document.storageLink"
+    [url]="document.storageLink"
+    [viewer]="getViewer()"
+    style="width:80%;height:80%; margin: 4rem auto"
+  ></ngx-doc-viewer>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>
+<app-deposit-delete-modal title="Supprimer l'element"
+                          [objectId]="document?.id"
+                          [isOpen]="deleteModal"
+                          (isOpenChange)="deleteModal = $event"
+                          [service]="service">
+</app-deposit-delete-modal>

@@ -1,0 +1,49 @@
+@import "src/styles/variables.scss";
+
+h1{
+  color: $blue;
+}
+
+.clr-accordion-panel {
+  background-color: blue;
+
+}
+
+#frequently-asked-questions {
+  width: 100%;
+  margin: 3rem auto auto auto;
+  margin-bottom: 10rem;
+
+  h3 {
+    margin-right: 0px;
+    color: $salmon;
+    margin-bottom: 2rem;
+
+
+  }
+
+  /* Style pour la question */
+  .faq-question {
+
+    margin: 1rem auto auto auto;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: initial;
+    padding: 10px;
+
+    color: black;
+  }
+
+  /* Style pour la réponse */
+  .faq-answer {
+    padding: 10px;
+
+    margin-left: 2opx;
+  }
+
+  /* Style pour la réponse affichée */
+
+  .faq-answer.active {
+    display: block;
+  }
+}

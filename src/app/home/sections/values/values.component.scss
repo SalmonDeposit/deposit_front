@@ -1,0 +1,60 @@
+@import "src/styles/variables";
+
+#values{
+  width: 70%;
+  margin: 8rem auto;
+  margin-bottom: 16rem;
+
+  h2{
+    text-align: center;
+  }
+  hr{
+    border: 1px solid $blue;
+    margin-bottom: 4rem;
+    width: 4rem;
+    background-color:$blue;
+  }
+  .asides-containers{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    .aside-deposit-support{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p{
+        text-align: center;
+        font-size: 0.85rem;
+      }
+
+      .imgs-container{
+        max-width: 5rem;
+        min-width: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+  }
+}
+@media (max-width: 768px) {
+  #values{
+    width: 100%;
+    margin: 4rem auto auto;
+    .asides-containers{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .aside-deposit-support{
+        margin-bottom: 2rem;
+
+      }
+    }
+  }
+}

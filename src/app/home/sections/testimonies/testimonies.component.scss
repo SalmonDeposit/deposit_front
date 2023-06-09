@@ -1,0 +1,59 @@
+@import "src/styles/variables";
+
+#testimonies {
+  @include bg-salmon;
+  margin-top: 8rem;
+
+  .container {
+    display: flex;
+    padding: 5rem;
+
+    aside {
+      width: 50%;
+      position: relative;
+
+      .quote-character {
+        color: #428fc3;
+        font-size: 7.5rem;
+        position: absolute;
+        top: -5.5rem;
+        left: 0;
+        font-family: none;
+        max-height: 100px;
+      }
+
+      .testimony-container {
+        width: 70%;
+        margin: auto;
+
+        .author-name {
+          font-weight: bold;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  #testimonies{
+    .container{
+      flex-direction: column;
+      padding: 2rem 20px;
+      :last-child{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        .quote-character{
+          display: none;
+        }
+      }
+      aside{
+        width: 100%;
+      }
+    }
+  }
+}
+

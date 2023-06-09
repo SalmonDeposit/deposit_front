@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+
+#dashboard-home-header {
+  h1, h4, p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  #dashboard-home-header-greetings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  #dashboard-home-header-searchbar-container {
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 768px) {
+  #dashboard-home-header {
+    #dashboard-home-header-greetings {
+     padding: 0;
+      padding-right: 1rem;
+      #user-buttons{
+        margin: 0;
+      }
+    }
+  }
+
+
+}

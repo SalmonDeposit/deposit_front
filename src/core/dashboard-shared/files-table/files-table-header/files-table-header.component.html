@@ -1,0 +1,31 @@
+<div class="header-details" [ngClass]="{'position-header': isChestMode()}">
+  <h1 *ngIf="currentFolder">{{currentFolder.name}}</h1>
+  <div class="btn-group btn-primary btn-deposit" *ngIf="!searchMode">
+    <button  (click)="addDocumentModal = true" class="btn">
+      <fa-icon class="icon" [icon]="upload"> </fa-icon>
+      <span> Charger </span>
+    </button>
+    <button  (click)="addFolderModal = true" class="btn btn-secondary btn-deposit">
+      <fa-icon class="icon" [icon]="folder"> </fa-icon>
+      <span> Créer un dossier </span>
+    </button>
+  </div>
+</div>
+
+
+<app-deposit-upload-file
+  [service]="documentService"
+  [title]="'Ajouter un document'"
+  [filename]="'document'"
+  [isOpen]="addDocumentModal"
+  (isOpenChange)="addDocumentModal = $event"
+/>
+<app-deposit-editor-modal
+  [service]="folderService"
+  [title]="'Créer un nouveau dossier'"
+  [isOpen]="addFolderModal"
+  (isOpenChange)="addFolderModal = $event"
+  [formBuilder]="folderFormBuilder"
+  (onSubmitForm)="addNewFolder($event)"
+  [customForm]="true"
+></app-deposit-editor-modal>

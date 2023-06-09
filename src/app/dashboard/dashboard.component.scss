@@ -1,0 +1,98 @@
+@import "src/styles/variables";
+
+#dashboard-wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  min-height: 100vh;
+
+  .container {
+    width: initial;
+    height: initial;
+    min-width: initial;
+    max-width: initial;
+    position: relative;
+  }
+
+  main {
+    flex: 4;
+    padding: 1.5rem 0;
+    margin: 0;
+  }
+
+  #dashboard-menu-container, #dashboard-infos-container {
+    flex: 1;
+    padding: 1.5rem;
+  }
+
+  #dashboard-infos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#user-buttons{
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  app-aside-menu{
+    display: none;
+  }
+  app-aside-profile-info{
+    display: none;
+  }
+  #dashboard-menu-container{
+    background-image: url("/assets/img/waves_menu.png");
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 3rem;
+    max-width: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #user-buttons{
+      .user-button{
+        border-color: white;
+        margin-top: 3rem;
+      }
+      .user-coin{
+        color: white;
+      }
+      width: fit-content;
+    }
+
+    padding: 0!important;
+
+  }
+  #dashboard-wrapper{
+    #dashboard-infos-container{
+      display: none;
+    }
+  }
+}
+#btn-return-responsive{
+ display: none;
+}
+
+@media (max-width: 768px) {
+  #btn-return-responsive{
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    button{
+      padding: 0;
+      margin: 0;
+      color: white;
+      background-color: $blue;
+      max-width: 2.5rem;
+      min-width: 2.5rem;
+      fa-icon{
+        margin-top: 5px;
+      }
+    }
+  }
+}

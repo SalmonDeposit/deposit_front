@@ -1,0 +1,16 @@
+<div id="dashboard-home-header">
+  <section id="dashboard-home-header-greetings">
+    <div>
+    </div>
+    <div>
+      <app-user-buttons [currentUser]="currentUser"></app-user-buttons>
+    </div>
+  </section>
+  <section id="dashboard-home-header-searchbar-container">
+    <app-deposit-search-document-bar></app-deposit-search-document-bar>
+  </section>
+  <section class="user-quick-access-document">
+    <app-user-last-documents [currentUser]="currentUser"></app-user-last-documents>
+  </section>
+</div>
+

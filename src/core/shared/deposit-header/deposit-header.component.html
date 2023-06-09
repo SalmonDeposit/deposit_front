@@ -1,0 +1,35 @@
+<header>
+  <div class="container">
+    <div id="logo-responsive">
+      <a href="/">
+        <img src="/assets/img/logo/deposit_white_fit.png" alt="deposit logo" />
+      </a>
+    </div>
+    <section id="header-links-container">
+      <div id="logo">
+        <a href="/">
+          <img src="/assets/img/logo/logo_blanc.png" alt="deposit logo" />
+        </a>
+      </div>
+
+      <ul>
+        <li>
+          <a [routerLink]="['/pages/qui-sommes-nous']" class="menu-links">A propos</a>
+        </li>
+        <li>
+          <a [routerLink]="['/pages/contact']" class="menu-links">Contact</a>
+        </li>
+      </ul>
+    </section>
+    <section id="header-auth-buttons-container" *ngIf="!isConnected else userConnected">
+      <app-register-modal></app-register-modal>
+      <app-connection-modal></app-connection-modal>
+    </section>
+    <ng-template #userConnected>
+      <app-user-buttons class="app-user-button-desktop"></app-user-buttons>
+    </ng-template>
+
+  </div>
+  <app-header-responsive></app-header-responsive>
+
+</header>

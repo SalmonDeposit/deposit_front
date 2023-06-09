@@ -1,0 +1,15 @@
+<section id="plans" *ngIf="plans && plans.length > 0">
+  <div class="container">
+    <h2> Nos offres </h2>
+    <hr>
+    <div class="asides-containers">
+      <aside *ngFor="let plan of plans" class="aside-deposit-support">
+        <h3>{{plan.shortName}}</h3>
+        <p>  {{plan.realCost | currency:'EUR'}}</p>
+        <div [innerHTML]="plan.description"></div>
+        <app-register-modal></app-register-modal>
+      </aside>
+    </div>
+  </div>
+
+</section>

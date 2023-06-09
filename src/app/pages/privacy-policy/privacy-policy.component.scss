@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+@import "../../../styles/variables.scss";
+
+#privacy-policy{
+  margin: auto;
+  h1{
+    color: $blue;
+  }
+  .text{
+    width: 80%;
+    margin: auto;
+  }
+  margin-bottom: 8rem;
+}
+@media (max-width: 768px) {
+  #privacy-policy{
+    .text{
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+

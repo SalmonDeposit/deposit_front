@@ -1,0 +1,25 @@
+<section id="baseline" class="container">
+  <aside class="baseline-left">
+    <div class="title-text">
+      <h1> <b>Depos'it</b>, la gestion de vos documents personnels simplifiée et sécurisée</h1>
+      <p> Pour gagner du temps dans l'organisation de vos documents administratifs personnels</p>
+    </div>
+  <div>
+    <a class="android-button" href="https://cdn.aquarius.irish/s/2B7nCrGiCYFYBom">
+      <button class="btn btn-primary">
+        <img src="../../../../assets/img/home/android.png"/>
+        <span> Disponible&nbsp;sur&nbsp;Android </span>
+      </button>
+    </a>
+  </div>
+  </aside>
+  <aside class="baseline-right">
+    <div id="baseline-right"></div>
+    <div id="baseline-left"></div>
+  </aside>
+</section>
+
+<section id="section-auth-buttons-container" *ngIf="!isConnected">
+  <app-register-modal></app-register-modal>
+  <app-connection-modal></app-connection-modal>
+</section>

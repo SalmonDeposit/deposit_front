@@ -1,0 +1,12 @@
+<ng-container *ngIf="!isLoading && folder; else loading">
+  <app-files-table
+  [documents]="folder.documents"
+  [folders]="folder.folders"
+  [currentFolder]="folder">
+  </app-files-table>
+</ng-container>
+<ng-template #loading>
+  <div class="loading-container">
+    <span class="spinner"></span>
+  </div>
+</ng-template>

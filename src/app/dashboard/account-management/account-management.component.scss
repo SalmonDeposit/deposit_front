@@ -1,0 +1,60 @@
+fa-icon{
+  margin-right: 1rem;
+}
+.card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-footer{
+  display: flex;
+  justify-content: flex-end;
+
+}
+.header-account{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.account-container{
+  display: flex;
+  gap: 1rem
+}
+@media (max-width: 1600px) {
+  .account-container{
+    flex-direction: column;
+  }
+
+}
+@media (max-width: 768px) {
+  .account-container{
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .header-account{
+    .btn-deposit{
+      fa-icon{
+        margin: 0;
+      }
+      span{
+        display: none;
+      }
+    }
+    h1{
+      margin:0;
+    }
+  }
+  .card{
+    max-width: 15rem;
+    .card-header{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0.5rem;
+    }
+    h3{
+      font-size: 1rem;
+    }
+  }
+}
