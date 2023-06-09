@@ -35,17 +35,13 @@ export class ConnectionModalComponent implements OnInit, OnDestroy {
     this.socialAuthService.authState
       .pipe(
         switchMap((user: SocialUser | null) => {
-          console.log(user)
           if (user && this.connectionModal) {
-            console.log("je me connecte api")
             return this.authApiService.connectWithGoogle(user);
           } else {
-            console.log("je suis ds le else")
             return of(null);
           }
         }),
         catchError((res) => {
-          console.log("catch error",res);
           return of(null)
         })
       )
@@ -66,7 +62,6 @@ export class ConnectionModalComponent implements OnInit, OnDestroy {
     })
   }
   onResetSubmit(email: any){
-    console.log("reset", email)
     this.accountService.resetPassword(email).subscribe({
       next: () => {
         this.sno.success("Si un email est associé à ce compte, vous recevrez un email avec votre nouveau mot de passe")

@@ -32,7 +32,6 @@ export class DepositSearchDocumentBarComponent {
     this.isLoading = true
     this.fileService.search(this.filter).subscribe({
       next : res => {
-        console.log(res)
         this.documents = res.documents
         this.folders = res.folders
         this.isLoading = false
